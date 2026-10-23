@@ -67,25 +67,6 @@ Things to know:
 
 ---
 
-## Put it online for free
-
-### GitHub Pages
-
-1. Make a free account at [github.com](https://github.com) and create a new **public** repository, for example `9709-workbook`.
-2. Rename `9709-maths-workbook.html` to **`index.html`**, then upload it and this `README.md` with **Add file → Upload files**.
-3. Go to **Settings → Pages**. Under **Build and deployment**, set **Source** to **Deploy from a branch**, choose the **main** branch and the **/ (root)** folder, then click **Save**.
-4. After a minute or two, the site is live at `https://<your-username>.github.io/9709-workbook/`.
-
-### Netlify
-
-Make a free account at [netlify.com](https://www.netlify.com), put `index.html` in a folder, and drag the folder onto the Netlify Drop page. You get a public link straight away.
-
----
-
-## Linking straight to a page
-
-Add a name after `#` at the end of the site's address. For example, `https://<your-site>/#p3.complex` opens P3 Complex Numbers.
-
 | Page | Link name |
 |---|---|
 | Home | `#home` |
