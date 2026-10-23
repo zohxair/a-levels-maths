@@ -1,0 +1,2253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>9709 Workbook — Cambridge AS &amp; A Level Mathematics</title>
+<meta name="description" content="Notes, worked examples, exam-style questions with full solutions and downloadable formula sheets for Cambridge 9709 Pure 1, Pure 3, Statistics 1, Statistics 2 and Mechanics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+:root{
+  --page:#f6f8fb; --sheet:#ffffff; --ink:#1b2340; --ink-2:#4b5573; --pencil:#737d97;
+  --rule:#d9e1ec; --grid:#e4ecf6; --margin:#e0463a; --focus:#2f5bd3;
+  --ok:#17744b; --ok-bg:#e5f3eb; --hint-bg:#fff5dc; --hint-ink:#6e4b00;
+  --c-p1:#2f5bd3; --c-p3:#7b4cc9; --c-s1:#0c837c; --c-s2:#bd3a74; --c-m1:#a8620a;
+  --accent:var(--c-p1);
+  --r-sm:6px; --r:10px;
+  --shadow:0 1px 0 rgba(27,35,64,.04),0 10px 28px -18px rgba(27,35,64,.45);
+  --font:'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --page:#111725; --sheet:#171f31; --ink:#e7ecf6; --ink-2:#b6c0d6; --pencil:#8c97b2;
+    --rule:#2a3550; --grid:#1e2840; --margin:#f0675c; --focus:#8fabff;
+    --ok:#74d6a4; --ok-bg:#15301f; --hint-bg:#2c2513; --hint-ink:#f3d18c;
+    --c-p1:#86a5ff; --c-p3:#bb9cf2; --c-s1:#52d0c4; --c-s2:#f282b4; --c-m1:#f0b660;
+    --shadow:0 1px 0 rgba(0,0,0,.2),0 12px 30px -18px rgba(0,0,0,.8);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#111725; --sheet:#171f31; --ink:#e7ecf6; --ink-2:#b6c0d6; --pencil:#8c97b2;
+  --rule:#2a3550; --grid:#1e2840; --margin:#f0675c; --focus:#8fabff;
+  --ok:#74d6a4; --ok-bg:#15301f; --hint-bg:#2c2513; --hint-ink:#f3d18c;
+  --c-p1:#86a5ff; --c-p3:#bb9cf2; --c-s1:#52d0c4; --c-s2:#f282b4; --c-m1:#f0b660;
+  --shadow:0 1px 0 rgba(0,0,0,.2),0 12px 30px -18px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--font);font-size:16.5px;line-height:1.6}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:2px;border-radius:4px}
+.katex{font-size:1.07em}
+.katex-display{position:relative;overflow-x:auto;overflow-y:hidden;padding:3px 0;margin:.6em 0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--page) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.topbar .wrap{display:flex;align-items:center;gap:18px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:18px;letter-spacing:-.01em;white-space:nowrap}
+.brand-mark{width:30px;height:30px;border-radius:6px;border:1.5px solid var(--ink);display:grid;place-items:center;font-size:17px;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:6px 6px;background-color:var(--sheet)}
+.nav{display:flex;gap:4px;margin-left:8px}
+.nav a{text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;color:var(--ink-2);font-size:15px;white-space:nowrap}
+.nav a:hover{color:var(--ink);background:var(--sheet)}
+.nav a[aria-current="page"]{color:var(--ink);box-shadow:inset 0 -2.5px 0 var(--ink);border-radius:0}
+.tb-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.search{position:relative}
+.search input{width:240px;height:38px;border:1px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:9px;padding:0 12px 0 34px;font:inherit;font-size:15px}
+.search svg{position:absolute;left:10px;top:10px;color:var(--pencil)}
+.results{position:absolute;right:0;top:44px;width:min(440px,92vw);background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow);max-height:70vh;overflow:auto;padding:6px}
+.results button{display:block;width:100%;text-align:left;background:none;border:0;padding:9px 10px;border-radius:7px;cursor:pointer}
+.results button:hover,.results button:focus-visible{background:var(--page)}
+.results .r-where{font-size:13px;color:var(--pencil);font-weight:600}
+.results .r-text{font-size:14.5px;color:var(--ink-2)}
+.results .empty{padding:10px;color:var(--pencil);font-size:14.5px}
+.icon-btn{width:38px;height:38px;border:1px solid var(--rule);background:var(--sheet);border-radius:9px;display:grid;place-items:center;cursor:pointer;color:var(--ink-2)}
+.icon-btn:hover{color:var(--ink)}
+.menu-btn{display:none}
+.search-toggle{display:none}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:9px;border:1.5px solid var(--ink);background:var(--ink);color:var(--page);font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover{filter:brightness(1.12)}
+.btn.line{background:transparent;color:var(--ink)}
+.btn.line:hover{background:var(--sheet);filter:none}
+.btn.sm{height:34px;padding:0 12px;font-size:14px;border-width:1px}
+.btn svg{flex:none}
+
+/* ---------- home ---------- */
+.hero{position:relative;border-bottom:1px solid var(--rule);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px;background-color:var(--sheet)}
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:max(20px,calc(50% - 590px + 20px));width:1.5px;background:var(--margin);opacity:.85}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;padding-top:64px;padding-bottom:64px;align-items:center}
+.hero-copy{padding-left:28px}
+.hero h1{font-size:clamp(34px,5vw,56px);line-height:1.04;letter-spacing:-.03em;margin:0 0 18px;font-weight:800;max-width:14ch}
+.hero p.lede{font-size:18.5px;color:var(--ink-2);max-width:46ch;margin:0 0 26px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.hero-count{margin-top:22px;color:var(--pencil);font-size:15px}
+.paper-sample{background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow);padding:22px 22px 18px}
+.paper-sample .ps-cap{font-size:13.5px;color:var(--pencil);margin-bottom:12px;font-weight:600}
+.section{padding:56px 0}
+.section h2{font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
+.section .sub{color:var(--ink-2);margin:0 0 26px;max-width:62ch}
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.route{background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);padding:22px}
+.route h3{margin:0 0 4px;font-size:21px}
+.route p{margin:0 0 14px;color:var(--ink-2);font-size:15px}
+.paper-row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--rule);text-decoration:none}
+.paper-row:hover .pr-name{text-decoration:underline;text-underline-offset:3px}
+.pr-badge{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;font-weight:800;color:var(--accent);border:2px solid var(--accent);font-size:15px}
+.pr-name{font-weight:700}
+.pr-meta{font-size:14px;color:var(--pencil)}
+.pr-prog{width:120px;text-align:right;font-size:13.5px;color:var(--pencil)}
+.bar{height:6px;border-radius:3px;background:var(--grid);overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
+.assess{width:100%;border-collapse:collapse;background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;font-size:15px}
+.assess th,.assess td{padding:11px 14px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.assess th{font-weight:700;background:var(--page)}
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tips div{border-left:3px solid var(--margin);padding:2px 0 2px 16px}
+.tips h4{margin:0 0 4px;font-size:16.5px}
+.tips p{margin:0;color:var(--ink-2);font-size:15px}
+
+/* ---------- level view ---------- */
+.level-head{border-bottom:1px solid var(--rule);background:var(--sheet)}
+.level-head .wrap{padding-top:26px;padding-bottom:0}
+.level-title{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.level-title h1{margin:0;font-size:30px;letter-spacing:-.02em}
+.level-title p{margin:0;color:var(--ink-2);font-size:15px}
+.paper-tabs{display:flex;gap:4px;overflow-x:auto;position:relative}
+.paper-tabs a{text-decoration:none;padding:10px 16px 12px;border-radius:9px 9px 0 0;font-weight:700;color:var(--ink-2);border:1px solid transparent;border-bottom:none;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.paper-tabs a .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.paper-tabs a:hover{color:var(--ink)}
+.paper-tabs a[aria-current="true"]{background:var(--page);color:var(--ink);border-color:var(--rule);margin-bottom:-1px}
+.paper-band{display:flex;gap:18px;align-items:center;flex-wrap:wrap;padding:22px 0 6px}
+.paper-band .pb-text{flex:1 1 360px}
+.paper-band h2{margin:0;font-size:24px;letter-spacing:-.015em}
+.paper-band h2 span{color:var(--accent)}
+.paper-band p{margin:4px 0 0;color:var(--ink-2);font-size:15px;max-width:70ch}
+.pb-facts{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;font-size:14px;color:var(--pencil)}
+.pb-facts b{color:var(--ink);font-weight:700}
+.pb-actions{display:flex;gap:8px;flex-wrap:wrap}
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:34px;padding-top:20px;padding-bottom:60px}
+.toc{position:sticky;top:78px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;padding-right:4px}
+.toc h3{font-size:14px;color:var(--pencil);margin:0 0 8px;font-weight:600}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc a{display:grid;grid-template-columns:34px 1fr;gap:4px;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--ink-2);font-size:15px;line-height:1.35}
+.toc a:hover{background:var(--sheet);color:var(--ink)}
+.toc a[aria-current="true"]{background:var(--sheet);color:var(--ink);font-weight:700;box-shadow:inset 3px 0 0 var(--accent)}
+.toc .num{color:var(--pencil);font-variant-numeric:tabular-nums;font-weight:600}
+.toc .tprog{grid-column:2;font-size:12.5px;color:var(--pencil);font-weight:500}
+.toc .tprog.full{color:var(--ok)}
+
+/* ---------- topic ---------- */
+.topic-head{margin-bottom:18px}
+.topic-head .sec-no{color:var(--accent);font-weight:800;font-size:15px}
+.topic-head h2{font-size:clamp(28px,3.4vw,38px);line-height:1.1;letter-spacing:-.025em;margin:2px 0 8px}
+.topic-head p{color:var(--ink-2);margin:0;max-width:68ch}
+.notes{background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);padding:8px 26px 20px;max-width:880px}
+.notes h4{font-size:18px;margin:22px 0 6px;letter-spacing:-.01em}
+.notes p,.notes li{max-width:72ch}
+.notes ul,.notes ol{padding-left:22px}
+.notes li{margin:4px 0}
+.key{border:1.5px solid var(--accent);border-radius:var(--r-sm);padding:12px 16px;margin:12px 0;background:color-mix(in srgb,var(--accent) 6%,var(--sheet))}
+.tip,.warn{border-radius:var(--r-sm);padding:11px 15px;margin:14px 0;font-size:15.5px}
+.tip{background:var(--ok-bg);color:var(--ink)}
+.tip b{color:var(--ok)}
+.warn{background:color-mix(in srgb,var(--margin) 10%,var(--sheet))}
+.warn b{color:var(--margin)}
+.tbl{position:relative;border-collapse:collapse;margin:12px 0;font-size:15px;max-width:100%;display:block;overflow-x:auto}
+.tbl th,.tbl td{border:1px solid var(--rule);padding:7px 12px;text-align:center}
+.tbl th{background:var(--page);font-weight:700}
+pre.sl{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14.5px;background:var(--page);border:1px solid var(--rule);border-radius:var(--r-sm);padding:10px 14px;overflow-x:auto;line-height:1.5}
+.part-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:40px 0 14px;max-width:880px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.part-h h3{margin:0;font-size:22px;letter-spacing:-.015em}
+.part-h span{color:var(--pencil);font-size:14.5px}
+
+/* question card styled like an exam paper */
+.q{display:grid;grid-template-columns:44px minmax(0,1fr);gap:6px;background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);padding:20px 22px 18px 14px;margin:0 0 16px;max-width:880px;scroll-margin-top:90px}
+.q.flash{animation:flash 1.6s ease-out}
+@keyframes flash{0%{box-shadow:0 0 0 4px var(--accent)}100%{box-shadow:0 0 0 0 transparent}}
+.q-n{font-weight:800;font-size:18px;text-align:right;padding-right:6px;line-height:1.45}
+.q-n small{display:block;font-size:12px;color:var(--pencil);font-weight:600;line-height:1.2;margin-top:2px}
+.q-text{line-height:1.65}
+.q-marks{text-align:right;font-weight:700;color:var(--ink-2);margin-top:4px;font-variant-numeric:tabular-nums}
+.q-tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.done-toggle{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;color:var(--ink-2);cursor:pointer;margin-left:auto;padding:4px 2px}
+.done-toggle input{width:17px;height:17px;accent-color:var(--ok);margin:0}
+.q.is-done{border-color:color-mix(in srgb,var(--ok) 45%,var(--rule))}
+.q.is-done .q-n{color:var(--ok)}
+.hint{background:var(--hint-bg);color:var(--hint-ink);border-radius:var(--r-sm);padding:9px 13px;margin-top:12px;font-size:15.5px}
+.hint b{color:inherit}
+.working{margin-top:14px;border:1px solid var(--rule);border-radius:var(--r-sm);padding:14px 16px 16px 58px;position:relative;
+  background-color:var(--sheet);
+  background-image:linear-gradient(90deg,transparent 40px,var(--margin) 40px,var(--margin) 41.5px,transparent 41.5px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100% 100%,22px 22px,22px 22px}
+.working-h{font-weight:700;font-size:14.5px;color:var(--pencil);margin-bottom:4px}
+.steps{margin:0;padding-left:20px}
+.steps li{margin:6px 0;padding-left:4px}
+.steps li::marker{color:var(--pencil);font-weight:700;font-size:.9em}
+.answer{margin-top:12px;display:flex;gap:12px;align-items:baseline;background:var(--sheet);border:1.5px solid var(--ink);border-radius:var(--r-sm);padding:9px 14px}
+.answer > span{font-weight:800;font-size:14px;flex:none}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:34px;max-width:880px}
+.pn a{flex:1 1 0;text-decoration:none;border:1px solid var(--rule);background:var(--sheet);border-radius:var(--r);padding:14px 16px}
+.pn a:hover{border-color:var(--ink-2)}
+.pn small{display:block;color:var(--pencil);font-size:13.5px}
+.pn b{font-size:16px}
+.pn .next{text-align:right}
+
+/* ---------- formula sheets ---------- */
+.sheets{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.sheet-card{background:var(--sheet);border:1px solid var(--rule);border-top:4px solid var(--accent);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:6px}
+.sheet-card h3{margin:0;font-size:19px}
+.sheet-card p{margin:0 0 10px;color:var(--ink-2);font-size:14.5px}
+.sheet-card .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.modal{position:fixed;inset:0;z-index:60;background:rgba(10,14,25,.55);display:flex;align-items:flex-start;justify-content:center;padding:28px 14px;overflow:auto}
+.modal[hidden]{display:none}
+.modal-card{background:var(--sheet);border-radius:12px;max-width:960px;width:100%;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+.modal-bar{position:sticky;top:0;background:var(--sheet);border-bottom:1px solid var(--rule);display:flex;gap:8px;align-items:center;padding:12px 16px;border-radius:12px 12px 0 0;z-index:2;flex-wrap:wrap}
+.modal-bar h2{margin:0 auto 0 0;font-size:17px}
+.fs{padding:22px 26px 30px}
+.fs-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:6px}
+.fs-head h2{margin:0;font-size:24px;letter-spacing:-.015em}
+.fs-head p{margin:2px 0 0;color:var(--ink-2);font-size:14.5px}
+.fs-key{font-size:14px;color:var(--ink-2);margin:0}
+.star{color:var(--margin);font-weight:800}
+.fs-sec{break-inside:avoid;margin-top:18px}
+.fs-sec h3{font-size:16px;margin:0 0 6px;color:var(--accent)}
+.fs-tbl{width:100%;border-collapse:collapse;font-size:15px}
+.fs-tbl td{border-top:1px solid var(--rule);padding:7px 8px;vertical-align:top}
+.fs-tbl td:first-child{width:190px;color:var(--ink-2);font-weight:600;font-size:14px}
+.fs-tbl td:last-child{width:22px;text-align:right}
+.phi{border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums;width:100%}
+.phi th,.phi td{border:1px solid var(--rule);padding:3px 5px;text-align:center}
+.phi th{background:var(--page)}
+.phi-wrap{overflow-x:auto;position:relative}
+
+.offline{background:var(--hint-bg);color:var(--hint-ink);text-align:center;padding:8px 16px;font-size:14.5px}
+footer{border-top:1px solid var(--rule);padding:28px 0 40px;color:var(--pencil);font-size:14px}
+footer p{margin:4px 0;max-width:80ch}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .search input{width:170px}
+  .hero .wrap{grid-template-columns:1fr;gap:34px}
+}
+@media (max-width:860px){
+  .nav{display:none;position:absolute;top:62px;left:0;right:0;flex-direction:column;background:var(--sheet);border-bottom:1px solid var(--rule);padding:8px 16px 14px;margin:0}
+  .nav.open{display:flex}
+  .nav a[aria-current="page"]{box-shadow:inset 3px 0 0 var(--ink)}
+  .menu-btn{display:grid}
+  .layout{grid-template-columns:minmax(0,1fr);gap:16px}
+  .toc{position:static;max-height:none;overflow:visible;min-width:0}
+  .toc ol{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;position:relative}
+  .toc li{flex:none}
+  .toc a{display:block;border:1px solid var(--rule);background:var(--sheet);white-space:nowrap;padding:7px 12px}
+  .toc .num{margin-right:6px}
+  .toc .tprog{display:none}
+  .routes,.tips{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .search{display:none}
+  .search.open{display:block;position:absolute;left:12px;right:12px;top:68px}
+  .search.open input{width:100%}
+  .search-toggle{display:grid}
+  .hero-copy{padding-left:14px}
+  .hero::before{left:12px}
+  .notes{padding:4px 16px 16px}
+  .q{grid-template-columns:30px minmax(0,1fr);padding:16px 14px 14px 8px}
+  .working{padding-left:40px}
+  .working{background-image:linear-gradient(90deg,transparent 26px,var(--margin) 26px,var(--margin) 27.5px,transparent 27.5px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px)}
+  .done-toggle{margin-left:0}
+  .fs{padding:16px}
+  .fs-tbl td:first-child{width:auto;display:block;border-top:1px solid var(--rule);padding-bottom:0}
+  .fs-tbl tr{display:block}
+  .fs-tbl td{display:block;border-top:none}
+  .fs-tbl td:last-child{display:none}
+  .pr-prog{width:84px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ---------- print (formula sheet only) ---------- */
+@media print{
+  body.print-sheet{background:#fff}
+  body.print-sheet > *:not(#sheet-modal){display:none!important}
+  body.print-sheet #sheet-modal{position:static;background:none;padding:0;display:block}
+  body.print-sheet .modal-card{box-shadow:none;max-width:none}
+  body.print-sheet .modal-bar{display:none}
+  body.print-sheet .fs{padding:0}
+}
+</style>
+</head>
+<body>
+<div id="offline" class="offline" hidden>Maths symbols need an internet connection to display. Connect and reload the page.</div>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#/"><span class="brand-mark" aria-hidden="true">∫</span>9709 Workbook</a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/as" data-nav="as">AS Level</a>
+      <a href="#/a" data-nav="a">A Level</a>
+      <a href="#/sheets" data-nav="sheets">Formula sheets</a>
+    </nav>
+    <div class="tb-right">
+      <div class="search" id="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search topics and questions" autocomplete="off" aria-label="Search topics and questions">
+        <div class="results" id="results" hidden></div>
+      </div>
+      <button class="icon-btn search-toggle" id="searchToggle" aria-label="Search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <button class="icon-btn" id="theme" aria-label="Switch between light and dark mode"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
+      <button class="icon-btn menu-btn" id="menu" aria-label="Open menu" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="app"></main>
+<footer>
+  <div class="wrap">
+    <p>Questions are original and written in the style of Cambridge International 9709 past papers; they are not copied from any paper. Practise with real past papers too, and check the current syllabus and list of formulae (MF19) with your teacher.</p>
+    <p>Not affiliated with or endorsed by Cambridge University Press &amp; Assessment. Progress is saved in this browser only.</p>
+  </div>
+</footer>
+<div class="modal" id="sheet-modal" hidden role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="modal-card">
+    <div class="modal-bar">
+      <h2 id="sheet-title">Formula sheet</h2>
+      <button class="btn sm" id="sheet-dl"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Download</button>
+      <button class="btn sm line" id="sheet-print"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 9V4h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v6H7z"/></svg>Print or save as PDF</button>
+      <button class="icon-btn" id="sheet-close" aria-label="Close formula sheet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div id="sheet-body"></div>
+  </div>
+</div>
+
+<script>
+const R = String.raw;
+const DATA = {};
+const FORMULAS = {};
+DATA.p1 = {
+id:'p1', short:'P1', name:'Pure Mathematics 1', paper:'Paper 1', level:'as', color:'#2f5bd3',
+exam:'1 hr 50 min', marks:75,
+blurb:'The foundation of the whole qualification. Compulsory for both AS and A Level: algebra, functions, coordinate geometry, trigonometry, series and calculus.',
+topics:[
+/* ---------------- 1. QUADRATICS ---------------- */
+{id:'quadratics', title:'Quadratics', sum:'Completing the square, the discriminant, quadratic inequalities, disguised quadratics and line–curve intersections.',
+notes:R`
+<h4>Completing the square</h4>
+<p>Every quadratic can be written in vertex form. This tells you the turning point immediately.</p>
+<div class="key">$$ax^2+bx+c \;=\; a\left(x+\frac{b}{2a}\right)^2 + c-\frac{b^2}{4a}$$
+For $y=a(x+p)^2+q$ the vertex is $(-p,\,q)$: a minimum if $a\gt 0$, a maximum if $a\lt 0$.</div>
+<h4>The discriminant $b^2-4ac$</h4>
+<ul>
+<li>$b^2-4ac\gt 0$ : two distinct real roots (line <em>cuts</em> curve at two points)</li>
+<li>$b^2-4ac=0$ : two equal (repeated) roots (line is a <em>tangent</em>)</li>
+<li>$b^2-4ac\lt 0$ : no real roots (line does <em>not meet</em> curve)</li>
+</ul>
+<h4>Quadratic inequalities</h4>
+<p>Solve the equation first to get the critical values, sketch the parabola, then read off the region. For $(x-\alpha)(x-\beta)\gt 0$ with $\alpha\lt\beta$ the answer is $x\lt\alpha$ or $x\gt\beta$; for $\lt 0$ it is $\alpha\lt x\lt\beta$.</p>
+<h4>Disguised quadratics</h4>
+<p>Spot a hidden quadratic and substitute: $x^4-5x^2+4=0$ (let $u=x^2$), $2x-7\sqrt{x}+3=0$ (let $u=\sqrt x$), $4^x-3\cdot2^x+2=0$ (let $u=2^x$). Always reject values of $u$ that are impossible (e.g. $\sqrt x\lt 0$).</p>
+<h4>Where a line meets a curve</h4>
+<p>Substitute the line into the curve to get a quadratic in $x$, then use the discriminant to decide whether the line cuts, touches or misses.</p>
+<div class="tip"><b>Exam tip:</b> “Find the set of values of $k$” almost always means: form a quadratic, write down $b^2-4ac$ in terms of $k$, then solve a quadratic <em>inequality</em> in $k$.</div>
+<div class="warn"><b>Common mistake:</b> writing $-3\lt x\gt \tfrac12$. Two separate regions must be written as “$x\lt -3$ or $x\gt\tfrac12$”.</div>`,
+ex:[
+{m:3, q:R`Express $2x^2-12x+23$ in the form $a(x+b)^2+c$. Hence state the minimum value of $2x^2-12x+23$ and the value of $x$ at which it occurs.`,
+s:[R`Take out the factor of 2 from the $x$ terms: $2(x^2-6x)+23$.`,
+R`Complete the square inside the bracket: $x^2-6x=(x-3)^2-9$.`,
+R`So $2\big[(x-3)^2-9\big]+23=2(x-3)^2-18+23=2(x-3)^2+5$.`,
+R`Since $(x-3)^2\ge 0$, the smallest value occurs when $x-3=0$.`],
+a:R`$2(x-3)^2+5$; minimum value $5$ when $x=3$.`},
+{m:4, q:R`The line $y=kx-3$ is a tangent to the curve $y=x^2+2x+1$. Find the possible values of the constant $k$.`,
+s:[R`Equate: $x^2+2x+1=kx-3 \;\Rightarrow\; x^2+(2-k)x+4=0$.`,
+R`Tangent means exactly one point of contact, so the discriminant is zero: $(2-k)^2-4(1)(4)=0$.`,
+R`$(2-k)^2=16 \Rightarrow 2-k=\pm4 \Rightarrow k=-2$ or $k=6$.`,
+R`Check $k=6$: $x^2-4x+4=0$ gives $x=2$, $y=9$ on both. Check $k=-2$: $x=-2$, $y=1$ on both. ✓`],
+a:R`$k=-2$ or $k=6$`}
+],
+pr:[
+{m:3, q:R`Solve the equation $3x-7\sqrt{x}+2=0$.`, h:R`Let $u=\sqrt{x}$, so $x=u^2$.`,
+s:[R`With $u=\sqrt x$: $3u^2-7u+2=0$.`, R`Factorise: $(3u-1)(u-2)=0$, so $u=\tfrac13$ or $u=2$.`, R`Both are positive so both are valid: $x=u^2$.`],
+a:R`$x=\tfrac19$ or $x=4$`},
+{m:3, q:R`Find the set of values of $k$ for which the line $y=2x+k$ does not meet the curve $y=x^2-4x+7$.`, h:R`“Does not meet” means $b^2-4ac\lt 0$.`,
+s:[R`$x^2-4x+7=2x+k \Rightarrow x^2-6x+(7-k)=0$.`, R`No intersection: $(-6)^2-4(1)(7-k)\lt 0$.`, R`$36-28+4k\lt 0 \Rightarrow 8+4k\lt 0$.`],
+a:R`$k\lt -2$`},
+{m:3, q:R`Find the set of values of $x$ for which $2x^2+5x-3\gt 0$.`, h:R`Factorise, find critical values, sketch a ∪-shaped parabola.`,
+s:[R`$2x^2+5x-3=(2x-1)(x+3)$, critical values $x=\tfrac12$ and $x=-3$.`, R`The parabola opens upwards, so it is positive <em>outside</em> the roots.`],
+a:R`$x\lt -3$ or $x\gt \tfrac12$`},
+{m:4, q:R`Find the set of values of the constant $k$ for which the equation $x^2+(k-2)x+k+1=0$ has two distinct real roots.`, h:R`Two distinct real roots: $b^2-4ac\gt 0$.`,
+s:[R`$b^2-4ac=(k-2)^2-4(k+1)=k^2-4k+4-4k-4=k^2-8k$.`, R`Need $k^2-8k\gt 0 \Rightarrow k(k-8)\gt 0$.`, R`Critical values $0$ and $8$; positive outside them.`],
+a:R`$k\lt 0$ or $k\gt 8$`},
+{m:4, q:R`The curve $y=x^2-3x+4$ and the line $y=2x-2$ meet at the points $A$ and $B$. Find the coordinates of the mid-point of $AB$.`,
+s:[R`$x^2-3x+4=2x-2\Rightarrow x^2-5x+6=0\Rightarrow (x-2)(x-3)=0$.`, R`$x=2\Rightarrow y=2$; $x=3\Rightarrow y=4$. So $A(2,2)$, $B(3,4)$.`, R`Mid-point $=\left(\frac{2+3}{2},\frac{2+4}{2}\right)$.`],
+a:R`$(2.5,\;3)$`}
+]},
+/* ---------------- 2. FUNCTIONS ---------------- */
+{id:'functions', title:'Functions', sum:'Domain and range, one-one functions, inverses, composite functions and graph transformations.',
+notes:R`
+<h4>Language of functions</h4>
+<ul><li><b>Domain</b>: the set of allowed inputs. <b>Range</b>: the set of outputs produced.</li>
+<li>A function is <b>one-one</b> if every output comes from exactly one input (passes the horizontal-line test). Only one-one functions have inverses.</li></ul>
+<h4>Inverse functions $f^{-1}$</h4>
+<div class="key">To find $f^{-1}(x)$: write $y=f(x)$, rearrange to make $x$ the subject, then swap $x$ and $y$.<br>
+Domain of $f^{-1}$ = range of $f$. &nbsp; Range of $f^{-1}$ = domain of $f$.<br>
+The graph of $y=f^{-1}(x)$ is the reflection of $y=f(x)$ in the line $y=x$.</div>
+<h4>Composite functions</h4>
+<p>$fg(x)=f\big(g(x)\big)$ — do $g$ first, then $f$. $fg$ only exists if the range of $g$ lies inside the domain of $f$.</p>
+<h4>Transformations of $y=f(x)$</h4>
+<table class="tbl"><tr><th>New graph</th><th>Transformation</th></tr>
+<tr><td>$y=f(x)+a$</td><td>translation $\begin{pmatrix}0\\a\end{pmatrix}$</td></tr>
+<tr><td>$y=f(x+a)$</td><td>translation $\begin{pmatrix}-a\\0\end{pmatrix}$</td></tr>
+<tr><td>$y=af(x)$</td><td>stretch parallel to the $y$-axis, factor $a$</td></tr>
+<tr><td>$y=f(ax)$</td><td>stretch parallel to the $x$-axis, factor $\tfrac1a$</td></tr>
+<tr><td>$y=-f(x)$</td><td>reflection in the $x$-axis</td></tr>
+<tr><td>$y=f(-x)$</td><td>reflection in the $y$-axis</td></tr></table>
+<div class="tip"><b>Exam tip:</b> When describing a transformation, always give the type <em>and</em> the details: “stretch, parallel to the $y$-axis, scale factor 3” — not just “stretch by 3”.</div>
+<div class="warn"><b>Common mistake:</b> choosing the wrong square root when inverting. If the domain is $x\ge 2$, take the <em>positive</em> root; if $x\le 3$, take the negative one.</div>`,
+ex:[
+{m:6, q:R`The function $f$ is defined by $f(x)=2x^2-8x+11$ for $x\ge 2$.<br>(a) Express $f(x)$ in the form $a(x+b)^2+c$.<br>(b) State the range of $f$.<br>(c) Find an expression for $f^{-1}(x)$ and state the domain of $f^{-1}$.`,
+s:[R`(a) $2(x^2-4x)+11=2\big[(x-2)^2-4\big]+11=2(x-2)^2+3$.`,
+R`(b) For $x\ge2$, $(x-2)^2\ge0$, so $f(x)\ge 3$.`,
+R`(c) Let $y=2(x-2)^2+3$. Then $(x-2)^2=\dfrac{y-3}{2}$.`,
+R`Because $x\ge2$, $x-2\ge0$, so take the positive root: $x=2+\sqrt{\dfrac{y-3}{2}}$.`,
+R`Swap letters. Domain of $f^{-1}$ = range of $f$.`],
+a:R`$f(x)=2(x-2)^2+3$; range $f(x)\ge3$; $f^{-1}(x)=2+\sqrt{\dfrac{x-3}{2}}$ for $x\ge 3$.`},
+{m:4, q:R`Functions $f$ and $g$ are defined by $f(x)=3x-1$ for $x\in\mathbb{R}$ and $g(x)=\dfrac{2}{x+1}$ for $x\gt -1$. Find $fg(x)$ and solve the equation $fg(x)=2$.`,
+s:[R`$fg(x)=f\!\left(\dfrac{2}{x+1}\right)=3\cdot\dfrac{2}{x+1}-1=\dfrac{6}{x+1}-1$.`,
+R`$\dfrac{6}{x+1}-1=2 \Rightarrow \dfrac{6}{x+1}=3 \Rightarrow x+1=2$.`],
+a:R`$fg(x)=\dfrac{6}{x+1}-1$; $x=1$`}
+],
+pr:[
+{m:4, q:R`The graph of $y=f(x)$ is transformed to the graph of $y=3f(x-2)$. Describe fully the two single transformations involved.`,
+s:[R`$f(x-2)$: replacing $x$ by $x-2$ moves the graph 2 units in the positive $x$-direction.`, R`$3f(\ldots)$: multiplying the output by 3 is a stretch parallel to the $y$-axis.`],
+a:R`Translation $\begin{pmatrix}2\\0\end{pmatrix}$ and a stretch parallel to the $y$-axis with scale factor 3 (in either order).`},
+{m:3, q:R`The curve $y=x^2-4x$ is reflected in the $y$-axis and then translated by $\begin{pmatrix}0\\3\end{pmatrix}$. Find the equation of the resulting curve in the form $y=ax^2+bx+c$.`, h:R`Reflection in the $y$-axis: replace $x$ with $-x$.`,
+s:[R`Reflect in $y$-axis: $y=(-x)^2-4(-x)=x^2+4x$.`, R`Translate up 3: add 3 to the whole function.`],
+a:R`$y=x^2+4x+3$`},
+{m:4, q:R`The function $f$ is defined by $f(x)=\dfrac{2x+3}{x-1}$ for $x\gt 1$. Find $f^{-1}(x)$ and state the domain of $f^{-1}$.`, h:R`Write $f(x)=2+\dfrac{5}{x-1}$ to find the range.`,
+s:[R`$y=\dfrac{2x+3}{x-1}\Rightarrow yx-y=2x+3\Rightarrow x(y-2)=y+3\Rightarrow x=\dfrac{y+3}{y-2}$.`,
+R`Range of $f$: $f(x)=2+\dfrac{5}{x-1}$ and for $x\gt1$, $\dfrac{5}{x-1}\gt0$, so $f(x)\gt 2$.`],
+a:R`$f^{-1}(x)=\dfrac{x+3}{x-2}$, domain $x\gt 2$`},
+{m:5, q:R`The function $f$ is defined by $f(x)=x^2-6x+10$ for $x\le k$.<br>(a) Find the largest value of $k$ for which $f$ is one-one.<br>(b) Using this value of $k$, find $f^{-1}(x)$ and state its domain.`,
+s:[R`$f(x)=(x-3)^2+1$, vertex at $x=3$. To be one-one the domain must stop at the vertex, so $k=3$.`,
+R`$y=(x-3)^2+1\Rightarrow x-3=\pm\sqrt{y-1}$. Since $x\le3$, $x-3\le0$: take the negative root.`,
+R`$x=3-\sqrt{y-1}$. Range of $f$ (for $x\le3$) is $f(x)\ge1$.`],
+a:R`$k=3$; $f^{-1}(x)=3-\sqrt{x-1}$ for $x\ge 1$`}
+]},
+/* ---------------- 3. COORDINATE GEOMETRY ---------------- */
+{id:'coordinate', title:'Coordinate Geometry', sum:'Straight lines, parallel and perpendicular gradients, mid-points, distances, circles, tangents and intersections.',
+notes:R`
+<h4>Straight lines</h4>
+<div class="key">Gradient $m=\dfrac{y_2-y_1}{x_2-x_1}$ &nbsp;·&nbsp; Mid-point $\left(\dfrac{x_1+x_2}{2},\dfrac{y_1+y_2}{2}\right)$ &nbsp;·&nbsp; Distance $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$<br>
+Line through $(x_1,y_1)$: $\;y-y_1=m(x-x_1)$<br>
+Parallel lines: $m_1=m_2$. &nbsp; Perpendicular lines: $m_1m_2=-1$.</div>
+<p>A <b>perpendicular bisector</b> of $AB$ passes through the mid-point of $AB$ with gradient $-\dfrac{1}{m_{AB}}$.</p>
+<h4>Circles</h4>
+<div class="key">Centre $(a,b)$, radius $r$: $\;(x-a)^2+(y-b)^2=r^2$<br>
+Expanded form $x^2+y^2+2gx+2fy+c=0$ has centre $(-g,-f)$ and radius $\sqrt{g^2+f^2-c}$.</div>
+<ul><li>A tangent is perpendicular to the radius at the point of contact.</li>
+<li>The perpendicular bisector of any chord passes through the centre.</li>
+<li>An angle in a semicircle is $90^\circ$ — useful for showing a point lies on a circle with a given diameter.</li>
+<li>Line meets circle: substitute and use the discriminant (two points / tangent / no intersection).</li></ul>
+<div class="tip"><b>Exam tip:</b> To find a circle's centre and radius from the expanded form, complete the square in $x$ and in $y$ separately — it is less error-prone than memorising $(-g,-f)$.</div>`,
+ex:[
+{m:4, q:R`The points $A(1,3)$ and $B(7,11)$ are given. Find the equation of the perpendicular bisector of $AB$, giving your answer in the form $px+qy=r$.`,
+s:[R`Mid-point of $AB$: $\left(\frac{1+7}{2},\frac{3+11}{2}\right)=(4,7)$.`,
+R`Gradient of $AB=\dfrac{11-3}{7-1}=\dfrac{8}{6}=\dfrac43$, so the perpendicular gradient is $-\dfrac34$.`,
+R`$y-7=-\tfrac34(x-4)\Rightarrow 4y-28=-3x+12$.`],
+a:R`$3x+4y=40$`},
+{m:6, q:R`A circle has equation $x^2+y^2-6x+4y-12=0$.<br>(a) Find the centre and radius of the circle.<br>(b) Show that $P(7,1)$ lies on the circle and find the equation of the tangent at $P$.`,
+s:[R`(a) Complete the square: $(x-3)^2-9+(y+2)^2-4-12=0\Rightarrow(x-3)^2+(y+2)^2=25$.`,
+R`Centre $C(3,-2)$, radius $5$.`,
+R`(b) $(7-3)^2+(1+2)^2=16+9=25$ ✓ so $P$ is on the circle.`,
+R`Gradient of radius $CP=\dfrac{1-(-2)}{7-3}=\dfrac34$, so tangent gradient $=-\dfrac43$.`,
+R`$y-1=-\tfrac43(x-7)\Rightarrow 3y-3=-4x+28$.`],
+a:R`Centre $(3,-2)$, radius $5$; tangent $4x+3y=31$`}
+],
+pr:[
+{m:4, q:R`The points $A(-1,2)$, $B(3,4)$ and $C(5,0)$ are given. Show that angle $ABC$ is a right angle and find the area of triangle $ABC$.`, h:R`Show $m_{AB}\times m_{BC}=-1$.`,
+s:[R`$m_{AB}=\dfrac{4-2}{3+1}=\dfrac12$, $\;m_{BC}=\dfrac{0-4}{5-3}=-2$.`, R`$m_{AB}\times m_{BC}=-1$, so $AB\perp BC$ and angle $ABC=90^\circ$.`, R`$AB=\sqrt{16+4}=\sqrt{20}$, $BC=\sqrt{4+16}=\sqrt{20}$.`, R`Area $=\tfrac12\times\sqrt{20}\times\sqrt{20}$.`],
+a:R`Area $=10$ square units`},
+{m:3, q:R`A circle has centre $(2,-1)$ and passes through $P(5,3)$. Find the equation of the circle and the coordinates of the other end of the diameter through $P$.`,
+s:[R`$r^2=(5-2)^2+(3+1)^2=9+16=25$.`, R`The centre is the mid-point of the diameter: $Q=(2\times2-5,\;2\times(-1)-3)$.`],
+a:R`$(x-2)^2+(y+1)^2=25$; other end $(-1,-5)$`},
+{m:4, q:R`The line $y=x+k$ is a tangent to the circle $x^2+y^2=8$. Find the possible values of $k$.`,
+s:[R`Substitute: $x^2+(x+k)^2=8\Rightarrow 2x^2+2kx+k^2-8=0$.`, R`Tangent: $(2k)^2-4(2)(k^2-8)=0\Rightarrow 4k^2-8k^2+64=0$.`, R`$4k^2=64\Rightarrow k^2=16$.`],
+a:R`$k=4$ or $k=-4$`},
+{m:5, q:R`The line $y=x+3$ meets the circle $(x-1)^2+(y-2)^2=10$ at the points $A$ and $B$. Find the length of the chord $AB$, giving your answer in exact form.`,
+s:[R`Substitute: $(x-1)^2+(x+1)^2=10\Rightarrow 2x^2+2=10\Rightarrow x^2=4$.`, R`$x=2\Rightarrow y=5$; $x=-2\Rightarrow y=1$. So $A(2,5)$ and $B(-2,1)$.`, R`$AB=\sqrt{(2+2)^2+(5-1)^2}=\sqrt{32}$.`],
+a:R`$AB=4\sqrt2$`}
+]},
+/* ---------------- 4. CIRCULAR MEASURE ---------------- */
+{id:'circular', title:'Circular Measure', sum:'Radians, arc length, sector area, segments and composite shaded regions.',
+notes:R`
+<h4>Radians</h4>
+<p>$\pi$ radians $=180^\circ$. To convert degrees to radians multiply by $\dfrac{\pi}{180}$. Useful values: $\tfrac{\pi}{6}=30^\circ$, $\tfrac{\pi}{4}=45^\circ$, $\tfrac{\pi}{3}=60^\circ$, $\tfrac{\pi}{2}=90^\circ$.</p>
+<div class="key">Arc length $s=r\theta$ &nbsp;·&nbsp; Sector area $A=\tfrac12 r^2\theta$ &nbsp;($\theta$ in radians)<br>
+Triangle area $\tfrac12 ab\sin C$ &nbsp;·&nbsp; Segment area $=\tfrac12r^2\theta-\tfrac12r^2\sin\theta=\tfrac12r^2(\theta-\sin\theta)$<br>
+Chord length $=2r\sin\dfrac{\theta}{2}$</div>
+<p>Shaded-region questions are always “area of one shape minus another”. Break the diagram into sectors, triangles and segments.</p>
+<div class="warn"><b>Common mistake:</b> leaving the calculator in degrees. When $\theta$ is in radians, $\sin\theta$ must be evaluated in radian mode.</div>
+<div class="tip"><b>Exam tip:</b> “Exact” answers mean leave $\pi$ and surds in, e.g. $6\pi-9\sqrt3$.</div>`,
+ex:[
+{m:5, q:R`A sector $OAB$ of a circle has centre $O$, radius $8\text{ cm}$ and angle $AOB=0.9$ radians. The chord $AB$ cuts off a minor segment. Find (a) the perimeter and (b) the area of this segment.`,
+s:[R`Arc $AB=r\theta=8\times0.9=7.2\text{ cm}$.`,
+R`Chord $AB=2\times8\times\sin0.45=6.9595\ldots\text{ cm}$.`,
+R`(a) Perimeter of segment $=7.2+6.9595=14.159\ldots$`,
+R`(b) Area $=\tfrac12(8^2)(0.9-\sin0.9)=32(0.9-0.78333)=3.7335\ldots$`],
+a:R`(a) $14.2\text{ cm}$ &nbsp; (b) $3.73\text{ cm}^2$`},
+{m:5, q:R`A sector of a circle has perimeter $20\text{ cm}$ and area $16\text{ cm}^2$. Find the radius $r$ and the angle $\theta$ of the sector.`,
+s:[R`Perimeter: $2r+r\theta=20\Rightarrow r\theta=20-2r$.`,
+R`Area: $\tfrac12r^2\theta=\tfrac12r(r\theta)=\tfrac12r(20-2r)=16$.`,
+R`$10r-r^2=16\Rightarrow r^2-10r+16=0\Rightarrow(r-2)(r-8)=0$.`,
+R`If $r=2$: $\theta=\dfrac{20-4}{2}=8$ rad, which is more than $2\pi$ — impossible for a sector. Reject.`,
+R`If $r=8$: $\theta=\dfrac{20-16}{8}=0.5$ rad.`],
+a:R`$r=8\text{ cm}$, $\theta=0.5$ rad`}
+],
+pr:[
+{m:3, q:R`A sector of a circle has radius $5\text{ cm}$ and angle $1.2$ radians. Find its area and its perimeter.`,
+s:[R`Area $=\tfrac12\times25\times1.2=15$.`, R`Arc $=5\times1.2=6$, perimeter $=5+5+6$.`],
+a:R`Area $15\text{ cm}^2$; perimeter $16\text{ cm}$`},
+{m:3, q:R`A chord $AB$ of a circle with centre $O$ and radius $6\text{ cm}$ subtends an angle of $\tfrac{\pi}{3}$ at $O$. Find the exact area of the minor segment.`,
+s:[R`Segment $=\tfrac12r^2(\theta-\sin\theta)=\tfrac12(36)\left(\tfrac{\pi}{3}-\tfrac{\sqrt3}{2}\right)$.`, R`$=18\cdot\tfrac{\pi}{3}-18\cdot\tfrac{\sqrt3}{2}$.`],
+a:R`$6\pi-9\sqrt3\ \text{cm}^2$`},
+{m:6, q:R`A circle has centre $O$ and radius $5\text{ cm}$. The tangents to the circle at $A$ and $B$ meet at $T$, and angle $AOB=\tfrac{2\pi}{3}$. Find, in exact form, the perimeter and the area of the region bounded by $AT$, $TB$ and the minor arc $AB$.`, h:R`$OT$ bisects angle $AOB$, and $OA\perp AT$.`,
+s:[R`By symmetry angle $AOT=\tfrac{\pi}{3}$, and angle $OAT=\tfrac{\pi}{2}$ (tangent ⟂ radius).`,
+R`$AT=5\tan\tfrac{\pi}{3}=5\sqrt3$, so $AT+TB=10\sqrt3$.`,
+R`Arc $AB=5\times\tfrac{2\pi}{3}=\tfrac{10\pi}{3}$.`,
+R`Kite $OATB$ = two right triangles: $2\times\tfrac12\times5\times5\sqrt3=25\sqrt3$.`,
+R`Sector $OAB=\tfrac12\times25\times\tfrac{2\pi}{3}=\tfrac{25\pi}{3}$. Region = kite − sector.`],
+a:R`Perimeter $10\sqrt3+\tfrac{10\pi}{3}\text{ cm}$; area $25\sqrt3-\tfrac{25\pi}{3}\text{ cm}^2$ (≈ 17.1 cm²)`}
+]},
+/* ---------------- 5. TRIGONOMETRY ---------------- */
+{id:'trig', title:'Trigonometry', sum:'Graphs, exact values, inverse functions, the identities tanθ = sinθ/cosθ and sin²θ + cos²θ = 1, and solving equations.',
+notes:R`
+<h4>Exact values</h4>
+<table class="tbl"><tr><th>$\theta$</th><th>$0$</th><th>$\tfrac{\pi}{6}$</th><th>$\tfrac{\pi}{4}$</th><th>$\tfrac{\pi}{3}$</th><th>$\tfrac{\pi}{2}$</th></tr>
+<tr><td>$\sin\theta$</td><td>$0$</td><td>$\tfrac12$</td><td>$\tfrac{\sqrt2}{2}$</td><td>$\tfrac{\sqrt3}{2}$</td><td>$1$</td></tr>
+<tr><td>$\cos\theta$</td><td>$1$</td><td>$\tfrac{\sqrt3}{2}$</td><td>$\tfrac{\sqrt2}{2}$</td><td>$\tfrac12$</td><td>$0$</td></tr>
+<tr><td>$\tan\theta$</td><td>$0$</td><td>$\tfrac{1}{\sqrt3}$</td><td>$1$</td><td>$\sqrt3$</td><td>—</td></tr></table>
+<h4>Identities</h4>
+<div class="key">$$\tan\theta\equiv\frac{\sin\theta}{\cos\theta}\qquad\qquad \sin^2\theta+\cos^2\theta\equiv1$$</div>
+<h4>Solving equations</h4>
+<p>Find the principal value with your calculator, then use the symmetry of the graph:</p>
+<ul><li>$\sin\theta=k$: $\theta=\alpha$ or $180^\circ-\alpha$</li>
+<li>$\cos\theta=k$: $\theta=\alpha$ or $360^\circ-\alpha$</li>
+<li>$\tan\theta=k$: $\theta=\alpha$, $\alpha+180^\circ$, …</li></ul>
+<p>Principal value ranges: $\sin^{-1}x\in[-\tfrac{\pi}{2},\tfrac{\pi}{2}]$, $\cos^{-1}x\in[0,\pi]$, $\tan^{-1}x\in(-\tfrac{\pi}{2},\tfrac{\pi}{2})$.</p>
+<p>For $\sin 2x=k$ on $0\le x\le 360^\circ$, solve for $2x$ on $0\le 2x\le 720^\circ$ first, then halve.</p>
+<h4>Graphs</h4>
+<p>$y=a\sin bx+c$ has amplitude $|a|$, period $\dfrac{360^\circ}{b}$ and is shifted up by $c$.</p>
+<div class="warn"><b>Common mistake:</b> dividing both sides by $\sin\theta$ — you lose the solutions where $\sin\theta=0$. Factorise instead.</div>`,
+ex:[
+{m:4, q:R`Solve the equation $2\sin^2\theta+3\cos\theta=0$ for $0^\circ\le\theta\le360^\circ$.`,
+s:[R`Use $\sin^2\theta=1-\cos^2\theta$: $2-2\cos^2\theta+3\cos\theta=0$.`,
+R`$2\cos^2\theta-3\cos\theta-2=0\Rightarrow(2\cos\theta+1)(\cos\theta-2)=0$.`,
+R`$\cos\theta=2$ has no solutions. $\cos\theta=-\tfrac12$: principal value $120^\circ$.`,
+R`Second solution $360^\circ-120^\circ=240^\circ$.`],
+a:R`$\theta=120^\circ,\ 240^\circ$`},
+{m:6, q:R`(a) Prove the identity $\dfrac{1}{\cos\theta}-\cos\theta\equiv\sin\theta\tan\theta$.<br>(b) Hence solve $\dfrac{1}{\cos\theta}-\cos\theta=2\sin\theta$ for $0^\circ\lt\theta\lt360^\circ$.`,
+s:[R`(a) LHS $=\dfrac{1-\cos^2\theta}{\cos\theta}=\dfrac{\sin^2\theta}{\cos\theta}=\sin\theta\cdot\dfrac{\sin\theta}{\cos\theta}=\sin\theta\tan\theta$ ✓`,
+R`(b) $\sin\theta\tan\theta=2\sin\theta\Rightarrow\sin\theta(\tan\theta-2)=0$ (factorise, don't divide!).`,
+R`$\sin\theta=0\Rightarrow\theta=180^\circ$ (0° and 360° are excluded by the strict inequality).`,
+R`$\tan\theta=2\Rightarrow\theta=63.4^\circ$ or $63.4^\circ+180^\circ=243.4^\circ$.`],
+a:R`$\theta=63.4^\circ,\ 180^\circ,\ 243.4^\circ$`}
+],
+pr:[
+{m:3, q:R`Solve $\tan2x=\sqrt3$ for $0\le x\le\pi$, giving exact answers.`, h:R`Solve for $2x$ in the range $0\le2x\le2\pi$ first.`,
+s:[R`$2x=\tfrac{\pi}{3}$ or $\tfrac{\pi}{3}+\pi=\tfrac{4\pi}{3}$.`, R`Halve each value.`],
+a:R`$x=\tfrac{\pi}{6},\ \tfrac{2\pi}{3}$`},
+{m:4, q:R`Solve $4\sin\theta=3\tan\theta$ for $0^\circ\le\theta\le360^\circ$.`, h:R`Write $\tan\theta=\frac{\sin\theta}{\cos\theta}$ and factorise out $\sin\theta$.`,
+s:[R`$4\sin\theta=\dfrac{3\sin\theta}{\cos\theta}\Rightarrow4\sin\theta\cos\theta-3\sin\theta=0$.`, R`$\sin\theta(4\cos\theta-3)=0$.`, R`$\sin\theta=0\Rightarrow0^\circ,180^\circ,360^\circ$.`, R`$\cos\theta=\tfrac34\Rightarrow41.4^\circ$ or $360^\circ-41.4^\circ=318.6^\circ$.`],
+a:R`$0^\circ,\ 41.4^\circ,\ 180^\circ,\ 318.6^\circ,\ 360^\circ$`},
+{m:4, q:R`The function $f$ is defined by $f(x)=3-2\cos x$ for $0\le x\le2\pi$.<br>(a) State the range of $f$.<br>(b) Solve $f(x)=4$, giving exact answers.`,
+s:[R`(a) $-1\le\cos x\le1$, so $3-2\le f(x)\le3+2$.`, R`(b) $3-2\cos x=4\Rightarrow\cos x=-\tfrac12$.`, R`Principal value $\tfrac{2\pi}{3}$; second solution $2\pi-\tfrac{2\pi}{3}=\tfrac{4\pi}{3}$.`],
+a:R`(a) $1\le f(x)\le5$ &nbsp; (b) $x=\tfrac{2\pi}{3},\ \tfrac{4\pi}{3}$`},
+{m:3, q:R`Prove the identity $\dfrac{\sin\theta}{1-\cos\theta}-\dfrac{\sin\theta}{1+\cos\theta}\equiv\dfrac{2}{\tan\theta}$.`,
+s:[R`Common denominator $(1-\cos\theta)(1+\cos\theta)=1-\cos^2\theta=\sin^2\theta$.`, R`Numerator: $\sin\theta(1+\cos\theta)-\sin\theta(1-\cos\theta)=2\sin\theta\cos\theta$.`, R`LHS $=\dfrac{2\sin\theta\cos\theta}{\sin^2\theta}=\dfrac{2\cos\theta}{\sin\theta}=\dfrac{2}{\tan\theta}$ ✓`],
+a:R`Proved.`}
+]},
+/* ---------------- 6. SERIES ---------------- */
+{id:'series', title:'Series', sum:'Binomial expansion for positive integer n, arithmetic and geometric progressions, sum to infinity.',
+notes:R`
+<h4>Binomial expansion</h4>
+<div class="key">$$(a+b)^n=a^n+\binom{n}{1}a^{n-1}b+\binom{n}{2}a^{n-2}b^2+\cdots+b^n,\qquad \binom{n}{r}=\frac{n!}{r!\,(n-r)!}$$
+General term: $\binom{n}{r}a^{n-r}b^r$.</div>
+<p>For the <b>term independent of $x$</b>, write the general term, collect the powers of $x$ and set the power equal to zero.</p>
+<h4>Arithmetic progressions (AP)</h4>
+<div class="key">$u_n=a+(n-1)d\qquad S_n=\tfrac{n}{2}\big(2a+(n-1)d\big)=\tfrac n2(a+l)$</div>
+<h4>Geometric progressions (GP)</h4>
+<div class="key">$u_n=ar^{n-1}\qquad S_n=\dfrac{a(1-r^n)}{1-r}\qquad S_\infty=\dfrac{a}{1-r}\ \text{ only if } |r|\lt1$</div>
+<div class="tip"><b>Exam tip:</b> “Three terms are in GP” means $\dfrac{u_2}{u_1}=\dfrac{u_3}{u_2}$, i.e. $u_2^2=u_1u_3$. “In AP” means $u_2-u_1=u_3-u_2$.</div>
+<div class="warn"><b>Common mistake:</b> forgetting the sign in binomial terms, e.g. in $(2-x)^5$ the coefficient of $x^3$ includes $(-1)^3$.</div>`,
+ex:[
+{m:3, q:R`Find the term independent of $x$ in the expansion of $\left(2x-\dfrac{1}{x^2}\right)^6$.`,
+s:[R`General term: $\binom{6}{r}(2x)^{6-r}\left(-\dfrac{1}{x^2}\right)^r=\binom{6}{r}2^{6-r}(-1)^rx^{6-3r}$.`,
+R`Independent of $x$: $6-3r=0\Rightarrow r=2$.`,
+R`Term $=\binom{6}{2}\cdot2^4\cdot(-1)^2=15\times16$.`],
+a:R`$240$`},
+{m:5, q:R`The first term of an arithmetic progression is $6$ and the common difference is $d$, where $d\ne0$. The first, third and seventh terms of the AP are the first three terms of a geometric progression. Find $d$, the common ratio of the GP, and the sum of the first 20 terms of the AP.`,
+s:[R`Terms: $6,\ 6+2d,\ 6+6d$. In GP so $(6+2d)^2=6(6+6d)$.`,
+R`$36+24d+4d^2=36+36d\Rightarrow4d^2-12d=0\Rightarrow4d(d-3)=0$, and $d\ne0$ so $d=3$.`,
+R`GP: $6,12,24$, so $r=2$.`,
+R`$S_{20}=\tfrac{20}{2}\big(2(6)+19(3)\big)=10(12+57)$.`],
+a:R`$d=3$, $r=2$, $S_{20}=690$`}
+],
+pr:[
+{m:4, q:R`Find the coefficient of $x^3$ in the expansion of $(1+2x)(3-x)^5$.`, h:R`You need the $x^3$ and $x^2$ terms of $(3-x)^5$.`,
+s:[R`In $(3-x)^5$: $x^2$ term $=\binom52 3^3(-x)^2=270x^2$; $x^3$ term $=\binom53 3^2(-x)^3=-90x^3$.`, R`$x^3$ in the product: $1\times(-90)+2\times270$.`],
+a:R`$450$`},
+{m:5, q:R`A geometric progression has second term $12$ and sum to infinity $64$. Find the two possible values of the common ratio and the corresponding first terms.`,
+s:[R`$ar=12$ and $\dfrac{a}{1-r}=64$. Substitute $a=\dfrac{12}{r}$: $\dfrac{12}{r(1-r)}=64$.`, R`$64r-64r^2=12\Rightarrow16r^2-16r+3=0\Rightarrow(4r-1)(4r-3)=0$.`, R`Both satisfy $|r|\lt1$. $r=\tfrac14\Rightarrow a=48$; $r=\tfrac34\Rightarrow a=16$.`],
+a:R`$r=\tfrac14,\ a=48$ or $r=\tfrac34,\ a=16$`},
+{m:4, q:R`A runner runs $3\text{ km}$ on day 1 and increases the distance by $0.25\text{ km}$ each day. On which day does the total distance run first exceed $100\text{ km}$?`,
+s:[R`$S_n=\tfrac n2\big(6+0.25(n-1)\big)\gt100\Rightarrow n(5.75+0.25n)\gt200\Rightarrow n^2+23n-800\gt0$.`, R`Positive root: $n=\dfrac{-23+\sqrt{3729}}{2}\approx19.03$, so $n=20$.`, R`Check: $S_{19}=9.5\times10.5=99.75$; $S_{20}=10\times10.75=107.5$ ✓`],
+a:R`Day 20`},
+{m:3, q:R`In the expansion of $(1+ax)^6$, where $a\gt0$, the coefficient of $x^2$ is $60$. Find $a$ and the coefficient of $x^3$.`,
+s:[R`$x^2$ coefficient: $\binom62a^2=15a^2=60\Rightarrow a=2$.`, R`$x^3$ coefficient: $\binom63a^3=20\times8$.`],
+a:R`$a=2$; coefficient of $x^3$ is $160$`},
+{m:3, q:R`The sum of the first $n$ terms of an arithmetic progression is $n(3n+1)$. Find the first term, the common difference and the 20th term.`,
+s:[R`$u_1=S_1=1\times4=4$.`, R`$S_2=2\times7=14$, so $u_2=14-4=10$ and $d=6$.`, R`$u_{20}=4+19\times6$.`],
+a:R`$a=4$, $d=6$, $u_{20}=118$`}
+]},
+/* ---------------- 7. DIFFERENTIATION ---------------- */
+{id:'differentiation', title:'Differentiation', sum:'Gradients, the chain rule, tangents and normals, stationary points, increasing functions and rates of change.',
+notes:R`
+<div class="key">$\dfrac{d}{dx}(x^n)=nx^{n-1}$ &nbsp;·&nbsp; Chain rule: $\dfrac{d}{dx}(ax+b)^n=an(ax+b)^{n-1}$, and in general $\dfrac{dy}{dx}=\dfrac{dy}{du}\times\dfrac{du}{dx}$</div>
+<h4>Tangents and normals</h4>
+<p>At $x=x_1$: tangent gradient $m=f'(x_1)$; normal gradient $-\dfrac1m$. Then use $y-y_1=m(x-x_1)$.</p>
+<h4>Stationary points</h4>
+<ul><li>Solve $\dfrac{dy}{dx}=0$.</li>
+<li>$\dfrac{d^2y}{dx^2}\gt0$ → minimum; $\dfrac{d^2y}{dx^2}\lt0$ → maximum.</li>
+<li>If the second derivative is zero, check the sign of $\dfrac{dy}{dx}$ either side.</li></ul>
+<h4>Increasing and decreasing</h4>
+<p>$f$ is increasing where $f'(x)\gt0$ and decreasing where $f'(x)\lt0$. To show a function is always increasing, complete the square on $f'(x)$.</p>
+<h4>Rates of change (connected rates)</h4>
+<div class="key">$$\frac{dy}{dt}=\frac{dy}{dx}\times\frac{dx}{dt}$$</div>
+<div class="tip"><b>Exam tip:</b> Practical optimisation questions: form an expression in one variable using the constraint, differentiate, set to zero, then <em>justify</em> it is a max/min with the second derivative.</div>`,
+ex:[
+{m:6, q:R`Find the coordinates of the stationary points of the curve $y=x^3-6x^2+9x+2$ and determine their nature.`,
+s:[R`$\dfrac{dy}{dx}=3x^2-12x+9=3(x-1)(x-3)=0\Rightarrow x=1$ or $x=3$.`,
+R`$x=1$: $y=1-6+9+2=6$. $\;x=3$: $y=27-54+27+2=2$.`,
+R`$\dfrac{d^2y}{dx^2}=6x-12$. At $x=1$: $-6\lt0$ (maximum). At $x=3$: $6\gt0$ (minimum).`],
+a:R`Maximum at $(1,6)$, minimum at $(3,2)$`},
+{m:3, q:R`A spherical balloon is being inflated so that its volume increases at a constant rate of $50\text{ cm}^3\text{ s}^{-1}$. Find the rate at which the radius is increasing when the radius is $5\text{ cm}$. $\left[V=\tfrac43\pi r^3\right]$`,
+s:[R`$\dfrac{dV}{dr}=4\pi r^2=100\pi$ when $r=5$.`, R`$\dfrac{dr}{dt}=\dfrac{dV/dt}{dV/dr}=\dfrac{50}{100\pi}=\dfrac{1}{2\pi}$.`],
+a:R`$\dfrac{1}{2\pi}\approx0.159\text{ cm s}^{-1}$`}
+],
+pr:[
+{m:4, q:R`Find the equation of the normal to the curve $y=(2x-3)^3$ at the point where $x=2$.`, h:R`Chain rule: the derivative of $(2x-3)^3$ includes a factor of 2.`,
+s:[R`At $x=2$: $y=1^3=1$.`, R`$\dfrac{dy}{dx}=3(2x-3)^2\times2=6(2x-3)^2=6$ at $x=2$.`, R`Normal gradient $-\tfrac16$: $y-1=-\tfrac16(x-2)\Rightarrow6y-6=-x+2$.`],
+a:R`$x+6y=8$`},
+{m:3, q:R`Show that $f(x)=\tfrac13x^3-2x^2+5x-1$ is an increasing function.`,
+s:[R`$f'(x)=x^2-4x+5$.`, R`Complete the square: $f'(x)=(x-2)^2+1$.`, R`$(x-2)^2\ge0$ so $f'(x)\ge1\gt0$ for all $x$.`],
+a:R`$f'(x)\gt0$ for all $x$, so $f$ is increasing.`},
+{m:6, q:R`An open-topped box has a square base of side $x\text{ cm}$ and height $h\text{ cm}$. Its volume is $500\text{ cm}^3$.<br>(a) Show that the external surface area is $S=x^2+\dfrac{2000}{x}$.<br>(b) Find the minimum value of $S$, justifying that it is a minimum.`,
+s:[R`(a) $x^2h=500\Rightarrow h=\dfrac{500}{x^2}$. $S=x^2+4xh=x^2+\dfrac{2000}{x}$ ✓`,
+R`(b) $\dfrac{dS}{dx}=2x-\dfrac{2000}{x^2}=0\Rightarrow x^3=1000\Rightarrow x=10$.`,
+R`$\dfrac{d^2S}{dx^2}=2+\dfrac{4000}{x^3}=6\gt0$ → minimum.`, R`$S=100+200=300$.`],
+a:R`Minimum $S=300\text{ cm}^2$ when $x=10$`},
+{m:3, q:R`A point moves along the curve $y=x^3-4x$ so that its $x$-coordinate increases at a constant rate of $0.5$ units per second. Find the rate of increase of $y$ when $x=2$.`,
+s:[R`$\dfrac{dy}{dx}=3x^2-4=8$ at $x=2$.`, R`$\dfrac{dy}{dt}=\dfrac{dy}{dx}\times\dfrac{dx}{dt}=8\times0.5$.`],
+a:R`$4$ units per second`}
+]},
+/* ---------------- 8. INTEGRATION ---------------- */
+{id:'integration', title:'Integration', sum:'Integration as reverse differentiation, finding a curve, areas, areas between curves, volumes of revolution and improper integrals.',
+notes:R`
+<div class="key">$\displaystyle\int x^n\,dx=\frac{x^{n+1}}{n+1}+c\ (n\ne-1)\qquad \int(ax+b)^n\,dx=\frac{(ax+b)^{n+1}}{a(n+1)}+c$</div>
+<p>If you know $\dfrac{dy}{dx}$ and one point on the curve, integrate and substitute the point to find $c$.</p>
+<h4>Areas</h4>
+<ul><li>Area between curve and $x$-axis: $\displaystyle\int_a^b y\,dx$ (negative if the curve is below the axis — take the magnitude and treat each part separately).</li>
+<li>Area between two curves: $\displaystyle\int_a^b(\text{top}-\text{bottom})\,dx$ between the intersection points.</li></ul>
+<h4>Volumes of revolution (360°)</h4>
+<div class="key">About the $x$-axis: $V=\pi\displaystyle\int_a^b y^2\,dx$ &nbsp;·&nbsp; About the $y$-axis: $V=\pi\displaystyle\int_c^d x^2\,dy$</div>
+<h4>Improper integrals</h4>
+<p>e.g. $\displaystyle\int_1^\infty x^{-2}\,dx=\left[-\frac1x\right]_1^\infty=0-(-1)=1$, because $\dfrac1x\to0$ as $x\to\infty$.</p>
+<div class="warn"><b>Common mistake:</b> for volumes, squaring each term separately: $(\sqrt{x}+1)^2\ne x+1$. Expand properly.</div>`,
+ex:[
+{m:4, q:R`A curve passes through the point $(1,7)$ and has gradient $\dfrac{dy}{dx}=6x^2-\dfrac{2}{x^2}$. Find the equation of the curve.`,
+s:[R`$y=\displaystyle\int(6x^2-2x^{-2})\,dx=2x^3+2x^{-1}+c=2x^3+\dfrac2x+c$.`,
+R`At $(1,7)$: $7=2+2+c\Rightarrow c=3$.`],
+a:R`$y=2x^3+\dfrac2x+3$`},
+{m:5, q:R`Find the area of the region enclosed by the curve $y=x^2-4x+6$ and the line $y=x+2$.`,
+s:[R`Intersections: $x^2-4x+6=x+2\Rightarrow x^2-5x+4=0\Rightarrow x=1,\ 4$.`,
+R`The line is on top between them, so Area $=\displaystyle\int_1^4\big[(x+2)-(x^2-4x+6)\big]dx=\int_1^4(-x^2+5x-4)\,dx$.`,
+R`$=\left[-\dfrac{x^3}{3}+\dfrac{5x^2}{2}-4x\right]_1^4=\dfrac83-\left(-\dfrac{11}{6}\right)=\dfrac{27}{6}$.`],
+a:R`Area $=\tfrac92=4.5$ square units`}
+],
+pr:[
+{m:3, q:R`The region bounded by $y=\sqrt{2x+1}$, the $x$-axis and the lines $x=0$ and $x=4$ is rotated through $360^\circ$ about the $x$-axis. Find the exact volume generated.`,
+s:[R`$V=\pi\displaystyle\int_0^4(2x+1)\,dx=\pi\big[x^2+x\big]_0^4$.`, R`$=\pi(16+4)$.`],
+a:R`$20\pi$`},
+{m:3, q:R`Evaluate $\displaystyle\int_0^2\sqrt{4x+1}\,dx$.`, h:R`Use $\int(ax+b)^n\,dx=\dfrac{(ax+b)^{n+1}}{a(n+1)}$ with $a=4$, $n=\tfrac12$.`,
+s:[R`$\displaystyle\int(4x+1)^{1/2}dx=\frac{(4x+1)^{3/2}}{4\times\frac32}=\frac{(4x+1)^{3/2}}{6}$.`, R`$\left[\dfrac{(4x+1)^{3/2}}{6}\right]_0^2=\dfrac{27-1}{6}$.`],
+a:R`$\dfrac{13}{3}$`},
+{m:3, q:R`Evaluate the improper integral $\displaystyle\int_1^\infty\frac{6}{(2x+1)^3}\,dx$.`,
+s:[R`$\displaystyle\int6(2x+1)^{-3}dx=\frac{6(2x+1)^{-2}}{2\times(-2)}=-\frac{3}{2(2x+1)^2}$.`, R`As $x\to\infty$ this $\to0$. At $x=1$: $-\dfrac{3}{18}=-\dfrac16$.`, R`Value $=0-\left(-\tfrac16\right)$.`],
+a:R`$\dfrac16$`},
+{m:4, q:R`The region between the curve $y=x^2+1$, the $y$-axis and the lines $y=1$ and $y=5$ (with $x\ge0$) is rotated through $360^\circ$ about the $y$-axis. Find the exact volume.`,
+s:[R`$x^2=y-1$.`, R`$V=\pi\displaystyle\int_1^5(y-1)\,dy=\pi\left[\frac{y^2}{2}-y\right]_1^5=\pi\big[(12.5-5)-(0.5-1)\big]$.`],
+a:R`$8\pi$`}
+]}
+]};
+
+DATA.p3 = {
+id:'p3', short:'P3', name:'Pure Mathematics 3', paper:'Paper 3', level:'a', color:'#7b4cc9',
+exam:'1 hr 50 min', marks:75,
+blurb:'Compulsory for the full A Level. Builds on P1 with advanced algebra, logs and exponentials, further trigonometry and calculus, numerical methods, vectors, differential equations and complex numbers.',
+topics:[
+/* ---------------- 1. ALGEBRA ---------------- */
+{id:'algebra', title:'Algebra', sum:'Modulus equations and inequalities, polynomial division, factor and remainder theorems, partial fractions, binomial expansion for rational n.',
+notes:R`
+<h4>Modulus</h4>
+<div class="key">$|x-a|\lt b\iff a-b\lt x\lt a+b\qquad |f(x)|=|g(x)|\iff f(x)^2=g(x)^2$</div>
+<p>To solve $|f(x)|\lt|g(x)|$, square both sides (both are non-negative) and solve the quadratic inequality. Sketch $y=|ax+b|$ as a V-shape reflected at the $x$-axis.</p>
+<h4>Polynomials</h4>
+<ul><li><b>Remainder theorem</b>: the remainder when $p(x)$ is divided by $(x-a)$ is $p(a)$; by $(ax-b)$ it is $p\!\left(\tfrac ba\right)$.</li>
+<li><b>Factor theorem</b>: $(x-a)$ is a factor $\iff p(a)=0$.</li>
+<li>Use long division (or compare coefficients) to find the quotient.</li></ul>
+<h4>Partial fractions</h4>
+<table class="tbl"><tr><th>Denominator</th><th>Form</th></tr>
+<tr><td>$(ax+b)(cx+d)$</td><td>$\dfrac{A}{ax+b}+\dfrac{B}{cx+d}$</td></tr>
+<tr><td>$(ax+b)(cx+d)^2$</td><td>$\dfrac{A}{ax+b}+\dfrac{B}{cx+d}+\dfrac{C}{(cx+d)^2}$</td></tr>
+<tr><td>$(ax+b)(x^2+c^2)$</td><td>$\dfrac{A}{ax+b}+\dfrac{Bx+C}{x^2+c^2}$</td></tr></table>
+<p>If the numerator's degree ≥ the denominator's, divide first.</p>
+<h4>Binomial series for any rational $n$</h4>
+<div class="key">$$(1+x)^n=1+nx+\frac{n(n-1)}{2!}x^2+\frac{n(n-1)(n-2)}{3!}x^3+\cdots\qquad |x|\lt1$$
+$(a+bx)^n=a^n\left(1+\dfrac{b}{a}x\right)^n$, valid for $|x|\lt\left|\dfrac ab\right|$.</div>
+<div class="warn"><b>Common mistake:</b> forgetting to take out $a^n$ (not $a$) when the bracket starts with a number other than 1.</div>`,
+ex:[
+{m:4, q:R`Solve the inequality $|2x-1|\lt|x+4|$.`,
+s:[R`Both sides are non-negative, so square: $(2x-1)^2\lt(x+4)^2$.`,
+R`$4x^2-4x+1\lt x^2+8x+16\Rightarrow3x^2-12x-15\lt0\Rightarrow x^2-4x-5\lt0$.`,
+R`$(x-5)(x+1)\lt0$: between the roots.`],
+a:R`$-1\lt x\lt5$`},
+{m:8, q:R`Let $f(x)=\dfrac{4+3x}{(1+2x)(2-x)}$.<br>(a) Express $f(x)$ in partial fractions.<br>(b) Hence find the expansion of $f(x)$ in ascending powers of $x$ up to the term in $x^2$, and state the set of values of $x$ for which it is valid.`,
+s:[R`(a) $4+3x=A(2-x)+B(1+2x)$. $x=2$: $10=5B\Rightarrow B=2$. $x=-\tfrac12$: $2.5=2.5A\Rightarrow A=1$.`,
+R`$f(x)=\dfrac{1}{1+2x}+\dfrac{2}{2-x}$.`,
+R`(b) $(1+2x)^{-1}=1-2x+4x^2-\cdots$`,
+R`$\dfrac{2}{2-x}=\left(1-\dfrac x2\right)^{-1}=1+\dfrac x2+\dfrac{x^2}{4}+\cdots$`,
+R`Add: $2-\tfrac32x+\tfrac{17}{4}x^2$. Validity: need $|2x|\lt1$ and $\left|\tfrac x2\right|\lt1$; the stricter is $|x|\lt\tfrac12$.`],
+a:R`$f(x)=\dfrac{1}{1+2x}+\dfrac{2}{2-x}\approx2-\dfrac32x+\dfrac{17}{4}x^2$, valid for $|x|\lt\tfrac12$`}
+],
+pr:[
+{m:6, q:R`The polynomial $p(x)=2x^3+ax^2+bx-6$ has a factor $(x+2)$, and leaves remainder $-6$ when divided by $(x-1)$. Find $a$ and $b$, and hence factorise $p(x)$ completely.`,
+s:[R`$p(-2)=0$: $-16+4a-2b-6=0\Rightarrow2a-b=11$.`, R`$p(1)=-6$: $2+a+b-6=-6\Rightarrow a+b=-2$.`, R`Solve: $a=3$, $b=-5$. Divide by $(x+2)$: $p(x)=(x+2)(2x^2-x-3)$.`, R`$2x^2-x-3=(2x-3)(x+1)$.`],
+a:R`$a=3$, $b=-5$; $p(x)=(x+2)(2x-3)(x+1)$`},
+{m:3, q:R`Solve the equation $|3x+2|=2|x-1|$.`,
+s:[R`Square: $9x^2+12x+4=4(x^2-2x+1)$.`, R`$5x^2+20x=0\Rightarrow5x(x+4)=0$.`, R`Check: $x=0$ gives $2=2$ ✓; $x=-4$ gives $10=10$ ✓.`],
+a:R`$x=0$ or $x=-4$`},
+{m:5, q:R`Expand $\sqrt{4-x}$ in ascending powers of $x$ up to the term in $x^2$, state the range of validity, and use your expansion to estimate $\sqrt{3.96}$.`, h:R`$\sqrt{4-x}=2\left(1-\tfrac x4\right)^{1/2}$.`,
+s:[R`$2\left(1-\tfrac x4\right)^{1/2}=2\left[1+\tfrac12\left(-\tfrac x4\right)+\dfrac{\tfrac12\left(-\tfrac12\right)}{2}\left(-\tfrac x4\right)^2\right]$.`, R`$=2\left[1-\tfrac x8-\tfrac{x^2}{128}\right]=2-\tfrac x4-\tfrac{x^2}{64}$, valid for $|x|\lt4$.`, R`$x=0.04$: $2-0.01-0.000025$.`],
+a:R`$2-\tfrac14x-\tfrac1{64}x^2$, $|x|\lt4$; $\sqrt{3.96}\approx1.989975$`},
+{m:5, q:R`Express $\dfrac{2x^2+3x-5}{(x-2)(x+1)^2}$ in partial fractions.`,
+s:[R`$2x^2+3x-5=A(x+1)^2+B(x-2)(x+1)+C(x-2)$.`, R`$x=2$: $9=9A\Rightarrow A=1$. $\;x=-1$: $-6=-3C\Rightarrow C=2$.`, R`Compare $x^2$: $2=A+B\Rightarrow B=1$.`],
+a:R`$\dfrac{1}{x-2}+\dfrac{1}{x+1}+\dfrac{2}{(x+1)^2}$`}
+]},
+/* ---------------- 2. LOGS & EXPONENTIALS ---------------- */
+{id:'logs', title:'Logarithms & Exponentials', sum:'Laws of logarithms, e and ln, solving exponential equations, reducing relationships to linear form.',
+notes:R`
+<div class="key">$\log_a x=y\iff a^y=x$<br>
+$\log(xy)=\log x+\log y\qquad\log\left(\dfrac xy\right)=\log x-\log y\qquad\log(x^k)=k\log x$<br>
+$\ln x=\log_e x$; $\;e^{\ln x}=x$ and $\ln(e^x)=x$</div>
+<h4>Solving equations</h4>
+<ul><li>$a^x=b$: take logs, $x=\dfrac{\ln b}{\ln a}$.</li>
+<li>Equations like $e^{2x}-5e^x+6=0$ are quadratics in $u=e^x$ (reject $u\le0$).</li>
+<li>Equations with logs: combine into a single log, then exponentiate. Check that each answer keeps the arguments of the logs positive.</li></ul>
+<h4>Reducing to linear form</h4>
+<table class="tbl"><tr><th>Model</th><th>Plot</th><th>Gradient</th><th>Intercept</th></tr>
+<tr><td>$y=kx^n$</td><td>$\ln y$ against $\ln x$</td><td>$n$</td><td>$\ln k$</td></tr>
+<tr><td>$y=ka^x$</td><td>$\ln y$ against $x$</td><td>$\ln a$</td><td>$\ln k$</td></tr></table>
+<div class="warn"><b>Common mistake:</b> writing $\ln(a+b)=\ln a+\ln b$. There is no rule for the log of a sum.</div>`,
+ex:[
+{m:3, q:R`Solve the equation $2^{x+1}=5^{x-1}$, giving $x$ correct to 3 significant figures.`,
+s:[R`Take logs: $(x+1)\ln2=(x-1)\ln5$.`,
+R`$x\ln5-x\ln2=\ln5+\ln2\Rightarrow x(\ln5-\ln2)=\ln10$.`,
+R`$x=\dfrac{\ln10}{\ln2.5}=\dfrac{2.3026}{0.9163}$.`],
+a:R`$x=2.51$`},
+{m:4, q:R`Variables $x$ and $y$ satisfy $y=Ab^x$. The graph of $\ln y$ against $x$ is a straight line passing through $(1,\,2.0)$ and $(4,\,3.8)$. Find $A$ and $b$.`,
+s:[R`$\ln y=\ln A+x\ln b$ — a line with gradient $\ln b$ and intercept $\ln A$.`,
+R`Gradient $=\dfrac{3.8-2.0}{4-1}=0.6\Rightarrow b=e^{0.6}$.`,
+R`Intercept: $2.0=\ln A+0.6(1)\Rightarrow\ln A=1.4\Rightarrow A=e^{1.4}$.`],
+a:R`$A=4.06$, $b=1.82$`}
+],
+pr:[
+{m:3, q:R`Solve $\ln(x+3)-\ln x=1+\ln2$, giving an exact answer and its value to 3 s.f.`,
+s:[R`$\ln\left(\dfrac{x+3}{x}\right)=\ln(2e)$ since $1=\ln e$.`, R`$x+3=2ex\Rightarrow x(2e-1)=3$.`],
+a:R`$x=\dfrac{3}{2e-1}=0.676$`},
+{m:4, q:R`Solve $3e^{2x}-7e^x+2=0$, giving exact answers.`,
+s:[R`Let $u=e^x$: $3u^2-7u+2=0\Rightarrow(3u-1)(u-2)=0$.`, R`$e^x=\tfrac13\Rightarrow x=\ln\tfrac13=-\ln3$; $\;e^x=2\Rightarrow x=\ln2$.`],
+a:R`$x=-\ln3$ or $x=\ln2$`},
+{m:4, q:R`Variables satisfy $y=Kx^n$. The graph of $\ln y$ against $\ln x$ is a straight line through $(0.5,\,2.3)$ and $(2.0,\,4.1)$. Find $K$ and $n$.`,
+s:[R`$\ln y=\ln K+n\ln x$. Gradient $n=\dfrac{4.1-2.3}{2.0-0.5}=1.2$.`, R`$2.3=\ln K+1.2(0.5)\Rightarrow\ln K=1.7$.`],
+a:R`$n=1.2$, $K=e^{1.7}=5.47$`},
+{m:3, q:R`Solve the equation $|3^x-5|=2$.`,
+s:[R`$3^x-5=2$ or $3^x-5=-2$, so $3^x=7$ or $3^x=3$.`, R`$x=\dfrac{\ln7}{\ln3}=1.771$ or $x=1$.`],
+a:R`$x=1$ or $x=1.77$`}
+]},
+/* ---------------- 3. TRIGONOMETRY ---------------- */
+{id:'trig3', title:'Trigonometry', sum:'sec, cosec and cot; Pythagorean identities; compound and double angle formulae; the R form.',
+notes:R`
+<div class="key">$\sec\theta=\dfrac1{\cos\theta}\quad\operatorname{cosec}\theta=\dfrac1{\sin\theta}\quad\cot\theta=\dfrac1{\tan\theta}$<br>
+$\sec^2\theta\equiv1+\tan^2\theta\qquad\operatorname{cosec}^2\theta\equiv1+\cot^2\theta$</div>
+<h4>Compound angles</h4>
+<div class="key">$\sin(A\pm B)=\sin A\cos B\pm\cos A\sin B$<br>
+$\cos(A\pm B)=\cos A\cos B\mp\sin A\sin B$<br>
+$\tan(A\pm B)=\dfrac{\tan A\pm\tan B}{1\mp\tan A\tan B}$</div>
+<h4>Double angles</h4>
+<div class="key">$\sin2A=2\sin A\cos A\qquad\cos2A=\cos^2A-\sin^2A=2\cos^2A-1=1-2\sin^2A\qquad\tan2A=\dfrac{2\tan A}{1-\tan^2A}$</div>
+<h4>The R form</h4>
+<p>$a\sin\theta+b\cos\theta=R\sin(\theta+\alpha)$ where $R=\sqrt{a^2+b^2}$ and $\tan\alpha=\dfrac ba$. Expand the right-hand side and compare coefficients. Max value $R$, min value $-R$.</p>
+<div class="tip"><b>Exam tip:</b> When solving $R\sin(\theta+\alpha)=k$, adjust the interval first: if $0^\circ\lt\theta\lt360^\circ$ then $\alpha\lt\theta+\alpha\lt360^\circ+\alpha$.</div>`,
+ex:[
+{m:6, q:R`(a) Express $3\sin\theta+4\cos\theta$ in the form $R\sin(\theta+\alpha)$, where $R\gt0$ and $0^\circ\lt\alpha\lt90^\circ$.<br>(b) Hence solve $3\sin\theta+4\cos\theta=2$ for $0^\circ\lt\theta\lt360^\circ$.`,
+s:[R`(a) $R\sin\theta\cos\alpha+R\cos\theta\sin\alpha$: $R\cos\alpha=3$, $R\sin\alpha=4$.`,
+R`$R=\sqrt{9+16}=5$, $\tan\alpha=\tfrac43\Rightarrow\alpha=53.13^\circ$.`,
+R`(b) $\sin(\theta+53.13^\circ)=0.4$, with $53.13^\circ\lt\theta+53.13^\circ\lt413.13^\circ$.`,
+R`$\sin^{-1}0.4=23.58^\circ$ (too small), so $\theta+53.13^\circ=156.42^\circ$ or $383.58^\circ$.`],
+a:R`(a) $5\sin(\theta+53.13^\circ)$ &nbsp; (b) $\theta=103.3^\circ,\ 330.4^\circ$`},
+{m:6, q:R`(a) Prove that $\cot\theta-\tan\theta\equiv2\cot2\theta$.<br>(b) Hence solve $\cot\theta-\tan\theta=3$ for $0^\circ\lt\theta\lt180^\circ$.`,
+s:[R`(a) $\dfrac{\cos\theta}{\sin\theta}-\dfrac{\sin\theta}{\cos\theta}=\dfrac{\cos^2\theta-\sin^2\theta}{\sin\theta\cos\theta}=\dfrac{\cos2\theta}{\tfrac12\sin2\theta}=2\cot2\theta$ ✓`,
+R`(b) $2\cot2\theta=3\Rightarrow\tan2\theta=\tfrac23$, with $0^\circ\lt2\theta\lt360^\circ$.`,
+R`$2\theta=33.69^\circ$ or $213.69^\circ$.`],
+a:R`$\theta=16.8^\circ,\ 106.8^\circ$`}
+],
+pr:[
+{m:4, q:R`Solve $2\sec^2\theta=5\tan\theta$ for $0^\circ\lt\theta\lt180^\circ$.`,
+s:[R`$2(1+\tan^2\theta)=5\tan\theta\Rightarrow2\tan^2\theta-5\tan\theta+2=0$.`, R`$(2\tan\theta-1)(\tan\theta-2)=0$.`, R`$\tan\theta=\tfrac12\Rightarrow26.6^\circ$; $\tan\theta=2\Rightarrow63.4^\circ$.`],
+a:R`$\theta=26.6^\circ,\ 63.4^\circ$`},
+{m:5, q:R`Solve $\cos2x+3\sin x=2$ for $0\le x\le2\pi$, giving exact answers.`, h:R`Use $\cos2x=1-2\sin^2x$.`,
+s:[R`$1-2\sin^2x+3\sin x=2\Rightarrow2\sin^2x-3\sin x+1=0$.`, R`$(2\sin x-1)(\sin x-1)=0$.`, R`$\sin x=\tfrac12\Rightarrow\tfrac\pi6,\tfrac{5\pi}6$; $\;\sin x=1\Rightarrow\tfrac\pi2$.`],
+a:R`$x=\tfrac\pi6,\ \tfrac\pi2,\ \tfrac{5\pi}6$`},
+{m:5, q:R`Angles $A$ and $B$ are acute with $\sin A=\tfrac35$ and $\cos B=\tfrac5{13}$. Find the exact values of $\sin(A+B)$ and $\tan(A-B)$.`,
+s:[R`$\cos A=\tfrac45$, $\tan A=\tfrac34$; $\sin B=\tfrac{12}{13}$, $\tan B=\tfrac{12}5$.`, R`$\sin(A+B)=\tfrac35\cdot\tfrac5{13}+\tfrac45\cdot\tfrac{12}{13}=\tfrac{15+48}{65}$.`, R`$\tan(A-B)=\dfrac{\tfrac34-\tfrac{12}5}{1+\tfrac34\cdot\tfrac{12}5}=\dfrac{-33/20}{56/20}$.`],
+a:R`$\sin(A+B)=\tfrac{63}{65}$, $\tan(A-B)=-\tfrac{33}{56}$`},
+{m:4, q:R`Prove that $\sin3\theta\equiv3\sin\theta-4\sin^3\theta$.`,
+s:[R`$\sin3\theta=\sin(2\theta+\theta)=\sin2\theta\cos\theta+\cos2\theta\sin\theta$.`, R`$=2\sin\theta\cos^2\theta+(1-2\sin^2\theta)\sin\theta$.`, R`$=2\sin\theta(1-\sin^2\theta)+\sin\theta-2\sin^3\theta=3\sin\theta-4\sin^3\theta$ ✓`],
+a:R`Proved.`}
+]},
+/* ---------------- 4. DIFFERENTIATION ---------------- */
+{id:'diff3', title:'Differentiation', sum:'Exponentials, logs, trig and inverse tan; product, quotient and chain rules; parametric and implicit differentiation.',
+notes:R`
+<table class="tbl"><tr><th>$y$</th><th>$\dfrac{dy}{dx}$</th><th>$y$</th><th>$\dfrac{dy}{dx}$</th></tr>
+<tr><td>$e^{ax}$</td><td>$ae^{ax}$</td><td>$\sin ax$</td><td>$a\cos ax$</td></tr>
+<tr><td>$\ln x$</td><td>$\dfrac1x$</td><td>$\cos ax$</td><td>$-a\sin ax$</td></tr>
+<tr><td>$\ln f(x)$</td><td>$\dfrac{f'(x)}{f(x)}$</td><td>$\tan ax$</td><td>$a\sec^2ax$</td></tr>
+<tr><td>$\tan^{-1}x$</td><td>$\dfrac1{1+x^2}$</td><td>$\sec x$</td><td>$\sec x\tan x$</td></tr></table>
+<div class="key">Product: $\dfrac{d}{dx}(uv)=u\dfrac{dv}{dx}+v\dfrac{du}{dx}$ &nbsp;·&nbsp; Quotient: $\dfrac{d}{dx}\left(\dfrac uv\right)=\dfrac{v\frac{du}{dx}-u\frac{dv}{dx}}{v^2}$<br>
+Parametric: $\dfrac{dy}{dx}=\dfrac{dy/dt}{dx/dt}$ &nbsp;·&nbsp; Implicit: differentiate each term, using $\dfrac{d}{dx}f(y)=f'(y)\dfrac{dy}{dx}$</div>
+<p>In implicit differentiation, $xy$ needs the product rule: $\dfrac{d}{dx}(xy)=x\dfrac{dy}{dx}+y$.</p>
+<div class="tip"><b>Exam tip:</b> When setting a derivative like $e^{3x}(3\sin2x+2\cos2x)$ equal to zero, note $e^{3x}\gt0$ so only the bracket can be zero.</div>`,
+ex:[
+{m:5, q:R`Find the coordinates of the stationary points of the curve $y=x^2e^{-2x}$.`,
+s:[R`Product rule: $\dfrac{dy}{dx}=2xe^{-2x}+x^2(-2e^{-2x})=2xe^{-2x}(1-x)$.`,
+R`$e^{-2x}\gt0$, so $x=0$ or $x=1$.`,
+R`$x=0\Rightarrow y=0$; $\;x=1\Rightarrow y=e^{-2}$.`],
+a:R`$(0,0)$ and $\left(1,e^{-2}\right)$`},
+{m:5, q:R`The curve $x^2+3xy+2y^2=6$ passes through $(1,1)$. Find the equation of the tangent at this point.`,
+s:[R`Differentiate implicitly: $2x+3y+3x\dfrac{dy}{dx}+4y\dfrac{dy}{dx}=0$.`,
+R`$\dfrac{dy}{dx}=-\dfrac{2x+3y}{3x+4y}=-\dfrac57$ at $(1,1)$.`,
+R`$y-1=-\tfrac57(x-1)\Rightarrow7y-7=-5x+5$.`],
+a:R`$5x+7y=12$`}
+],
+pr:[
+{m:4, q:R`Find the exact $x$-coordinate of the stationary point of $y=\dfrac{\ln x}{x^2}$.`,
+s:[R`Quotient rule: $\dfrac{dy}{dx}=\dfrac{x^2\cdot\frac1x-\ln x\cdot2x}{x^4}=\dfrac{1-2\ln x}{x^3}$.`, R`$1-2\ln x=0\Rightarrow\ln x=\tfrac12$.`],
+a:R`$x=\sqrt e$`},
+{m:5, q:R`A curve has parametric equations $x=t^3+t$, $y=t^2-2t$. Find the equation of the normal at the point where $t=2$.`,
+s:[R`$t=2$: point $(10,0)$.`, R`$\dfrac{dy}{dx}=\dfrac{2t-2}{3t^2+1}=\dfrac2{13}$ at $t=2$; normal gradient $-\dfrac{13}2$.`, R`$y=-\tfrac{13}2(x-10)$.`],
+a:R`$13x+2y=130$`},
+{m:5, q:R`Find the $x$-coordinate of the stationary point of $y=e^{3x}\sin2x$ in the interval $0\lt x\lt\tfrac\pi2$.`,
+s:[R`$\dfrac{dy}{dx}=3e^{3x}\sin2x+2e^{3x}\cos2x=e^{3x}(3\sin2x+2\cos2x)$.`, R`$3\sin2x+2\cos2x=0\Rightarrow\tan2x=-\tfrac23$.`, R`$0\lt2x\lt\pi$, so $2x=\pi-\tan^{-1}\tfrac23=2.5536$.`],
+a:R`$x=1.28$`}
+]},
+/* ---------------- 5. INTEGRATION ---------------- */
+{id:'int3', title:'Integration', sum:'Standard integrals, trig identities, f′(x)/f(x), partial fractions, substitution, integration by parts and the trapezium rule.',
+notes:R`
+<table class="tbl"><tr><th>$f(x)$</th><th>$\int f(x)\,dx$</th><th>$f(x)$</th><th>$\int f(x)\,dx$</th></tr>
+<tr><td>$e^{ax+b}$</td><td>$\tfrac1ae^{ax+b}$</td><td>$\sin(ax+b)$</td><td>$-\tfrac1a\cos(ax+b)$</td></tr>
+<tr><td>$\dfrac1{ax+b}$</td><td>$\tfrac1a\ln|ax+b|$</td><td>$\cos(ax+b)$</td><td>$\tfrac1a\sin(ax+b)$</td></tr>
+<tr><td>$\dfrac{f'(x)}{f(x)}$</td><td>$\ln|f(x)|$</td><td>$\sec^2(ax+b)$</td><td>$\tfrac1a\tan(ax+b)$</td></tr>
+<tr><td>$\dfrac1{x^2+a^2}$</td><td>$\tfrac1a\tan^{-1}\left(\tfrac xa\right)$</td><td></td><td></td></tr></table>
+<h4>Using identities</h4>
+<p>$\cos^2x=\tfrac12(1+\cos2x)$, $\;\sin^2x=\tfrac12(1-\cos2x)$, $\;\tan^2x=\sec^2x-1$.</p>
+<h4>Integration by parts</h4>
+<div class="key">$$\int u\frac{dv}{dx}\,dx=uv-\int v\frac{du}{dx}\,dx$$
+Choose $u$ to be the part that gets simpler when differentiated — but if there is a $\ln x$, let $u=\ln x$.</div>
+<h4>Substitution</h4>
+<p>Replace $x$, $dx$ <em>and the limits</em>. Never mix $x$ and $u$ in the same integral.</p>
+<h4>Trapezium rule</h4>
+<div class="key">$\displaystyle\int_a^by\,dx\approx\tfrac12h\big[y_0+2(y_1+\cdots+y_{n-1})+y_n\big],\quad h=\frac{b-a}{n}$</div>
+<p>Over-estimate if the curve is concave up (bends upward), under-estimate if concave down.</p>`,
+ex:[
+{m:5, q:R`Find the exact value of $\displaystyle\int_1^e x^2\ln x\,dx$.`,
+s:[R`Parts with $u=\ln x$, $\dfrac{dv}{dx}=x^2$: $\;\dfrac{du}{dx}=\dfrac1x$, $v=\dfrac{x^3}3$.`,
+R`$\left[\dfrac{x^3}{3}\ln x\right]_1^e-\displaystyle\int_1^e\frac{x^2}{3}\,dx=\frac{e^3}{3}-\left[\frac{x^3}{9}\right]_1^e$.`,
+R`$=\dfrac{e^3}{3}-\dfrac{e^3-1}{9}=\dfrac{3e^3-e^3+1}{9}$.`],
+a:R`$\dfrac{2e^3+1}{9}$`},
+{m:5, q:R`Use the substitution $u=2x+1$ to find the exact value of $\displaystyle\int_0^4\frac{x}{\sqrt{2x+1}}\,dx$.`,
+s:[R`$x=\dfrac{u-1}{2}$, $dx=\dfrac{du}{2}$; limits $x=0\to u=1$, $x=4\to u=9$.`,
+R`$\displaystyle\int_1^9\frac{u-1}{2}\cdot u^{-1/2}\cdot\frac12\,du=\frac14\int_1^9\left(u^{1/2}-u^{-1/2}\right)du$.`,
+R`$=\dfrac14\left[\tfrac23u^{3/2}-2u^{1/2}\right]_1^9=\dfrac14\left[(18-6)-\left(\tfrac23-2\right)\right]=\dfrac14\cdot\dfrac{40}{3}$.`],
+a:R`$\dfrac{10}{3}$`}
+],
+pr:[
+{m:4, q:R`Find the exact value of $\displaystyle\int_0^{\pi/4}\sin^2x\,dx$.`,
+s:[R`$\sin^2x=\tfrac12(1-\cos2x)$.`, R`$\tfrac12\left[x-\tfrac12\sin2x\right]_0^{\pi/4}=\tfrac12\left(\tfrac\pi4-\tfrac12\right)$.`],
+a:R`$\dfrac\pi8-\dfrac14$`},
+{m:5, q:R`Use partial fractions to find the exact value of $\displaystyle\int_1^3\frac{4}{(x+1)(x+3)}\,dx$, giving your answer as a single logarithm.`,
+s:[R`$\dfrac{4}{(x+1)(x+3)}=\dfrac{2}{x+1}-\dfrac{2}{x+3}$.`, R`$\big[2\ln(x+1)-2\ln(x+3)\big]_1^3=2(\ln4-\ln6)-2(\ln2-\ln4)$.`, R`$=2\ln\dfrac{4\times4}{6\times2}=2\ln\dfrac43$.`],
+a:R`$\ln\dfrac{16}{9}$`},
+{m:4, q:R`Find the exact value of $\displaystyle\int_0^1xe^{2x}\,dx$.`,
+s:[R`$u=x$, $v=\tfrac12e^{2x}$: $\left[\tfrac12xe^{2x}\right]_0^1-\displaystyle\int_0^1\tfrac12e^{2x}\,dx$.`, R`$=\tfrac12e^2-\left[\tfrac14e^{2x}\right]_0^1=\tfrac12e^2-\tfrac14(e^2-1)$.`],
+a:R`$\dfrac{e^2+1}{4}$`},
+{m:3, q:R`Find the exact value of $\displaystyle\int_0^2\frac{1}{4+x^2}\,dx$.`,
+s:[R`$a=2$: $\left[\tfrac12\tan^{-1}\tfrac x2\right]_0^2=\tfrac12\tan^{-1}1$.`],
+a:R`$\dfrac\pi8$`},
+{m:4, q:R`Use the trapezium rule with two intervals to estimate $\displaystyle\int_0^2\sqrt{1+x^3}\,dx$. State, with a reason, whether this is an over-estimate or an under-estimate.`,
+s:[R`$h=1$: $y_0=1$, $y_1=\sqrt2=1.4142$, $y_2=3$.`, R`$\tfrac12(1)\big[1+2(1.4142)+3\big]=3.414$.`, R`The curve is concave upwards on $[0,2]$, so the trapezia lie above the curve.`],
+a:R`$3.41$; an over-estimate`}
+]},
+/* ---------------- 6. NUMERICAL SOLUTIONS ---------------- */
+{id:'numerical', title:'Numerical Solution of Equations', sum:'Locating roots by sign change, iterative formulae, convergence and accuracy.',
+notes:R`
+<h4>Locating a root</h4>
+<p>If $f$ is continuous and $f(a)$, $f(b)$ have opposite signs, then $f(x)=0$ has a root between $a$ and $b$. To show a root lies between two values, evaluate $f$ at both and state the sign change.</p>
+<h4>Iteration</h4>
+<div class="key">Rearrange $f(x)=0$ as $x=F(x)$ and use $x_{n+1}=F(x_n)$.<br>
+The iteration converges to the root $\alpha$ if $|F'(\alpha)|\lt1$ (roughly). If it converges, the limit $\alpha$ satisfies $\alpha=F(\alpha)$.</div>
+<ul><li>Show all iterates to at least one more decimal place than required.</li>
+<li>To confirm a root to 2 d.p. (e.g. $1.67$), show a sign change of $f$ over $[1.665,\,1.675]$.</li></ul>
+<div class="tip"><b>Exam tip:</b> “Show that the root satisfies $x=\ldots$” — start from the equation in the question and rearrange step by step to the given iteration form.</div>`,
+ex:[
+{m:5, q:R`Show that the equation $x^3-x-3=0$ has a root between 1 and 2. Use the iteration $x_{n+1}=\sqrt[3]{x_n+3}$ with $x_1=1.5$ to find this root correct to 2 decimal places, showing the result of each iteration to 4 decimal places.`,
+s:[R`$f(1)=-3\lt0$, $f(2)=3\gt0$: sign change, so a root lies in $(1,2)$.`,
+R`$x_1=1.5,\ x_2=1.6510,\ x_3=1.6692,\ x_4=1.6714,\ x_5=1.6717,\ x_6=1.6717$.`,
+R`Check: $f(1.665)=-0.049\lt0$, $f(1.675)=0.024\gt0$ — sign change confirms $1.67$.`],
+a:R`$x=1.67$`},
+{m:5, q:R`Show that the equation $\ln x=3-x$ has a root between 2 and 2.5. Use the iteration $x_{n+1}=3-\ln x_n$ with $x_1=2.2$ to find the root correct to 2 decimal places.`,
+s:[R`Let $f(x)=\ln x+x-3$. $f(2)=-0.307\lt0$, $f(2.5)=0.416\gt0$: sign change.`,
+R`$x_1=2.2,\ x_2=2.2115,\ x_3=2.2063,\ x_4=2.2087,\ x_5=2.2076,\ x_6=2.2081$.`,
+R`The iterates oscillate and close in on $2.208\ldots$. Check: $f(2.205)\lt0$, $f(2.215)\gt0$.`],
+a:R`$x=2.21$`}
+],
+pr:[
+{m:5, q:R`Show that $x^3+2x-7=0$ has a root between 1.5 and 1.6. Use $x_{n+1}=\sqrt[3]{7-2x_n}$ with $x_1=1.5$ to find the root to 2 d.p.`,
+s:[R`$f(1.5)=-0.625$, $f(1.6)=0.296$: sign change.`, R`$x_2=1.5874,\ x_3=1.5639,\ x_4=1.5703,\ x_5=1.5686,\ x_6=1.5690,\ x_7=1.5689$.`, R`$f(1.565)\lt0$, $f(1.575)\gt0$ ✓`],
+a:R`$x=1.57$`},
+{m:2, q:R`The equation $x^3-x-3=0$ has a root $\alpha\approx1.67$. Explain why the iteration $x_{n+1}=x_n^3-3$ will not converge to $\alpha$.`,
+s:[R`$F(x)=x^3-3$, $F'(x)=3x^2$.`, R`$F'(\alpha)\approx3(1.67)^2=8.4$, so $|F'(\alpha)|\gt1$ and the iterates move away from $\alpha$.`],
+a:R`$|F'(\alpha)|\gt1$, so the iteration diverges.`},
+{m:4, q:R`Show that the equation $\cos x=x$ (in radians) has a root between $0.7$ and $0.8$. Use $x_{n+1}=\cos x_n$ with $x_1=0.75$ to find it to 2 d.p.`,
+s:[R`$f(x)=x-\cos x$: $f(0.7)=-0.065\lt0$, $f(0.8)=0.103\gt0$.`, R`$0.75,\ 0.7317,\ 0.7440,\ 0.7357,\ 0.7413,\ 0.7376,\ 0.7401,\ldots$`, R`$f(0.735)=-0.007\lt0$, $f(0.745)=0.010\gt0$ ✓`],
+a:R`$x=0.74$`}
+]},
+/* ---------------- 7. VECTORS ---------------- */
+{id:'vectors', title:'Vectors', sum:'Vectors in 3D, the scalar product, equations of lines, intersections, skew lines, angles and perpendicular distance.',
+notes:R`
+<div class="key">$|\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2}\qquad\overrightarrow{AB}=\mathbf b-\mathbf a$<br>
+Scalar product: $\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3=|\mathbf a||\mathbf b|\cos\theta$<br>
+Perpendicular $\iff\mathbf a\cdot\mathbf b=0$<br>
+Line through $A$ with direction $\mathbf d$: $\;\mathbf r=\mathbf a+\lambda\mathbf d$</div>
+<h4>Two lines can be…</h4>
+<ul><li><b>Parallel</b>: directions are multiples of each other.</li>
+<li><b>Intersecting</b>: solve two components for $\lambda$, $\mu$, then check the third.</li>
+<li><b>Skew</b>: not parallel and the third equation fails.</li></ul>
+<p><b>Angle between lines</b>: use the direction vectors only; give the acute angle.</p>
+<h4>Foot of the perpendicular</h4>
+<p>For point $P$ and line $\mathbf r=\mathbf a+\lambda\mathbf d$: let $N$ be a general point on the line, set $\overrightarrow{PN}\cdot\mathbf d=0$ to find $\lambda$. The perpendicular distance is $|\overrightarrow{PN}|$.</p>`,
+ex:[
+{m:7, q:R`Lines $l$ and $m$ have equations $\mathbf r=\begin{pmatrix}1\\2\\-1\end{pmatrix}+\lambda\begin{pmatrix}2\\-1\\1\end{pmatrix}$ and $\mathbf r=\begin{pmatrix}1\\-1\\4\end{pmatrix}+\mu\begin{pmatrix}1\\1\\-2\end{pmatrix}$. Show that the lines intersect, find the point of intersection, and find the acute angle between them.`,
+s:[R`$x$: $1+2\lambda=1+\mu\Rightarrow\mu=2\lambda$. $\;y$: $2-\lambda=-1+\mu=-1+2\lambda\Rightarrow\lambda=1$, $\mu=2$.`,
+R`$z$: $-1+\lambda=0$ and $4-2\mu=0$ — equal ✓, so the lines intersect.`,
+R`Point: $\lambda=1$ gives $(3,1,0)$.`,
+R`$\mathbf d_1\cdot\mathbf d_2=2-1-2=-1$; $|\mathbf d_1|=|\mathbf d_2|=\sqrt6$; $\cos\theta=\dfrac{|-1|}{6}$.`],
+a:R`Intersect at $(3,1,0)$; acute angle $80.4^\circ$`},
+{m:6, q:R`Find the foot of the perpendicular from $P(5,1,2)$ to the line $\mathbf r=\begin{pmatrix}1\\2\\-1\end{pmatrix}+\lambda\begin{pmatrix}2\\-1\\1\end{pmatrix}$, and hence the perpendicular distance from $P$ to the line.`,
+s:[R`General point $N(1+2\lambda,\ 2-\lambda,\ -1+\lambda)$; $\overrightarrow{PN}=\begin{pmatrix}-4+2\lambda\\1-\lambda\\-3+\lambda\end{pmatrix}$.`,
+R`$\overrightarrow{PN}\cdot\mathbf d=2(-4+2\lambda)-(1-\lambda)+(-3+\lambda)=6\lambda-12=0\Rightarrow\lambda=2$.`,
+R`$N=(5,0,1)$, $\overrightarrow{PN}=(0,-1,-1)$.`],
+a:R`Foot $(5,0,1)$; distance $\sqrt2$`}
+],
+pr:[
+{m:4, q:R`Points $A(1,2,3)$, $B(3,1,5)$ and $C(2,4,1)$ are given. Find angle $BAC$.`,
+s:[R`$\overrightarrow{AB}=(2,-1,2)$, $\overrightarrow{AC}=(1,2,-2)$.`, R`$\overrightarrow{AB}\cdot\overrightarrow{AC}=2-2-4=-4$; both have length 3.`, R`$\cos BAC=-\tfrac49$.`],
+a:R`$116.4^\circ$`},
+{m:4, q:R`Show that the lines $\mathbf r=\begin{pmatrix}1\\0\\2\end{pmatrix}+s\begin{pmatrix}1\\1\\0\end{pmatrix}$ and $\mathbf r=\begin{pmatrix}0\\1\\-1\end{pmatrix}+t\begin{pmatrix}0\\1\\1\end{pmatrix}$ are skew.`,
+s:[R`Directions are not multiples, so not parallel.`, R`$x$: $1+s=0\Rightarrow s=-1$. $\;y$: $s=1+t\Rightarrow t=-2$.`, R`$z$: $2$ vs $-1+t=-3$. Contradiction, so no intersection.`],
+a:R`Not parallel and do not intersect → skew.`},
+{m:4, q:R`A line passes through $A(1,-2,4)$ and $B(3,-1,2)$. Find a vector equation of the line, show that $C(-3,-4,8)$ lies on it, and find the point on the line where $x=7$.`,
+s:[R`$\overrightarrow{AB}=(2,1,-2)$: $\mathbf r=(1,-2,4)+\lambda(2,1,-2)$.`, R`$\lambda=-2$: $(-3,-4,8)$ ✓.`, R`$1+2\lambda=7\Rightarrow\lambda=3$.`],
+a:R`$\mathbf r=\begin{pmatrix}1\\-2\\4\end{pmatrix}+\lambda\begin{pmatrix}2\\1\\-2\end{pmatrix}$; point $(7,1,-2)$`},
+{m:2, q:R`Find the value of $p$ for which $\begin{pmatrix}p\\2\\-1\end{pmatrix}$ and $\begin{pmatrix}3\\p\\4\end{pmatrix}$ are perpendicular.`,
+s:[R`$3p+2p-4=0$.`],
+a:R`$p=\tfrac45$`}
+]},
+/* ---------------- 8. DIFFERENTIAL EQUATIONS ---------------- */
+{id:'de', title:'Differential Equations', sum:'Forming and solving first-order differential equations by separating the variables; general and particular solutions.',
+notes:R`
+<div class="key">If $\dfrac{dy}{dx}=f(x)\,g(y)$ then $\displaystyle\int\frac{1}{g(y)}\,dy=\int f(x)\,dx$</div>
+<ol><li>Separate: all $y$ terms with $dy$, all $x$ terms with $dx$.</li>
+<li>Integrate both sides; one constant of integration is enough.</li>
+<li>Use the given condition to find the constant (the <b>particular solution</b>).</li>
+<li>Rearrange to $y=\ldots$ if asked.</li></ol>
+<h4>Forming equations</h4>
+<p>“The rate of change of $x$ is proportional to $x$” → $\dfrac{dx}{dt}=kx$. A <em>decrease</em> means a negative rate: $\dfrac{dx}{dt}=-kx$.</p>
+<p>Exponential results are common: $\ln|y|=kt+c\Rightarrow y=Ae^{kt}$.</p>
+<div class="warn"><b>Common mistake:</b> adding the constant after exponentiating as “$+c$” instead of a multiplying constant $A=e^c$.</div>`,
+ex:[
+{m:5, q:R`Solve $x\dfrac{dy}{dx}=1+y^2$, given that $y=1$ when $x=1$. Give $y$ in terms of $x$.`,
+s:[R`Separate: $\displaystyle\int\frac{1}{1+y^2}\,dy=\int\frac1x\,dx$.`,
+R`$\tan^{-1}y=\ln x+c$.`,
+R`$x=1,\ y=1$: $\tfrac\pi4=0+c$.`],
+a:R`$y=\tan\left(\ln x+\tfrac\pi4\right)$`},
+{m:8, q:R`A liquid cools so that the rate of decrease of its temperature $\theta\ {}^\circ\text{C}$ is proportional to $(\theta-20)$. Initially $\theta=80$; after 10 minutes $\theta=50$. Find $\theta$ in terms of $t$ and the time at which $\theta=30$.`,
+s:[R`$\dfrac{d\theta}{dt}=-k(\theta-20)\Rightarrow\displaystyle\int\frac{d\theta}{\theta-20}=-\int k\,dt\Rightarrow\ln(\theta-20)=-kt+c$.`,
+R`$\theta-20=Ae^{-kt}$; $t=0$: $A=60$.`,
+R`$t=10$: $30=60e^{-10k}\Rightarrow e^{-10k}=\tfrac12\Rightarrow k=\tfrac{\ln2}{10}=0.0693$.`,
+R`$\theta=30$: $10=60e^{-kt}\Rightarrow e^{-kt}=\tfrac16\Rightarrow t=\dfrac{10\ln6}{\ln2}=25.8$.`],
+a:R`$\theta=20+60e^{-0.0693t}$; $t=25.8$ minutes`}
+],
+pr:[
+{m:5, q:R`Solve $\dfrac{dy}{dx}=e^{2x-y}$, given $y=0$ when $x=0$, expressing $y$ in terms of $x$.`, h:R`$e^{2x-y}=e^{2x}e^{-y}$.`,
+s:[R`$\displaystyle\int e^y\,dy=\int e^{2x}\,dx\Rightarrow e^y=\tfrac12e^{2x}+c$.`, R`$x=0,y=0$: $1=\tfrac12+c\Rightarrow c=\tfrac12$.`],
+a:R`$y=\ln\left(\dfrac{e^{2x}+1}{2}\right)$`},
+{m:7, q:R`A population $x$ (in thousands) satisfies $\dfrac{dx}{dt}=\tfrac14x(4-x)$, with $x=1$ when $t=0$. Find $t$ when $x=3$, and express $x$ in terms of $t$.`,
+s:[R`$\dfrac{1}{x(4-x)}=\dfrac14\left(\dfrac1x+\dfrac1{4-x}\right)$, so $\displaystyle\int\left(\frac1x+\frac1{4-x}\right)dx=\int dt$.`, R`$\ln x-\ln(4-x)=t+c$; $t=0$: $c=\ln\tfrac13$.`, R`$\dfrac{x}{4-x}=\tfrac13e^t$. $x=3$: $3=\tfrac13e^t\Rightarrow t=\ln9$.`, R`Rearrange: $3x=4e^t-xe^t\Rightarrow x(3+e^t)=4e^t$.`],
+a:R`$t=\ln9\approx2.20$; $x=\dfrac{4e^t}{3+e^t}$`},
+{m:4, q:R`Solve $\dfrac{dy}{dx}=y\cos x$, given that $y=e$ when $x=\tfrac\pi2$.`,
+s:[R`$\displaystyle\int\frac1y\,dy=\int\cos x\,dx\Rightarrow\ln y=\sin x+c$.`, R`$1=1+c\Rightarrow c=0$.`],
+a:R`$y=e^{\sin x}$`},
+{m:6, q:R`Liquid leaks from a tank so that the volume $V$ decreases at a rate proportional to $\sqrt V$. Initially $V=100$; after 2 hours $V=64$. Find how long it takes for the tank to empty.`,
+s:[R`$\dfrac{dV}{dt}=-k\sqrt V\Rightarrow\displaystyle\int V^{-1/2}dV=-\int k\,dt\Rightarrow2\sqrt V=-kt+c$.`, R`$t=0$: $c=20$. $\;t=2$: $16=-2k+20\Rightarrow k=2$.`, R`Empty: $0=-2t+20$.`],
+a:R`$10$ hours`}
+]},
+/* ---------------- 9. COMPLEX NUMBERS ---------------- */
+{id:'complex', title:'Complex Numbers', sum:'Arithmetic, conjugates, Argand diagrams, modulus–argument and exponential form, square roots, polynomial roots and loci.',
+notes:R`
+<div class="key">$z=x+iy,\ i^2=-1$ &nbsp;·&nbsp; Conjugate $z^*=x-iy$ &nbsp;·&nbsp; $zz^*=x^2+y^2$<br>
+$|z|=\sqrt{x^2+y^2}$, $\;\arg z=\theta$ with $-\pi\lt\theta\le\pi$ (check the quadrant!)<br>
+$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$<br>
+$|z_1z_2|=|z_1||z_2|\qquad\arg(z_1z_2)=\arg z_1+\arg z_2\qquad\arg\left(\dfrac{z_1}{z_2}\right)=\arg z_1-\arg z_2$</div>
+<ul><li><b>Division</b>: multiply top and bottom by the conjugate of the denominator.</li>
+<li><b>Square roots</b>: set $(a+ib)^2=x+iy$, equate real and imaginary parts.</li>
+<li><b>Polynomials with real coefficients</b>: non-real roots come in conjugate pairs.</li></ul>
+<h4>Loci on an Argand diagram</h4>
+<table class="tbl"><tr><th>Locus</th><th>Shape</th></tr>
+<tr><td>$|z-a|=r$</td><td>circle, centre $a$, radius $r$</td></tr>
+<tr><td>$|z-a|=|z-b|$</td><td>perpendicular bisector of the points $a$ and $b$</td></tr>
+<tr><td>$\arg(z-a)=\theta$</td><td>half-line from $a$ (not including $a$) at angle $\theta$</td></tr></table>`,
+ex:[
+{m:5, q:R`Find the square roots of $5-12i$.`,
+s:[R`$(x+iy)^2=5-12i\Rightarrow x^2-y^2=5$ and $2xy=-12$.`,
+R`$y=-\tfrac6x$: $x^2-\tfrac{36}{x^2}=5\Rightarrow x^4-5x^2-36=0\Rightarrow(x^2-9)(x^2+4)=0$.`,
+R`$x$ real so $x=\pm3$, giving $y=\mp2$.`],
+a:R`$3-2i$ and $-3+2i$`},
+{m:4, q:R`The complex number $u$ is $1+i\sqrt3$. Find $|u|$ and $\arg u$, write $u$ in the form $re^{i\theta}$, and hence find $u^3$.`,
+s:[R`$|u|=\sqrt{1+3}=2$; $u$ is in the first quadrant, $\arg u=\tan^{-1}\sqrt3=\tfrac\pi3$.`,
+R`$u=2e^{i\pi/3}$, so $u^3=8e^{i\pi}$.`,
+R`$e^{i\pi}=\cos\pi+i\sin\pi=-1$.`],
+a:R`$|u|=2$, $\arg u=\tfrac\pi3$; $u^3=-8$`}
+],
+pr:[
+{m:2, q:R`Express $\dfrac{3+4i}{1-2i}$ in the form $x+iy$.`,
+s:[R`Multiply by $\dfrac{1+2i}{1+2i}$: numerator $(3+4i)(1+2i)=3+10i+8i^2=-5+10i$.`, R`Denominator $1+4=5$.`],
+a:R`$-1+2i$`},
+{m:5, q:R`Given that $1+2i$ is a root of $z^3-z^2+3z+5=0$, find the other two roots.`,
+s:[R`Real coefficients, so $1-2i$ is also a root.`, R`Quadratic factor: $(z-1)^2+4=z^2-2z+5$.`, R`$z^3-z^2+3z+5=(z^2-2z+5)(z+1)$.`],
+a:R`$1-2i$ and $-1$`},
+{m:5, q:R`Points representing $z$ lie in the region $|z-3i|\le2$. Find the greatest and least values of $|z|$ and of $\arg z$ for points in this region.`,
+s:[R`Circle centre $3i$, radius 2. $|z|$ is the distance from $O$: greatest $3+2$, least $3-2$.`, R`The extreme arguments occur on the tangents from $O$. The angle between the tangent and the imaginary axis is $\sin^{-1}\tfrac23=0.7297$.`, R`$\arg z$ ranges from $\tfrac\pi2-0.7297$ to $\tfrac\pi2+0.7297$.`],
+a:R`$1\le|z|\le5$; $0.841\le\arg z\le2.30$`},
+{m:3, q:R`Find the Cartesian equation of the locus $|z-2|=|z+4i|$.`,
+s:[R`$z=x+iy$: $(x-2)^2+y^2=x^2+(y+4)^2$.`, R`$-4x+4=8y+16$.`],
+a:R`$x+2y+3=0$`},
+{m:2, q:R`$z=2e^{i\pi/6}$ and $w=3e^{i\pi/4}$. Find $zw$ and $\dfrac zw$ in exponential form.`,
+s:[R`Multiply moduli, add arguments: $zw=6e^{i(\pi/6+\pi/4)}$.`, R`Divide moduli, subtract arguments: $\dfrac zw=\tfrac23e^{i(\pi/6-\pi/4)}$.`],
+a:R`$zw=6e^{5\pi i/12}$, $\;\dfrac zw=\tfrac23e^{-\pi i/12}$`}
+]}
+]};
+
+DATA.s1 = {
+id:'s1', short:'S1', name:'Probability & Statistics 1', paper:'Paper 5', level:'as', color:'#0e8a83',
+exam:'1 hr 15 min', marks:50,
+blurb:'Data representation, counting, probability, discrete random variables (binomial and geometric) and the normal distribution. Counts towards AS or A Level.',
+topics:[
+/* ---------------- 1. REPRESENTATION OF DATA ---------------- */
+{id:'data', title:'Representation of Data', sum:'Stem-and-leaf, box plots, histograms, cumulative frequency, mean and standard deviation (including coded data).',
+notes:R`
+<h4>Diagrams</h4>
+<ul><li><b>Stem-and-leaf</b>: keeps raw data; always include a key (e.g. $2\,|\,1$ means $21$). Back-to-back diagrams compare two sets.</li>
+<li><b>Box-and-whisker</b>: shows min, $Q_1$, median, $Q_3$, max. Good for comparing spread and skew.</li>
+<li><b>Histogram</b>: area ∝ frequency. Use <b>frequency density</b> $=\dfrac{\text{frequency}}{\text{class width}}$ when class widths differ.</li>
+<li><b>Cumulative frequency</b>: plot at upper class boundaries; read median at $\tfrac n2$, quartiles at $\tfrac n4$ and $\tfrac{3n}{4}$.</li></ul>
+<h4>Measures</h4>
+<div class="key">$\bar x=\dfrac{\sum x}{n}\qquad \sigma^2=\dfrac{\sum x^2}{n}-\bar x^2$ &nbsp;&nbsp;(grouped: use $\sum fx$, $\sum fx^2$ with mid-points)<br>
+Coded data: $\bar x=a+\dfrac{\sum(x-a)}{n}\qquad \sigma^2=\dfrac{\sum(x-a)^2}{n}-\left(\dfrac{\sum(x-a)}{n}\right)^2$</div>
+<p>Subtracting a constant $a$ shifts the mean but does <em>not</em> change the standard deviation.</p>
+<p>For raw data with $n$ values: median is the $\tfrac{n+1}{2}$th value; for small data sets, $Q_1$ and $Q_3$ are the medians of the lower and upper halves.</p>
+<h4>Choosing measures</h4>
+<p>Median and IQR are not affected by extreme values; mean and standard deviation use all the data. If the data are skewed or contain extreme values, the median/IQR are usually more representative.</p>
+<div class="warn"><b>Common mistake:</b> plotting histogram bar heights as frequency when class widths are unequal.</div>`,
+ex:[
+{m:3, q:R`For 20 values of $x$ it is given that $\sum(x-50)=84$ and $\sum(x-50)^2=1600$. Find the mean and standard deviation of $x$.`,
+s:[R`Mean $=50+\dfrac{84}{20}=50+4.2=54.2$.`,
+R`Variance $=\dfrac{1600}{20}-\left(\dfrac{84}{20}\right)^2=80-17.64=62.36$.`,
+R`SD $=\sqrt{62.36}=7.8968\ldots$ (unchanged by the coding).`],
+a:R`Mean $54.2$, standard deviation $7.90$`},
+{m:6, q:R`The times, $t$ minutes, taken by 80 students to complete a puzzle are summarised below.
+<table class="tbl"><tr><th>Time</th><td>$0\le t\lt10$</td><td>$10\le t\lt15$</td><td>$15\le t\lt20$</td><td>$20\le t\lt30$</td><td>$30\le t\lt50$</td></tr>
+<tr><th>Frequency</th><td>12</td><td>20</td><td>25</td><td>18</td><td>5</td></tr></table>
+(a) Calculate the frequency densities needed to draw a histogram.<br>(b) Calculate estimates of the mean and standard deviation.`,
+s:[R`(a) Widths 10, 5, 5, 10, 20 → densities $1.2,\ 4,\ 5,\ 1.8,\ 0.25$.`,
+R`(b) Mid-points $5,\ 12.5,\ 17.5,\ 25,\ 40$.`,
+R`$\sum fx=60+250+437.5+450+200=1397.5\Rightarrow\bar x=\dfrac{1397.5}{80}=17.47$.`,
+R`$\sum fx^2=300+3125+7656.25+11250+8000=30331.25$.`,
+R`$\sigma^2=\dfrac{30331.25}{80}-17.46875^2=379.14-305.16=73.98$, so $\sigma=8.60$.`],
+a:R`Mean $\approx17.5$ min, SD $\approx8.60$ min`}
+],
+pr:[
+{m:5, q:R`Group A has 10 values with mean 15 and standard deviation 2. Group B has 15 values with mean 20 and standard deviation 3. Find the mean and standard deviation of all 25 values combined.`, h:R`Recover $\sum x$ and $\sum x^2$ for each group: $\sum x^2=n(\sigma^2+\bar x^2)$.`,
+s:[R`A: $\sum x=150$, $\sum x^2=10(4+225)=2290$.`, R`B: $\sum x=300$, $\sum x^2=15(9+400)=6135$.`, R`Combined: $\sum x=450$, $\sum x^2=8425$, $n=25$. Mean $=18$.`, R`$\sigma^2=\dfrac{8425}{25}-18^2=337-324=13$.`],
+a:R`Mean $18$, SD $\sqrt{13}=3.61$`},
+{m:4, q:R`The stem-and-leaf diagram shows 15 values.<br><pre class="sl">1 | 2 5 8
+2 | 1 2 5 7
+3 | 0 1 4 6
+4 | 0 2 5
+5 | 8          Key: 2 | 1 means 21</pre>Find the median, the quartiles and the interquartile range.`,
+s:[R`Ordered: 12, 15, 18, 21, 22, 25, 27, <b>30</b>, 31, 34, 36, 40, 42, 45, 58.`, R`Median = 8th value $=30$.`, R`$Q_1$ = median of the first 7 values = 4th value $=21$. $Q_3$ = 12th value $=40$.`],
+a:R`Median $30$, $Q_1=21$, $Q_3=40$, IQR $=19$`},
+{m:4, q:R`Eight numbers have mean $12.5$ and standard deviation $3$. Two more numbers, $10$ and $20$, are added. Find the new mean and standard deviation.`,
+s:[R`$\sum x=100$, $\sum x^2=8(9+156.25)=1322$.`, R`New: $\sum x=130$, $\sum x^2=1322+100+400=1822$, $n=10$.`, R`Mean $=13$; $\sigma^2=182.2-169=13.2$.`],
+a:R`Mean $13$, SD $\sqrt{13.2}=3.63$`}
+]},
+/* ---------------- 2. PERMUTATIONS & COMBINATIONS ---------------- */
+{id:'perms', title:'Permutations & Combinations', sum:'Arrangements with repeats and restrictions, selections, and using counting in probability.',
+notes:R`
+<div class="key">$n$ different objects in a line: $n!$ &nbsp;·&nbsp; with $p$ alike and $q$ alike: $\dfrac{n!}{p!\,q!}$<br>
+Ordered choice of $r$ from $n$: $\,{}^nP_r=\dfrac{n!}{(n-r)!}$ &nbsp;·&nbsp; Unordered selection: $\,{}^nC_r=\binom nr=\dfrac{n!}{r!(n-r)!}$</div>
+<h4>Standard techniques</h4>
+<ul><li><b>Items together</b>: glue them into one block, arrange the blocks, then arrange inside the block.</li>
+<li><b>Items not together</b>: total − together (for two items), or the <em>gaps method</em>: arrange the others, then place the restricted items in the gaps.</li>
+<li><b>Fixed positions</b> (“starts with a vowel”): fill the restricted position first.</li>
+<li><b>“At least one”</b>: total − none, or add the separate cases.</li>
+<li>Selections with conditions: split into cases and <em>add</em>; within a case, <em>multiply</em>.</li></ul>
+<div class="tip"><b>Exam tip:</b> Ask yourself “does order matter?” — arrangements use permutations, committees/teams use combinations.</div>`,
+ex:[
+{m:6, q:R`Find the number of different arrangements of the letters of the word ELEVEN<br>(a) with no restrictions,<br>(b) in which the three Es are together,<br>(c) in which no two Es are next to each other.`,
+s:[R`(a) 6 letters with E repeated 3 times: $\dfrac{6!}{3!}=120$.`,
+R`(b) Treat EEE as one block: items are [EEE], L, V, N → $4!=24$.`,
+R`(c) Arrange L, V, N: $3!=6$. This creates 4 gaps: _ L _ V _ N _.`,
+R`Choose 3 of the 4 gaps for the Es: $\binom43=4$. Total $6\times4=24$.`],
+a:R`(a) 120 &nbsp; (b) 24 &nbsp; (c) 24`},
+{m:6, q:R`A committee of 5 people is chosen from 6 men and 4 women.<br>(a) How many committees contain at least 2 women?<br>(b) How many committees are possible if a particular man and a particular woman refuse to serve together?`,
+s:[R`(a) Total $=\binom{10}{5}=252$. Fewer than 2 women: 0 women $\binom65=6$; 1 woman $\binom41\binom64=60$.`,
+R`At least 2 women $=252-6-60=186$. (Check: $2W:6\times20=120$, $3W:4\times15=60$, $4W:1\times6=6$.)`,
+R`(b) Committees containing both of them: choose the other 3 from 8: $\binom83=56$.`,
+R`Allowed $=252-56=196$.`],
+a:R`(a) 186 &nbsp; (b) 196`}
+],
+pr:[
+{m:5, q:R`Four-digit numbers are formed from the digits 1, 2, 4, 5, 7, 8, with no digit repeated. How many of these numbers are (a) greater than 5000, (b) even and greater than 5000?`, h:R`In (b) the first digit 8 is also even — split into cases.`,
+s:[R`(a) First digit 5, 7 or 8: $3\times5\times4\times3=180$.`, R`(b) First digit 8: last digit 2 or 4 → $1\times2\times(4\times3)=24$.`, R`First digit 5 or 7: last digit 2, 4 or 8 → $2\times3\times(4\times3)=72$.`],
+a:R`(a) 180 &nbsp; (b) 96`},
+{m:3, q:R`Seven people sit in a row. In how many ways can they sit if two particular people, A and B, must not sit next to each other?`,
+s:[R`Total $=7!=5040$.`, R`A and B together: block [AB] + 5 others → $6!\times2!=1440$.`],
+a:R`$5040-1440=3600$`},
+{m:3, q:R`In how many ways can 9 different books be divided into three groups of 4, 3 and 2 books?`,
+s:[R`Choose 4 from 9, then 3 from the remaining 5, then the last 2: $\binom94\binom53\binom22$.`, R`$=126\times10\times1$.`],
+a:R`1260`},
+{m:4, q:R`The letters of BANANA are arranged in a random order. Find the probability that the three As are next to each other.`,
+s:[R`Total arrangements $=\dfrac{6!}{3!\,2!}=60$.`, R`With AAA as a block: [AAA], B, N, N → $\dfrac{4!}{2!}=12$.`],
+a:R`$\dfrac{12}{60}=\dfrac15$`}
+]},
+/* ---------------- 3. PROBABILITY ---------------- */
+{id:'probability', title:'Probability', sum:'Mutually exclusive and independent events, conditional probability, tree and Venn diagrams.',
+notes:R`
+<div class="key">$P(A')=1-P(A)\qquad P(A\cup B)=P(A)+P(B)-P(A\cap B)$<br>
+Mutually exclusive: $P(A\cap B)=0$ &nbsp;·&nbsp; Independent: $P(A\cap B)=P(A)\,P(B)$<br>
+Conditional: $P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}$</div>
+<ul><li><b>Tree diagrams</b>: multiply along branches, add between branches. Second-stage probabilities are conditional.</li>
+<li><b>Without replacement</b>: the denominators fall by one each time.</li>
+<li>To <b>show independence</b>, calculate $P(A)P(B)$ and compare with $P(A\cap B)$ — or show $P(A\mid B)=P(A)$.</li></ul>
+<div class="warn"><b>Common mistake:</b> mixing up “mutually exclusive” (can't both happen) and “independent” (one doesn't affect the other). Events with non-zero probability can't be both.</div>
+<div class="tip"><b>Exam tip:</b> For “given that” questions, find the denominator $P(B)$ first as a full sum over all routes on the tree, then pick out the routes that also satisfy $A$.</div>`,
+ex:[
+{m:5, q:R`A bag contains 5 red and 3 blue counters. Two counters are taken at random without replacement. Find the probability that (a) both counters are the same colour, (b) the first counter is red, given that both counters are the same colour.`,
+s:[R`$P(RR)=\tfrac58\times\tfrac47=\tfrac{20}{56}$, $\;P(BB)=\tfrac38\times\tfrac27=\tfrac{6}{56}$.`,
+R`(a) $P(\text{same})=\tfrac{26}{56}=\tfrac{13}{28}$.`,
+R`(b) $P(\text{1st red}\mid\text{same})=\dfrac{P(RR)}{P(\text{same})}=\dfrac{20/56}{26/56}=\dfrac{20}{26}$.`],
+a:R`(a) $\tfrac{13}{28}$ &nbsp; (b) $\tfrac{10}{13}$`},
+{m:4, q:R`Events $A$ and $B$ satisfy $P(A)=0.4$, $P(B)=0.5$ and $P(A\cup B)=0.7$. Find $P(A\cap B)$, determine whether $A$ and $B$ are independent, and find $P(A\mid B')$.`,
+s:[R`$P(A\cap B)=0.4+0.5-0.7=0.2$.`,
+R`$P(A)P(B)=0.4\times0.5=0.2=P(A\cap B)$, so independent.`,
+R`$P(A\cap B')=P(A)-P(A\cap B)=0.2$; $P(B')=0.5$, so $P(A\mid B')=\dfrac{0.2}{0.5}$.`],
+a:R`$P(A\cap B)=0.2$; independent; $P(A\mid B')=0.4$`}
+],
+pr:[
+{m:5, q:R`The probability that it rains on a given day is $0.3$. If it rains, the probability that Ali is late is $0.4$; if it does not rain, the probability that he is late is $0.1$. Find the probability that Ali is late, and the probability that it rained given that he was late.`,
+s:[R`$P(L)=0.3\times0.4+0.7\times0.1=0.12+0.07=0.19$.`, R`$P(R\mid L)=\dfrac{0.12}{0.19}$.`],
+a:R`$P(L)=0.19$; $P(R\mid L)=\tfrac{12}{19}\approx0.632$`},
+{m:5, q:R`Two fair six-sided dice are thrown. Event $A$: the sum is 7. Event $B$: at least one die shows a 6. Find $P(A\cap B)$ and $P(A\mid B)$, and determine whether $A$ and $B$ are independent.`,
+s:[R`$P(A)=\tfrac6{36}$; $P(B)=1-\tfrac{25}{36}=\tfrac{11}{36}$.`, R`$A\cap B$: (1,6) and (6,1), so $P(A\cap B)=\tfrac2{36}$.`, R`$P(A\mid B)=\dfrac{2/36}{11/36}=\dfrac2{11}$.`, R`$P(A)P(B)=\tfrac16\times\tfrac{11}{36}=\tfrac{11}{216}\ne\tfrac{12}{216}=P(A\cap B)$.`],
+a:R`$\tfrac1{18}$, $\tfrac2{11}$; not independent`},
+{m:4, q:R`A box contains 4 dark and 6 milk chocolates. Three are chosen at random. Find the probability that (a) at least one is dark, (b) exactly two are dark.`,
+s:[R`Total selections $\binom{10}{3}=120$.`, R`(a) None dark: $\binom63=20$, so $1-\tfrac{20}{120}$.`, R`(b) $\binom42\binom61=36$, so $\tfrac{36}{120}$.`],
+a:R`(a) $\tfrac56$ &nbsp; (b) $0.3$`},
+{m:4, q:R`A and B take turns to throw a fair die, with A throwing first. The first person to throw a 6 wins. Find the probability that A wins.`, h:R`A wins on throw 1, 3, 5, … — this is a geometric series.`,
+s:[R`$P(A)=\tfrac16+\left(\tfrac56\right)^2\tfrac16+\left(\tfrac56\right)^4\tfrac16+\cdots$`, R`GP with $a=\tfrac16$, $r=\tfrac{25}{36}$: $S_\infty=\dfrac{1/6}{1-25/36}=\dfrac{1/6}{11/36}$.`],
+a:R`$\dfrac{6}{11}$`}
+]},
+/* ---------------- 4. DISCRETE RANDOM VARIABLES ---------------- */
+{id:'drv', title:'Discrete Random Variables', sum:'Probability distribution tables, expectation and variance, the binomial and geometric distributions.',
+notes:R`
+<div class="key">$\sum P(X=x)=1\qquad E(X)=\sum x\,p\qquad \mathrm{Var}(X)=\sum x^2p-\big(E(X)\big)^2$</div>
+<h4>Binomial $X\sim B(n,p)$</h4>
+<p>Fixed number of independent trials $n$, each with two outcomes and constant probability of success $p$.</p>
+<div class="key">$P(X=r)=\binom nr p^r(1-p)^{n-r}\qquad E(X)=np\qquad \mathrm{Var}(X)=np(1-p)$</div>
+<h4>Geometric $X\sim \mathrm{Geo}(p)$</h4>
+<p>Number of trials up to and including the first success.</p>
+<div class="key">$P(X=r)=(1-p)^{r-1}p\qquad P(X\gt r)=(1-p)^r\qquad P(X\le r)=1-(1-p)^r\qquad E(X)=\dfrac1p$</div>
+<p>The mode of any geometric distribution is 1.</p>
+<div class="tip"><b>Exam tip:</b> Learn the shortcut $P(X\gt r)=(1-p)^r$ — “the first $r$ trials are all failures”. It saves a lot of adding.</div>
+<div class="warn"><b>Common mistake:</b> using $\mathrm{Var}(X)=\sum x^2p$ and forgetting to subtract $\mu^2$.</div>`,
+ex:[
+{m:5, q:R`The random variable $X$ has the probability distribution below.
+<table class="tbl"><tr><th>$x$</th><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>$P(X=x)$</th><td>0.1</td><td>$k$</td><td>0.3</td><td>$2k$</td></tr></table>Find $k$, $E(X)$ and $\mathrm{Var}(X)$.`,
+s:[R`$0.1+k+0.3+2k=1\Rightarrow3k=0.6\Rightarrow k=0.2$.`,
+R`$E(X)=1(0.1)+2(0.2)+3(0.3)+4(0.4)=3$.`,
+R`$E(X^2)=1(0.1)+4(0.2)+9(0.3)+16(0.4)=10$.`,
+R`$\mathrm{Var}(X)=10-3^2$.`],
+a:R`$k=0.2$, $E(X)=3$, $\mathrm{Var}(X)=1$`},
+{m:6, q:R`15% of light bulbs produced by a factory are faulty.<br>(a) Find the probability that a box of 12 bulbs contains at most 2 faulty bulbs.<br>(b) Bulbs are tested one at a time. Find the probability that the first faulty bulb is the 5th bulb tested.`,
+s:[R`(a) $X\sim B(12,0.15)$. $P(X\le2)=0.85^{12}+12(0.15)(0.85)^{11}+66(0.15)^2(0.85)^{10}$.`,
+R`$=0.14224+0.30122+0.29236=0.73582$.`,
+R`(b) Geometric: four good then one faulty: $0.85^4\times0.15$.`],
+a:R`(a) $0.736$ &nbsp; (b) $0.0783$`}
+],
+pr:[
+{m:4, q:R`A biased die has probability $\tfrac14$ of showing a six. It is thrown until a six appears. Find the probability that (a) the first six is on the 3rd throw, (b) more than 4 throws are needed. (c) State the expected number of throws.`,
+s:[R`(a) $\left(\tfrac34\right)^2\tfrac14=\tfrac9{64}$.`, R`(b) $P(X\gt4)=\left(\tfrac34\right)^4=\tfrac{81}{256}$.`, R`(c) $E(X)=\tfrac1p=4$.`],
+a:R`(a) $0.141$ &nbsp; (b) $0.316$ &nbsp; (c) 4`},
+{m:3, q:R`$X\sim B(n,p)$ has mean $4.8$ and variance $2.88$. Find $n$ and $p$.`,
+s:[R`$np=4.8$, $np(1-p)=2.88$. Divide: $1-p=0.6$.`, R`$p=0.4$, $n=4.8\div0.4$.`],
+a:R`$n=12$, $p=0.4$`},
+{m:5, q:R`A bag has 3 red and 2 green counters. Two are taken without replacement and $X$ is the number of red counters taken. Draw up the probability distribution of $X$ and find $E(X)$ and $\mathrm{Var}(X)$.`,
+s:[R`$P(X=0)=\tfrac25\cdot\tfrac14=0.1$; $P(X=2)=\tfrac35\cdot\tfrac24=0.3$; $P(X=1)=1-0.4=0.6$.`, R`$E(X)=0.6+0.6=1.2$; $E(X^2)=0.6+1.2=1.8$.`, R`$\mathrm{Var}(X)=1.8-1.44$.`],
+a:R`$E(X)=1.2$, $\mathrm{Var}(X)=0.36$`},
+{m:4, q:R`A biased coin shows heads with probability $0.3$. Find the least number of times it must be tossed so that the probability of getting at least one head is greater than $0.95$.`,
+s:[R`$1-0.7^n\gt0.95\Rightarrow0.7^n\lt0.05$.`, R`$n\gt\dfrac{\ln0.05}{\ln0.7}=8.399\ldots$ (the inequality flips because $\ln0.7\lt0$).`],
+a:R`$n=9$`}
+]},
+/* ---------------- 5. NORMAL DISTRIBUTION ---------------- */
+{id:'normal', title:'The Normal Distribution', sum:'Standardising, using Φ tables in both directions, finding μ and σ, and the normal approximation to the binomial.',
+notes:R`
+<div class="key">$X\sim N(\mu,\sigma^2)\quad\Rightarrow\quad Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$<br>
+$P(Z\le z)=\Phi(z)\qquad P(Z\gt z)=1-\Phi(z)\qquad \Phi(-z)=1-\Phi(z)$</div>
+<ul><li>Always draw a quick sketch and shade the region you want.</li>
+<li><b>Reverse problems</b>: if $P(X\lt a)=0.2$, then $\dfrac{a-\mu}{\sigma}=-0.8416$ (negative, because it is below the mean).</li>
+<li>Two unknowns ($\mu$ and $\sigma$) → two equations → solve simultaneously.</li></ul>
+<h4>Normal approximation to $B(n,p)$</h4>
+<div class="key">Valid when $np\gt5$ and $n(1-p)\gt5$. Use $N\big(np,\ np(1-p)\big)$ with a <b>continuity correction</b>:<br>
+$P(X\ge 22)\to P(Y\gt21.5)$, &nbsp; $P(X\lt 22)\to P(Y\lt21.5)$, &nbsp; $P(X=22)\to P(21.5\lt Y\lt22.5)$</div>
+<p>Useful $z$-values: $\Phi^{-1}(0.9)=1.282$, $\Phi^{-1}(0.95)=1.645$, $\Phi^{-1}(0.975)=1.960$, $\Phi^{-1}(0.99)=2.326$.</p>
+<div class="warn"><b>Common mistake:</b> using the variance instead of the standard deviation. In $N(500,144)$, $\sigma=12$.</div>`,
+ex:[
+{m:5, q:R`The masses of bags of flour are normally distributed with mean $500\text{ g}$ and standard deviation $12\text{ g}$. Find the probability that a randomly chosen bag has mass (a) less than $490\text{ g}$, (b) between $485\text{ g}$ and $520\text{ g}$.`,
+s:[R`(a) $P\!\left(Z\lt\frac{490-500}{12}\right)=P(Z\lt-0.8333)=1-\Phi(0.8333)=1-0.7977$.`,
+R`(b) $z_1=\frac{485-500}{12}=-1.25$, $z_2=\frac{520-500}{12}=1.667$.`,
+R`$\Phi(1.667)-\Phi(-1.25)=0.9522-(1-0.8944)=0.9522-0.1056$.`],
+a:R`(a) $0.202$ &nbsp; (b) $0.847$`},
+{m:5, q:R`$X\sim N(\mu,\sigma^2)$. Given that $P(X\lt40)=0.2$ and $P(X\gt70)=0.1$, find $\mu$ and $\sigma$.`,
+s:[R`$P(X\lt40)=0.2\Rightarrow\dfrac{40-\mu}{\sigma}=-0.8416$.`,
+R`$P(X\gt70)=0.1\Rightarrow\dfrac{70-\mu}{\sigma}=1.2816$.`,
+R`So $40-\mu=-0.8416\sigma$ and $70-\mu=1.2816\sigma$. Subtract: $30=2.1232\sigma\Rightarrow\sigma=14.13$.`,
+R`$\mu=40+0.8416(14.13)=51.89$.`],
+a:R`$\mu\approx51.9$, $\sigma\approx14.1$`}
+],
+pr:[
+{m:3, q:R`Heights of adults are normally distributed with mean $165\text{ cm}$ and standard deviation $8\text{ cm}$. Find the height exceeded by 15% of adults.`,
+s:[R`$P(Z\gt z)=0.15\Rightarrow\Phi(z)=0.85\Rightarrow z=1.036$.`, R`$h=165+1.036\times8=173.3$.`],
+a:R`$173\text{ cm}$ (3 s.f.)`},
+{m:5, q:R`$X\sim B(60,0.3)$. Use a suitable approximation to find $P(X\ge22)$.`, h:R`Check $np$ and $nq$, then apply a continuity correction.`,
+s:[R`$np=18\gt5$, $nq=42\gt5$, so use $Y\sim N(18,\,12.6)$.`, R`$P(X\ge22)\approx P(Y\gt21.5)=P\!\left(Z\gt\dfrac{3.5}{\sqrt{12.6}}\right)=P(Z\gt0.986)$.`, R`$=1-0.8380$.`],
+a:R`$0.162$`},
+{m:5, q:R`Lengths of rods are normally distributed with mean $30\text{ cm}$. 90% of rods are shorter than $32.5\text{ cm}$. Find the standard deviation, and the probability that a rod is between $28\text{ cm}$ and $32\text{ cm}$ long.`,
+s:[R`$\dfrac{32.5-30}{\sigma}=1.2816\Rightarrow\sigma=1.951$.`, R`$P(28\lt X\lt32)=P(-1.025\lt Z\lt1.025)=2\Phi(1.025)-1$.`, R`$=2(0.8474)-1$.`],
+a:R`$\sigma=1.95\text{ cm}$; probability $0.695$`},
+{m:5, q:R`Journey times are normally distributed with mean 12 minutes and standard deviation 2.5 minutes. (a) Find the probability that a journey takes more than 15 minutes. (b) For 8 independent journeys, find the probability that exactly 2 take more than 15 minutes.`,
+s:[R`(a) $P(Z\gt1.2)=1-0.8849=0.1151$.`, R`(b) $Y\sim B(8,\,0.1151)$: $P(Y=2)=\binom82(0.1151)^2(0.8849)^6$.`, R`$=28\times0.013248\times0.48014$.`],
+a:R`(a) $0.115$ &nbsp; (b) $0.178$`}
+]}
+]};
+
+DATA.s2 = {
+id:'s2', short:'S2', name:'Probability & Statistics 2', paper:'Paper 6', level:'a', color:'#c2417a',
+exam:'1 hr 15 min', marks:50,
+blurb:'A Level only, and must be taken with S1 (it cannot be combined with Mechanics). Poisson distribution, linear combinations, continuous random variables, sampling and estimation, hypothesis testing.',
+topics:[
+/* ---------------- 1. POISSON ---------------- */
+{id:'poisson', title:'The Poisson Distribution', sum:'Conditions, calculations, scaling λ, Poisson approximation to the binomial and normal approximation to the Poisson.',
+notes:R`
+<div class="key">$X\sim\mathrm{Po}(\lambda)$: $\;P(X=r)=e^{-\lambda}\dfrac{\lambda^r}{r!}$, $\;r=0,1,2,\ldots$ &nbsp;·&nbsp; $E(X)=\mathrm{Var}(X)=\lambda$</div>
+<h4>When is Poisson a good model?</h4>
+<p>Events occur <b>singly</b>, <b>randomly</b>, <b>independently</b> and at a <b>constant average rate</b>. A sample with mean ≈ variance supports a Poisson model.</p>
+<p>The rate scales with the interval: 3 per 10 minutes → 6 per 20 minutes.</p>
+<h4>Approximations</h4>
+<div class="key"><b>Binomial → Poisson</b>: $B(n,p)\approx\mathrm{Po}(np)$ when $n\gt50$ and $np\lt5$.<br>
+<b>Poisson → Normal</b>: $\mathrm{Po}(\lambda)\approx N(\lambda,\lambda)$ when $\lambda\gt15$, with a continuity correction.</div>
+<div class="tip"><b>Exam tip:</b> “At least 4” = $1-P(X\le3)$. Write out the terms you are adding so the method mark is clear.</div>`,
+ex:[
+{m:5, q:R`Calls arrive at a help-desk at an average rate of 3 per 10 minutes. Find the probability of (a) exactly 2 calls in 10 minutes, (b) at least 4 calls in 20 minutes.`,
+s:[R`(a) $X\sim\mathrm{Po}(3)$: $P(X=2)=e^{-3}\dfrac{3^2}{2!}=4.5e^{-3}$.`,
+R`(b) $Y\sim\mathrm{Po}(6)$: $P(Y\ge4)=1-e^{-6}\left(1+6+\dfrac{36}{2}+\dfrac{216}{6}\right)=1-61e^{-6}$.`],
+a:R`(a) $0.224$ &nbsp; (b) $0.849$`},
+{m:4, q:R`1.2% of items produced are defective. A batch contains 250 items. Use a suitable approximation to find the probability that fewer than 3 are defective.`,
+s:[R`$X\sim B(250,0.012)$; $n\gt50$ and $np=3\lt5$, so use $\mathrm{Po}(3)$.`,
+R`$P(X\le2)=e^{-3}\left(1+3+\tfrac92\right)=8.5e^{-3}$.`],
+a:R`$0.423$`}
+],
+pr:[
+{m:5, q:R`Emails arrive at an average rate of 5 per hour. Use a suitable approximation to find the probability that more than 45 emails arrive in an 8-hour day.`,
+s:[R`$X\sim\mathrm{Po}(40)$; $\lambda\gt15$ so use $N(40,40)$.`, R`$P(X\gt45)=P(X\ge46)\approx P\!\left(Z\gt\dfrac{45.5-40}{\sqrt{40}}\right)=P(Z\gt0.870)$.`, R`$=1-0.8077$.`],
+a:R`$0.192$`},
+{m:4, q:R`Cars pass a point at an average of 2.5 per minute and lorries at 0.5 per minute, independently. Find the probability that exactly 5 vehicles pass in a 2-minute period.`,
+s:[R`Total vehicles per 2 minutes: $\mathrm{Po}(2\times(2.5+0.5))=\mathrm{Po}(6)$.`, R`$P(T=5)=e^{-6}\dfrac{6^5}{120}$.`],
+a:R`$0.161$`},
+{m:4, q:R`$X\sim\mathrm{Po}(\lambda)$ and $P(X=0)=0.2$. Find $\lambda$ and $P(X=2)$.`,
+s:[R`$e^{-\lambda}=0.2\Rightarrow\lambda=\ln5=1.609$.`, R`$P(X=2)=0.2\times\dfrac{(\ln5)^2}{2}$.`],
+a:R`$\lambda=1.61$; $P(X=2)=0.259$`},
+{m:3, q:R`Accidents occur at an average rate of 0.8 per week. Find the least number of weeks $n$ for which the probability of no accidents is less than $0.01$.`,
+s:[R`In $n$ weeks: $\mathrm{Po}(0.8n)$, $P(0)=e^{-0.8n}\lt0.01$.`, R`$0.8n\gt\ln100=4.605\Rightarrow n\gt5.76$.`],
+a:R`$n=6$`}
+]},
+/* ---------------- 2. LINEAR COMBINATIONS ---------------- */
+{id:'linear', title:'Linear Combinations of Random Variables', sum:'Expectation and variance of aX + b and aX ± bY; sums of independent normal and Poisson variables.',
+notes:R`
+<div class="key">$E(aX+b)=aE(X)+b\qquad\mathrm{Var}(aX+b)=a^2\mathrm{Var}(X)$<br>
+$E(aX\pm bY)=aE(X)\pm bE(Y)$<br>
+$\mathrm{Var}(aX\pm bY)=a^2\mathrm{Var}(X)+b^2\mathrm{Var}(Y)$ &nbsp;(for independent $X$, $Y$)</div>
+<ul><li>Variances <b>always add</b>, even for a difference.</li>
+<li><b>Sum of $n$ separate observations</b>: $\mathrm{Var}(X_1+\cdots+X_n)=n\sigma^2$. <b>One observation multiplied</b>: $\mathrm{Var}(nX)=n^2\sigma^2$. Read the question carefully!</li>
+<li>Any linear combination of independent <b>normal</b> variables is normal.</li>
+<li>The sum of independent <b>Poisson</b> variables is Poisson: $X+Y\sim\mathrm{Po}(\lambda+\mu)$. A difference or multiple is <em>not</em> Poisson.</li></ul>
+<div class="tip"><b>Exam tip:</b> “Find the probability that A is heavier than B” → define $D=A-B$ and find $P(D\gt0)$.</div>`,
+ex:[
+{m:5, q:R`Masses of apples are $N(150,20^2)$ grams and masses of oranges are $N(200,25^2)$ grams. Find the probability that the total mass of 3 randomly chosen apples and 2 randomly chosen oranges exceeds $900\text{ g}$.`,
+s:[R`$T=A_1+A_2+A_3+B_1+B_2$: $E(T)=450+400=850$.`,
+R`$\mathrm{Var}(T)=3(400)+2(625)=2450$.`,
+R`$P(T\gt900)=P\!\left(Z\gt\dfrac{50}{\sqrt{2450}}\right)=P(Z\gt1.010)=1-0.8438$.`],
+a:R`$0.156$`},
+{m:4, q:R`Using the distributions in the previous example, find the probability that a randomly chosen orange is more than $60\text{ g}$ heavier than a randomly chosen apple.`,
+s:[R`$D=B-A$: $E(D)=50$, $\mathrm{Var}(D)=625+400=1025$.`,
+R`$P(D\gt60)=P\!\left(Z\gt\dfrac{10}{\sqrt{1025}}\right)=P(Z\gt0.312)=1-0.6226$.`],
+a:R`$0.377$`}
+],
+pr:[
+{m:3, q:R`$X$ has mean 10 and variance 4; $Y$ has mean 6 and variance 9; $X$ and $Y$ are independent. Find $E(3X-2Y+5)$ and $\mathrm{Var}(3X-2Y+5)$.`,
+s:[R`$E=3(10)-2(6)+5$.`, R`$\mathrm{Var}=9(4)+4(9)$ — the $+5$ does not affect the variance.`],
+a:R`$E=23$, $\mathrm{Var}=72$`},
+{m:5, q:R`$X\sim N(20,9)$. Four independent observations $X_1,X_2,X_3,X_4$ are taken. Find $P(X_1+X_2+X_3\gt3X_4+10)$.`,
+s:[R`$D=X_1+X_2+X_3-3X_4$: $E(D)=60-60=0$.`, R`$\mathrm{Var}(D)=3(9)+9(9)=108$.`, R`$P(D\gt10)=P\!\left(Z\gt\dfrac{10}{\sqrt{108}}\right)=P(Z\gt0.962)=1-0.8321$.`],
+a:R`$0.168$`},
+{m:4, q:R`$X\sim\mathrm{Po}(1.5)$ and $Y\sim\mathrm{Po}(2.5)$ are independent. (a) Find $P(X+Y\le2)$. (b) Give two reasons why $2X-Y$ does not have a Poisson distribution.`,
+s:[R`(a) $X+Y\sim\mathrm{Po}(4)$: $e^{-4}(1+4+8)=13e^{-4}$.`, R`(b) $E(2X-Y)=0.5$ but $\mathrm{Var}(2X-Y)=4(1.5)+2.5=8.5$: mean ≠ variance; also $2X-Y$ can be negative.`],
+a:R`(a) $0.238$ &nbsp; (b) mean ≠ variance; it can take negative values`},
+{m:4, q:R`A lift has a maximum safe load of $700\text{ kg}$. Masses of adults are $N(75,12^2)$. Find the probability that 9 randomly chosen adults overload the lift.`,
+s:[R`$T\sim N(9\times75,\ 9\times144)=N(675,1296)$, SD $=36$.`, R`$P(T\gt700)=P(Z\gt0.694)=1-0.7563$.`],
+a:R`$0.244$`}
+]},
+/* ---------------- 3. CONTINUOUS RANDOM VARIABLES ---------------- */
+{id:'crv', title:'Continuous Random Variables', sum:'Probability density functions, probabilities, mean, variance, median and percentiles.',
+notes:R`
+<div class="key">$f(x)\ge0$ and $\displaystyle\int f(x)\,dx=1$ over the whole range<br>
+$P(a\lt X\lt b)=\displaystyle\int_a^bf(x)\,dx$ &nbsp;·&nbsp; $E(X)=\displaystyle\int xf(x)\,dx$ &nbsp;·&nbsp; $\mathrm{Var}(X)=\displaystyle\int x^2f(x)\,dx-\mu^2$<br>
+Median $m$: $\displaystyle\int_{\text{lower}}^{m}f(x)\,dx=0.5$ &nbsp;·&nbsp; Upper quartile $q$: $\displaystyle\int_{\text{lower}}^{q}f(x)\,dx=0.75$</div>
+<ul><li>For a continuous variable $P(X=a)=0$, so $\lt$ and $\le$ give the same probability.</li>
+<li>If the pdf is symmetrical about $x=c$, then $E(X)=c$ and the median is $c$.</li>
+<li>For an infinite range, use improper integrals: $\displaystyle\int_0^\infty ke^{-2x}\,dx=\tfrac k2$.</li></ul>
+<div class="warn"><b>Common mistake:</b> forgetting to subtract $\mu^2$ in the variance, or using limits outside the given range of $f$.</div>`,
+ex:[
+{m:7, q:R`$X$ has pdf $f(x)=kx^2$ for $0\le x\le3$ and $0$ otherwise. Find $k$, $E(X)$, $\mathrm{Var}(X)$ and the median of $X$.`,
+s:[R`$\displaystyle\int_0^3kx^2\,dx=9k=1\Rightarrow k=\tfrac19$.`,
+R`$E(X)=\displaystyle\int_0^3\frac{x^3}{9}\,dx=\frac{81}{36}=2.25$.`,
+R`$E(X^2)=\displaystyle\int_0^3\frac{x^4}{9}\,dx=\frac{243}{45}=5.4$; $\mathrm{Var}=5.4-2.25^2=0.3375$.`,
+R`Median: $\dfrac{m^3}{27}=0.5\Rightarrow m^3=13.5$.`],
+a:R`$k=\tfrac19$, $E(X)=2.25$, $\mathrm{Var}(X)=0.3375$, median $2.38$`},
+{m:6, q:R`$X$ has pdf $f(x)=\dfrac{k}{x^2}$ for $1\le x\le2$ and $0$ otherwise. Find $k$, $P(X\lt1.5)$, the median of $X$ and the exact value of $E(X)$.`,
+s:[R`$k\left[-\tfrac1x\right]_1^2=k\cdot\tfrac12=1\Rightarrow k=2$.`,
+R`$P(X\lt1.5)=2\left[1-\tfrac1{1.5}\right]=\tfrac23$.`,
+R`Median: $2\left(1-\tfrac1m\right)=0.5\Rightarrow\tfrac1m=\tfrac34$.`,
+R`$E(X)=\displaystyle\int_1^2\frac{2}{x}\,dx=2\ln2$.`],
+a:R`$k=2$; $\tfrac23$; median $\tfrac43$; $E(X)=2\ln2\approx1.39$`}
+],
+pr:[
+{m:5, q:R`$X$ has pdf $f(x)=c(1+x)$ for $0\le x\le2$. Find $c$, $P(X\gt1)$ and $E(X)$.`,
+s:[R`$c\left[x+\tfrac{x^2}2\right]_0^2=4c=1\Rightarrow c=\tfrac14$.`, R`$P(X\gt1)=\tfrac14\left[(2+2)-(1+0.5)\right]=\tfrac14(2.5)$.`, R`$E(X)=\tfrac14\displaystyle\int_0^2(x+x^2)\,dx=\tfrac14\left(2+\tfrac83\right)$.`],
+a:R`$c=\tfrac14$, $P(X\gt1)=0.625$, $E(X)=\tfrac76$`},
+{m:6, q:R`$X$ has pdf $f(x)=k(4x-x^2)$ for $0\le x\le4$. Show that $k=\tfrac3{32}$, state $E(X)$, find $P(X\lt1)$ and find $\mathrm{Var}(X)$.`,
+s:[R`$\displaystyle\int_0^4(4x-x^2)\,dx=32-\tfrac{64}{3}=\tfrac{32}3$, so $k=\tfrac{3}{32}$ ✓`, R`Symmetrical about $x=2$, so $E(X)=2$.`, R`$P(X\lt1)=\tfrac3{32}\left[2x^2-\tfrac{x^3}3\right]_0^1=\tfrac3{32}\cdot\tfrac53=\tfrac5{32}$.`, R`$E(X^2)=\tfrac3{32}\displaystyle\int_0^4(4x^3-x^4)\,dx=\tfrac3{32}(256-204.8)=4.8$.`],
+a:R`$E(X)=2$; $P(X\lt1)=\tfrac5{32}$; $\mathrm{Var}(X)=0.8$`},
+{m:3, q:R`$X$ has pdf $f(x)=\tfrac12x$ for $0\le x\le2$. Find the upper quartile of $X$.`,
+s:[R`$\displaystyle\int_0^q\tfrac12x\,dx=\tfrac{q^2}{4}=0.75$.`],
+a:R`$q=\sqrt3\approx1.73$`},
+{m:4, q:R`$X$ has pdf $f(x)=ke^{-2x}$ for $x\ge0$. Find $k$ and the median of $X$.`,
+s:[R`$\displaystyle\int_0^\infty ke^{-2x}\,dx=\left[-\tfrac k2e^{-2x}\right]_0^\infty=\tfrac k2=1\Rightarrow k=2$.`, R`$\displaystyle\int_0^m2e^{-2x}\,dx=1-e^{-2m}=0.5\Rightarrow m=\tfrac12\ln2$.`],
+a:R`$k=2$; median $0.347$`}
+]},
+/* ---------------- 4. SAMPLING & ESTIMATION ---------------- */
+{id:'sampling', title:'Sampling & Estimation', sum:'Random samples, distribution of the sample mean, the Central Limit Theorem, unbiased estimates and confidence intervals.',
+notes:R`
+<h4>Distribution of the sample mean</h4>
+<div class="key">$E(\bar X)=\mu\qquad\mathrm{Var}(\bar X)=\dfrac{\sigma^2}{n}$<br>
+If $X$ is normal, $\bar X\sim N\!\left(\mu,\dfrac{\sigma^2}n\right)$ exactly. Otherwise, by the <b>Central Limit Theorem</b>, this is approximately true for large $n$.</div>
+<h4>Unbiased estimates</h4>
+<div class="key">$\hat\mu=\bar x\qquad s^2=\dfrac{1}{n-1}\left(\sum x^2-\dfrac{(\sum x)^2}{n}\right)=\dfrac{n}{n-1}\left(\dfrac{\sum x^2}{n}-\bar x^2\right)$</div>
+<h4>Confidence intervals</h4>
+<div class="key">Mean: $\;\bar x\pm z\dfrac{\sigma}{\sqrt n}$ (use $s$ for $\sigma$ when $n$ is large)<br>
+Proportion: $\;\hat p\pm z\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$<br>
+90%: $z=1.645$ &nbsp; 95%: $z=1.960$ &nbsp; 98%: $z=2.326$ &nbsp; 99%: $z=2.576$</div>
+<p>A 95% confidence interval means: if many such intervals were constructed, about 95% of them would contain the true value.</p>
+<div class="tip"><b>Exam tip:</b> When asked whether the CLT was needed, say yes only if the population is <em>not</em> known to be normal.</div>`,
+ex:[
+{m:6, q:R`A random sample of 50 observations gives $\sum x=1240$ and $\sum x^2=31590$. Find unbiased estimates of the population mean and variance, and a 95% confidence interval for the population mean.`,
+s:[R`$\bar x=\dfrac{1240}{50}=24.8$.`,
+R`$s^2=\dfrac1{49}\left(31590-\dfrac{1240^2}{50}\right)=\dfrac{838}{49}=17.10$.`,
+R`CI: $24.8\pm1.96\sqrt{\dfrac{17.10}{50}}=24.8\pm1.146$.`],
+a:R`$\bar x=24.8$, $s^2=17.1$; CI $(23.7,\ 25.9)$`},
+{m:4, q:R`In a random sample of 200 voters, 76 support a new policy. Find a 90% confidence interval for the proportion of all voters who support the policy.`,
+s:[R`$\hat p=\tfrac{76}{200}=0.38$.`,
+R`$\sqrt{\dfrac{0.38\times0.62}{200}}=0.03432$.`,
+R`$0.38\pm1.645\times0.03432=0.38\pm0.0565$.`],
+a:R`$(0.324,\ 0.436)$`}
+],
+pr:[
+{m:3, q:R`$X\sim N(80,15^2)$. A random sample of 25 is taken. Find $P(\bar X\gt85)$.`,
+s:[R`$\bar X\sim N\!\left(80,\tfrac{225}{25}\right)=N(80,9)$.`, R`$P\!\left(Z\gt\tfrac53\right)=1-0.9522$.`],
+a:R`$0.0478$`},
+{m:4, q:R`A population (not known to be normal) has mean 4.2 and standard deviation 1.5. Find the probability that the mean of a random sample of 60 is less than 4. Justify your method.`,
+s:[R`$n=60$ is large, so by the CLT $\bar X\approx N\!\left(4.2,\tfrac{2.25}{60}\right)$.`, R`$P\!\left(Z\lt\dfrac{4-4.2}{0.1936}\right)=P(Z\lt-1.033)=1-0.8492$.`],
+a:R`$0.151$`},
+{m:3, q:R`A 95% confidence interval for $\mu$, from a sample of size $n$ with known $\sigma=6$, has width $2.94$. Find $n$.`,
+s:[R`Width $=2\times1.96\times\dfrac6{\sqrt n}=\dfrac{23.52}{\sqrt n}=2.94$.`, R`$\sqrt n=8$.`],
+a:R`$n=64$`},
+{m:4, q:R`A 95% confidence interval for $\mu$ based on a large sample of size 40 is $(12.4,\ 14.6)$. Find $\bar x$ and the estimate $s$ that was used.`,
+s:[R`$\bar x$ is the mid-point: $13.5$. Half-width $1.1=1.96\dfrac{s}{\sqrt{40}}$.`, R`$s=\dfrac{1.1\sqrt{40}}{1.96}$.`],
+a:R`$\bar x=13.5$, $s=3.55$`}
+]},
+/* ---------------- 5. HYPOTHESIS TESTS ---------------- */
+{id:'hypothesis', title:'Hypothesis Tests', sum:'Null and alternative hypotheses, one- and two-tailed tests, critical regions, Type I and Type II errors; tests for binomial p, Poisson λ and a normal mean.',
+notes:R`
+<h4>The structure of every test</h4>
+<ol><li>State $H_0$ and $H_1$ in terms of the parameter ($p$, $\lambda$ or $\mu$).</li>
+<li>State the distribution under $H_0$.</li>
+<li>Find the probability of the observed value <em>or more extreme</em> (or the test statistic $z$).</li>
+<li>Compare with the significance level (halve it for a two-tailed test).</li>
+<li>Conclude <b>in context</b> with non-assertive language: “there is (in)sufficient evidence that…”.</li></ol>
+<div class="key">$z$-test for a mean: $\;z=\dfrac{\bar x-\mu_0}{\sigma/\sqrt n}$<br>
+One-tailed critical values: 10% → 1.282, 5% → 1.645, 2.5% → 1.960, 1% → 2.326<br>
+Two-tailed 5% → ±1.960; two-tailed 1% → ±2.576</div>
+<h4>Errors</h4>
+<ul><li><b>Type I</b>: rejecting $H_0$ when it is true. $P(\text{Type I})$ = actual significance level = $P(\text{in critical region}\mid H_0)$.</li>
+<li><b>Type II</b>: not rejecting $H_0$ when it is false. Needs a specific alternative value: $P(\text{not in critical region}\mid H_1\text{ value})$.</li></ul>
+<div class="warn"><b>Common mistake:</b> for discrete tests, finding $P(X=x)$ instead of $P(X\ge x)$ or $P(X\le x)$.</div>`,
+ex:[
+{m:5, q:R`A coin is suspected of being biased towards heads. In 15 tosses it shows 12 heads. Test, at the 5% significance level, whether the coin is biased towards heads.`,
+s:[R`$H_0$: $p=0.5$; $\;H_1$: $p\gt0.5$. Under $H_0$, $X\sim B(15,0.5)$.`,
+R`$P(X\ge12)=\dfrac{\binom{15}{12}+\binom{15}{13}+\binom{15}{14}+\binom{15}{15}}{2^{15}}=\dfrac{455+105+15+1}{32768}=0.0176$.`,
+R`$0.0176\lt0.05$, so reject $H_0$.`],
+a:R`There is sufficient evidence at the 5% level that the coin is biased towards heads.`},
+{m:5, q:R`A task historically took a mean of 25 minutes with standard deviation 4 minutes. After a change, a random sample of 40 tasks has mean 23.9 minutes. Test at the 2% significance level whether the mean time has decreased.`,
+s:[R`$H_0$: $\mu=25$; $\;H_1$: $\mu\lt25$.`,
+R`$z=\dfrac{23.9-25}{4/\sqrt{40}}=-1.739$.`,
+R`Critical value for 2% (one-tailed) is $-2.054$. Since $-1.739\gt-2.054$, do not reject $H_0$.`],
+a:R`Insufficient evidence at the 2% level that the mean time has decreased.`}
+],
+pr:[
+{m:5, q:R`Accidents at a junction occurred at a mean rate of 4.5 per month. In the 3 months after a new road layout there were 7 accidents. Test at the 5% level whether the mean rate has decreased.`,
+s:[R`$H_0$: $\lambda=13.5$ (per 3 months); $\;H_1$: $\lambda\lt13.5$.`, R`$P(X\le7)=e^{-13.5}\left(1+13.5+\tfrac{13.5^2}{2!}+\cdots+\tfrac{13.5^7}{7!}\right)=0.0415$.`, R`$0.0415\lt0.05$: reject $H_0$.`],
+a:R`Sufficient evidence at the 5% level that the accident rate has decreased.`},
+{m:6, q:R`For a test of $H_0$: $p=0.3$ against $H_1$: $p\lt0.3$ with $n=20$, $H_0$ is rejected if $X\le2$. (a) Find the probability of a Type I error. (b) Given that in fact $p=0.1$, find the probability of a Type II error.`,
+s:[R`(a) $P(X\le2\mid p=0.3)=0.7^{20}+20(0.3)(0.7)^{19}+190(0.3)^2(0.7)^{18}=0.0355$.`, R`(b) Type II: $X\ge3$ when $p=0.1$: $1-\left[0.9^{20}+20(0.1)(0.9)^{19}+190(0.01)(0.9)^{18}\right]$.`, R`$=1-0.6769$.`],
+a:R`(a) $0.0355$ &nbsp; (b) $0.323$`},
+{m:5, q:R`A machine fills bags with mean $500\text{ g}$ and standard deviation $8\text{ g}$. A sample of 16 bags has mean $504.5\text{ g}$. Test at the 5% level whether the mean has changed.`,
+s:[R`$H_0$: $\mu=500$; $\;H_1$: $\mu\ne500$ (two-tailed).`, R`$z=\dfrac{504.5-500}{8/4}=2.25$.`, R`$2.25\gt1.960$: reject $H_0$.`],
+a:R`Sufficient evidence at the 5% level that the mean mass has changed.`},
+{m:5, q:R`$X\sim\mathrm{Po}(\lambda)$. Find the critical region for a test of $H_0$: $\lambda=6$ against $H_1$: $\lambda\gt6$ at the 5% significance level, and state the probability of a Type I error.`,
+s:[R`$P(X\ge10)=1-P(X\le9)=1-0.9161=0.0839\gt0.05$.`, R`$P(X\ge11)=1-P(X\le10)=1-0.9574=0.0426\lt0.05$.`],
+a:R`Critical region $X\ge11$; $P(\text{Type I})=0.0426$`}
+]}
+]};
+
+DATA.m1 = {
+id:'m1', short:'M1', name:'Mechanics', paper:'Paper 4', level:'as', color:'#c97a12',
+exam:'1 hr 15 min', marks:50,
+blurb:R`Forces, kinematics, momentum, Newton’s laws and energy. Counts towards AS or A Level. Take $g=10\ \text{m s}^{-2}$ throughout.`,
+topics:[
+/* ---------------- 1. FORCES & EQUILIBRIUM ---------------- */
+{id:'forces', title:'Forces & Equilibrium', sum:'Resolving forces, resultants, equilibrium of a particle, smooth and rough contact, friction.',
+notes:R`
+<h4>Resolving</h4>
+<p>A force $F$ at angle $\theta$ to a direction has component $F\cos\theta$ along that direction and $F\sin\theta$ perpendicular to it.</p>
+<div class="key">Resultant of components $X$ and $Y$: magnitude $\sqrt{X^2+Y^2}$, direction $\tan^{-1}\!\left(\dfrac{Y}{X}\right)$ (check the quadrant!)<br>
+Equilibrium: the sum of components is zero in <b>two perpendicular directions</b>.</div>
+<h4>Contact forces</h4>
+<ul><li><b>Weight</b> $W=mg$ acts vertically down. <b>Normal reaction</b> $R$ is perpendicular to the surface.</li>
+<li><b>Friction</b> opposes (possible) motion: $F\le\mu R$. When the particle is <em>on the point of moving</em> (limiting equilibrium) or moving, $F=\mu R$.</li>
+<li>“Smooth” means no friction. “Light” means the mass of a string/rod is ignored.</li></ul>
+<h4>Inclined planes</h4>
+<p>Resolve parallel and perpendicular to the slope. The weight has component $mg\sin\alpha$ down the slope and $mg\cos\alpha$ into the slope.</p>
+<div class="warn"><b>Common mistake:</b> assuming $R=mg$ when another force (like a pull at an angle) has a vertical component. Always resolve to find $R$.</div>
+<div class="tip"><b>Exam tip:</b> Draw a large, clear force diagram before any calculation — marks are lost through missing forces far more often than through algebra.</div>`,
+ex:[
+{m:6, q:R`A particle of mass $4\text{ kg}$ rests on a rough plane inclined at $30^\circ$ to the horizontal. The coefficient of friction is $0.4$. A force of magnitude $P\text{ N}$ acts on the particle up a line of greatest slope. Find (a) the least value of $P$ that prevents the particle sliding down, (b) the value of $P$ for which the particle is about to move up the plane.`,
+s:[R`Perpendicular to the plane: $R=40\cos30^\circ=34.64\text{ N}$, so $F_{\max}=0.4\times34.64=13.86\text{ N}$.`,
+R`Weight component down the slope: $40\sin30^\circ=20\text{ N}$.`,
+R`(a) About to slide down → friction acts <em>up</em> the slope: $P+13.86=20$.`,
+R`(b) About to move up → friction acts <em>down</em> the slope: $P=20+13.86$.`],
+a:R`(a) $P=6.14$ &nbsp; (b) $P=33.9$`},
+{m:5, q:R`A particle of weight $20\text{ N}$ hangs in equilibrium from two light strings. One string makes an angle of $30^\circ$ with the horizontal and the other makes $60^\circ$ with the horizontal, on opposite sides. Find the tensions $T_1$ (at $30^\circ$) and $T_2$ (at $60^\circ$).`,
+s:[R`Horizontally: $T_1\cos30^\circ=T_2\cos60^\circ\Rightarrow T_2=\sqrt3\,T_1$.`,
+R`Vertically: $T_1\sin30^\circ+T_2\sin60^\circ=20$.`,
+R`$\tfrac12T_1+\sqrt3T_1\cdot\tfrac{\sqrt3}{2}=2T_1=20\Rightarrow T_1=10$.`],
+a:R`$T_1=10\text{ N}$, $T_2=10\sqrt3\approx17.3\text{ N}$`}
+],
+pr:[
+{m:5, q:R`A box of mass $5\text{ kg}$ rests on rough horizontal ground ($\mu=0.3$). It is pulled by a force $P\text{ N}$ at $20^\circ$ above the horizontal. Find $P$ when the box is on the point of moving.`, h:R`$R$ is reduced by the upward component $P\sin20^\circ$.`,
+s:[R`Vertically: $R=50-P\sin20^\circ$.`, R`Horizontally (limiting): $P\cos20^\circ=0.3(50-P\sin20^\circ)$.`, R`$P(\cos20^\circ+0.3\sin20^\circ)=15\Rightarrow P=\dfrac{15}{1.0423}$.`],
+a:R`$P=14.4$`},
+{m:5, q:R`Forces of magnitude $5\text{ N}$, $8\text{ N}$ and $6\text{ N}$ act at a point in directions $0^\circ$, $90^\circ$ and $210^\circ$ measured anticlockwise from the positive $x$-axis. Find the magnitude and direction of the resultant.`,
+s:[R`$X=5+0+6\cos210^\circ=5-5.196=-0.196$.`, R`$Y=0+8+6\sin210^\circ=8-3=5$.`, R`Magnitude $=\sqrt{0.196^2+5^2}=5.004$.`, R`$X\lt0$, $Y\gt0$ → second quadrant: angle $=180^\circ-\tan^{-1}\!\left(\frac{5}{0.196}\right)=180^\circ-87.75^\circ$.`],
+a:R`$5.00\text{ N}$ at $92.2^\circ$ anticlockwise from the positive $x$-axis`},
+{m:3, q:R`A particle of mass $2\text{ kg}$ rests on a rough plane inclined at $\alpha$ to the horizontal, where $\tan\alpha=\tfrac34$. Find the least possible value of the coefficient of friction.`,
+s:[R`$\sin\alpha=0.6$, $\cos\alpha=0.8$. Down-slope component $=20\times0.6=12$; $R=20\times0.8=16$.`, R`Equilibrium requires $12\le\mu\times16$.`],
+a:R`$\mu\ge0.75$ (least value $0.75$)`},
+{m:4, q:R`A particle of mass $3\text{ kg}$ is held in equilibrium on a smooth plane inclined at $25^\circ$ by a horizontal force $P\text{ N}$. Find $P$ and the normal reaction $R$.`,
+s:[R`Along the slope: $P\cos25^\circ=30\sin25^\circ\Rightarrow P=30\tan25^\circ=13.99$.`, R`Perpendicular: $R=30\cos25^\circ+P\sin25^\circ=27.19+5.91$.`],
+a:R`$P=14.0\text{ N}$, $R=33.1\text{ N}$`}
+]},
+/* ---------------- 2. KINEMATICS ---------------- */
+{id:'kinematics', title:'Kinematics in a Straight Line', sum:'Displacement, velocity and acceleration; suvat; displacement–time and velocity–time graphs; variable acceleration using calculus.',
+notes:R`
+<h4>Constant acceleration (suvat)</h4>
+<div class="key">$v=u+at\qquad s=ut+\tfrac12at^2\qquad s=\tfrac12(u+v)t\qquad v^2=u^2+2as\qquad s=vt-\tfrac12at^2$</div>
+<p>For vertical motion under gravity use $a=-10$ (taking up as positive). At the highest point, $v=0$.</p>
+<h4>Graphs</h4>
+<ul><li>$s$–$t$ graph: gradient = velocity.</li>
+<li>$v$–$t$ graph: gradient = acceleration; area under graph = displacement (area below the axis is negative displacement).</li></ul>
+<h4>Variable acceleration</h4>
+<div class="key">$v=\dfrac{ds}{dt}\qquad a=\dfrac{dv}{dt}\qquad s=\displaystyle\int v\,dt\qquad v=\int a\,dt$</div>
+<p>Use calculus whenever $v$ or $a$ is given as a function of $t$ — suvat only works for <em>constant</em> acceleration.</p>
+<div class="warn"><b>Common mistake:</b> confusing distance and displacement. If the particle changes direction, find where $v=0$ and add the distances for each stage separately.</div>`,
+ex:[
+{m:5, q:R`A ball is projected vertically upwards at $20\text{ m s}^{-1}$ from a point $15\text{ m}$ above the ground. Find (a) the greatest height above the ground, (b) the time taken to reach the ground.`,
+s:[R`(a) Up positive, $a=-10$. At the top $v=0$: $0=20^2-20s\Rightarrow s=20$.`,
+R`Height above ground $=15+20=35\text{ m}$.`,
+R`(b) Ground is $15\text{ m}$ below the start: $-15=20t-5t^2\Rightarrow t^2-4t-3=0$.`,
+R`$t=\dfrac{4+\sqrt{28}}{2}=2+\sqrt7$ (reject the negative root).`],
+a:R`(a) $35\text{ m}$ &nbsp; (b) $4.65\text{ s}$`},
+{m:7, q:R`A particle moves in a straight line from $O$ with velocity $v=3t^2-12t+9\ \text{m s}^{-1}$ for $0\le t\le4$. Find the times at which it is at instantaneous rest, its acceleration at $t=4$, and the total distance travelled in the 4 seconds.`,
+s:[R`$v=3(t-1)(t-3)=0\Rightarrow t=1$ and $t=3$.`,
+R`$a=\dfrac{dv}{dt}=6t-12$, so $a(4)=12\text{ m s}^{-2}$.`,
+R`$s=\displaystyle\int v\,dt=t^3-6t^2+9t$ (with $s=0$ at $t=0$).`,
+R`$s(1)=4$, $s(3)=0$, $s(4)=4$.`,
+R`Distance $=|4-0|+|0-4|+|4-0|=12$.`],
+a:R`Rest at $t=1$ and $t=3$; $a=12\text{ m s}^{-2}$; distance $12\text{ m}$`}
+],
+pr:[
+{m:4, q:R`A car accelerates uniformly from rest to $20\text{ m s}^{-1}$ in $8\text{ s}$, travels at constant speed for $T\text{ s}$, then decelerates uniformly to rest in $10\text{ s}$. The total distance is $1090\text{ m}$. Find $T$.`, h:R`Total area under the $v$–$t$ graph.`,
+s:[R`Areas: $\tfrac12\times8\times20=80$, $\;20T$, $\;\tfrac12\times10\times20=100$.`, R`$180+20T=1090$.`],
+a:R`$T=45.5$`},
+{m:3, q:R`A particle with constant acceleration passes point $A$ at $4\text{ m s}^{-1}$ and point $B$ at $10\text{ m s}^{-1}$, where $AB=35\text{ m}$. Find the acceleration and the time from $A$ to $B$.`,
+s:[R`$v^2=u^2+2as$: $100=16+70a\Rightarrow a=1.2$.`, R`$t=\dfrac{v-u}{a}=\dfrac{6}{1.2}$.`],
+a:R`$a=1.2\text{ m s}^{-2}$, $t=5\text{ s}$`},
+{m:5, q:R`Particle $P$ starts from rest at $O$ with acceleration $2\text{ m s}^{-2}$. Three seconds later, particle $Q$ leaves $O$ in the same direction with constant speed $13\text{ m s}^{-1}$. Find when $Q$ first draws level with $P$ and how far from $O$ this happens.`,
+s:[R`At time $t$ (from $P$'s start): $s_P=t^2$, $\;s_Q=13(t-3)$.`, R`$t^2=13t-39\Rightarrow t^2-13t+39=0\Rightarrow t=\dfrac{13\pm\sqrt{13}}{2}$.`, R`First meeting at $t=4.697$; $s=t^2=22.06$. (At $t=8.30$, $P$ overtakes again.)`],
+a:R`$t=4.70\text{ s}$ after $P$ starts, $22.1\text{ m}$ from $O$`},
+{m:5, q:R`A particle starts from rest at $O$ and moves with acceleration $a=6-2t\ \text{m s}^{-2}$. Find its maximum velocity and its displacement from $O$ at that time.`,
+s:[R`$v=\displaystyle\int(6-2t)\,dt=6t-t^2$ (as $v=0$ at $t=0$).`, R`Maximum when $a=0\Rightarrow t=3$: $v=18-9=9$.`, R`$s=\displaystyle\int(6t-t^2)\,dt=3t^2-\tfrac{t^3}{3}$; at $t=3$: $27-9$.`],
+a:R`$v_{\max}=9\text{ m s}^{-1}$; displacement $18\text{ m}$`}
+]},
+/* ---------------- 3. MOMENTUM ---------------- */
+{id:'momentum', title:'Momentum', sum:'Linear momentum as a vector, conservation of momentum in direct collisions and coalescence.',
+notes:R`
+<div class="key">Momentum $=mv$ (a vector — direction matters, so choose a positive direction).<br>
+<b>Conservation of momentum</b> (no external force along the line of motion):<br>
+$$m_1u_1+m_2u_2=m_1v_1+m_2v_2$$
+If the particles <b>coalesce</b>: $m_1u_1+m_2u_2=(m_1+m_2)v$.</div>
+<ul><li>A particle moving in the negative direction has negative velocity — put the sign in!</li>
+<li>Kinetic energy is usually <em>lost</em> in a collision: loss $=\text{KE before}-\text{KE after}$.</li>
+<li>For a chain of collisions, apply conservation to each collision separately, then check whether a further collision occurs (compare final velocities).</li></ul>
+<div class="warn"><b>Common mistake:</b> giving a speed when a velocity is asked for. If your answer is negative, state the direction in words.</div>`,
+ex:[
+{m:5, q:R`Sphere $A$, mass $0.3\text{ kg}$, moving at $5\text{ m s}^{-1}$, collides directly with sphere $B$, mass $0.2\text{ kg}$, moving at $2\text{ m s}^{-1}$ towards $A$. After the collision $A$ moves at $1\text{ m s}^{-1}$ in its original direction. Find the velocity of $B$ after the collision and the loss of kinetic energy.`,
+s:[R`Positive = $A$'s initial direction. Before: $0.3(5)+0.2(-2)=1.1$.`,
+R`After: $0.3(1)+0.2v=1.1\Rightarrow v=4$.`,
+R`KE before $=\tfrac12(0.3)(25)+\tfrac12(0.2)(4)=4.15\text{ J}$; after $=\tfrac12(0.3)(1)+\tfrac12(0.2)(16)=1.75\text{ J}$.`],
+a:R`$B$ moves at $4\text{ m s}^{-1}$ in $A$'s original direction; KE lost $=2.4\text{ J}$`},
+{m:5, q:R`Particle $P$ (mass $2\text{ kg}$) moving at $6\text{ m s}^{-1}$ hits particle $Q$ (mass $m\text{ kg}$) at rest; they coalesce and move at $4\text{ m s}^{-1}$. (a) Find $m$. (b) The combined particle then hits particle $R$ (mass $1\text{ kg}$) moving at $3\text{ m s}^{-1}$ in the opposite direction. The combined particle is brought to rest. Find the velocity of $R$ after the impact.`,
+s:[R`(a) $2\times6=(2+m)\times4\Rightarrow m=1$.`,
+R`(b) Combined mass $3\text{ kg}$. Before: $3(4)+1(-3)=9$.`,
+R`After: $3(0)+1\times v=9$.`],
+a:R`(a) $m=1$ &nbsp; (b) $9\text{ m s}^{-1}$ in the original direction of $P$`}
+],
+pr:[
+{m:3, q:R`Particles $A$ (mass $3\text{ kg}$, speed $4\text{ m s}^{-1}$) and $B$ (mass $2\text{ kg}$, speed $5\text{ m s}^{-1}$) move directly towards each other and coalesce. Find the velocity of the combined particle.`,
+s:[R`Positive = $A$'s direction: $3(4)+2(-5)=2$.`, R`$5v=2\Rightarrow v=0.4$.`],
+a:R`$0.4\text{ m s}^{-1}$ in $A$'s original direction`},
+{m:5, q:R`Particles $A$, $B$, $C$ of masses $1$, $2$, $3\text{ kg}$ lie in a straight line. $A$ moves at $6\text{ m s}^{-1}$ towards $B$, which is at rest. After the collision $A$ rebounds at $2\text{ m s}^{-1}$. $B$ then hits $C$ (at rest) and they coalesce. Find the final velocity of $B$ and $C$, and explain why there are no further collisions.`,
+s:[R`First collision: $1(6)=1(-2)+2v_B\Rightarrow v_B=4$.`, R`Second: $2(4)=5v\Rightarrow v=1.6$.`, R`$A$ moves away at $2\text{ m s}^{-1}$ in the opposite direction, so it can never catch $B$ and $C$.`],
+a:R`$1.6\text{ m s}^{-1}$; no further collisions`},
+{m:4, q:R`Particle $A$ (mass $0.4\text{ kg}$) moving at $3\text{ m s}^{-1}$ hits particle $B$ (mass $0.6\text{ kg}$) at rest. After the collision $B$ moves at $1.5\text{ m s}^{-1}$. Find the velocity of $A$ after the collision and the loss of kinetic energy.`,
+s:[R`$0.4(3)=0.4v+0.6(1.5)\Rightarrow1.2=0.4v+0.9\Rightarrow v=0.75$.`, R`KE before $=1.8$; after $=0.1125+0.675=0.7875$.`],
+a:R`$0.75\text{ m s}^{-1}$ (same direction); loss $1.01\text{ J}$`},
+{m:5, q:R`Particle $A$ (mass $2\text{ kg}$) moving at $5\text{ m s}^{-1}$ collides with and coalesces with particle $B$ (mass $3\text{ kg}$) at rest on a rough horizontal surface with coefficient of friction $0.25$. Find how far the combined particle travels before coming to rest.`, h:R`After the collision, friction gives deceleration $\mu g$.`,
+s:[R`$2(5)=5v\Rightarrow v=2$.`, R`Friction $=0.25\times50=12.5\text{ N}$, so deceleration $=12.5/5=2.5\text{ m s}^{-2}$.`, R`$0=2^2-2(2.5)s$.`],
+a:R`$0.8\text{ m}$`}
+]},
+/* ---------------- 4. NEWTON'S LAWS ---------------- */
+{id:'newton', title:'Newton’s Laws of Motion', sum:'F = ma, connected particles over pulleys, motion on slopes, lifts, towing.',
+notes:R`
+<div class="key">Newton's 2nd law: <b>resultant force</b> $=ma$ (in the direction of the acceleration).<br>Weight $=mg$ with $g=10\ \text{m s}^{-2}$.</div>
+<ul><li><b>Connected particles</b> (light inextensible string over a smooth pulley): same tension either side and same magnitude of acceleration. Write $F=ma$ for each particle separately, or for the whole system to find $a$ quickly.</li>
+<li><b>Lifts</b>: $R-mg=ma$ (with $a$ positive upwards).</li>
+<li><b>Towing</b>: tension (or thrust) in the tow-bar is an internal force — it cancels for the whole system.</li>
+<li>When a string becomes slack (e.g. a particle hits the floor), the other particle continues with no tension — re-start the analysis.</li></ul>
+<div class="tip"><b>Exam tip:</b> Decide which way the system will move <em>before</em> putting in friction; friction opposes the motion.</div>`,
+ex:[
+{m:6, q:R`Particles $A$ (mass $5\text{ kg}$) and $B$ (mass $3\text{ kg}$) are attached to the ends of a light inextensible string passing over a smooth fixed pulley. The system is released from rest. Find the acceleration and the tension. $A$ hits the floor after falling $2\text{ m}$; find its speed at that moment.`,
+s:[R`$A$: $50-T=5a$. $\;B$: $T-30=3a$.`,
+R`Add: $20=8a\Rightarrow a=2.5\text{ m s}^{-2}$.`,
+R`$T=30+3(2.5)=37.5\text{ N}$.`,
+R`$v^2=0+2(2.5)(2)=10\Rightarrow v=\sqrt{10}$.`],
+a:R`$a=2.5\text{ m s}^{-2}$, $T=37.5\text{ N}$, speed $3.16\text{ m s}^{-1}$`},
+{m:7, q:R`Particle $A$ (mass $4\text{ kg}$) lies on a rough plane inclined at $30^\circ$ ($\mu=0.2$). It is attached by a light string, passing over a smooth pulley at the top of the plane, to particle $B$ (mass $3\text{ kg}$) hanging freely. Find the acceleration of the system and the tension.`,
+s:[R`Compare: $B$'s weight $30\text{ N}$ vs $A$'s down-slope component $40\sin30^\circ=20\text{ N}$ → $A$ moves <em>up</em>, so friction acts down the slope.`,
+R`$R=40\cos30^\circ=34.64$, $F=0.2\times34.64=6.928\text{ N}$.`,
+R`$B$: $30-T=3a$. $\;A$: $T-20-6.928=4a$.`,
+R`Add: $3.072=7a\Rightarrow a=0.439$. Then $T=30-3(0.439)$.`],
+a:R`$a=0.439\text{ m s}^{-2}$, $T=28.7\text{ N}$`}
+],
+pr:[
+{m:4, q:R`A man of mass $70\text{ kg}$ stands in a lift. Find the reaction from the floor when the lift (a) accelerates upwards at $1.5\text{ m s}^{-2}$, (b) is moving upwards but decelerating at $2\text{ m s}^{-2}$.`,
+s:[R`(a) $R-700=70(1.5)$.`, R`(b) Acceleration is $-2$ (upward positive): $R-700=70(-2)$.`],
+a:R`(a) $805\text{ N}$ &nbsp; (b) $560\text{ N}$`},
+{m:4, q:R`A car of mass $1200\text{ kg}$ tows a trailer of mass $400\text{ kg}$. Resistances are $300\text{ N}$ on the car and $100\text{ N}$ on the trailer. The driving force is $2000\text{ N}$. Find the acceleration and the tension in the tow-bar.`,
+s:[R`Whole system: $2000-300-100=1600a\Rightarrow a=1$.`, R`Trailer: $T-100=400(1)$.`],
+a:R`$a=1\text{ m s}^{-2}$, $T=500\text{ N}$`},
+{m:5, q:R`A particle is released from rest on a rough plane inclined at $35^\circ$ ($\mu=0.3$). Find its speed after it has slid $5\text{ m}$.`,
+s:[R`$a=g(\sin35^\circ-0.3\cos35^\circ)=10(0.5736-0.2457)=3.278\text{ m s}^{-2}$.`, R`$v^2=2(3.278)(5)=32.78$.`],
+a:R`$5.73\text{ m s}^{-1}$`},
+{m:5, q:R`Block $A$ (mass $2\text{ kg}$) is on a rough horizontal table ($\mu=0.25$). It is connected by a light string over a smooth pulley at the edge to block $B$ (mass $1.5\text{ kg}$) hanging freely. Find the acceleration and the tension.`,
+s:[R`Friction on $A$: $0.25\times20=5\text{ N}$.`, R`$B$: $15-T=1.5a$. $\;A$: $T-5=2a$. Add: $10=3.5a$.`, R`$a=2.857$, $T=5+2(2.857)$.`],
+a:R`$a=2.86\text{ m s}^{-2}$, $T=10.7\text{ N}$`}
+]},
+/* ---------------- 5. ENERGY, WORK & POWER ---------------- */
+{id:'energy', title:'Energy, Work & Power', sum:'Work done by a force, kinetic and potential energy, the work–energy principle, power and driving force.',
+notes:R`
+<div class="key">Work done $=Fd\cos\theta$ &nbsp;·&nbsp; KE $=\tfrac12mv^2$ &nbsp;·&nbsp; GPE $=mgh$<br>
+<b>Work–energy principle</b>: work done by driving forces − work done against resistances = change in (KE + PE)<br>
+<b>Power</b> $P=Fv$ (driving force × speed). 1 W = 1 J s$^{-1}$.</div>
+<ul><li>If only gravity does work, mechanical energy is conserved: $\tfrac12mu^2+mgh_1=\tfrac12mv^2+mgh_2$.</li>
+<li><b>Maximum speed</b> occurs when acceleration is zero: driving force $=\dfrac{P}{v}=$ total resistance.</li>
+<li>Work done against friction on a slope $=\mu R\times d$, where $R$ is found by resolving.</li></ul>
+<div class="tip"><b>Exam tip:</b> If the question says “use an energy method”, you <em>must</em> — a suvat solution will lose the method marks.</div>`,
+ex:[
+{m:6, q:R`A car of mass $1000\text{ kg}$ has engine power $30\text{ kW}$ and experiences a constant resistance of $600\text{ N}$. (a) Find its maximum speed on a level road. (b) Find its acceleration at $20\text{ m s}^{-1}$ on a level road. (c) Find its maximum speed up a hill inclined at $\alpha$ where $\sin\alpha=0.05$.`,
+s:[R`(a) At max speed $\dfrac{30000}{v}=600\Rightarrow v=50$.`,
+R`(b) Driving force $=\dfrac{30000}{20}=1500$; $1500-600=1000a\Rightarrow a=0.9$.`,
+R`(c) Resistance + weight component $=600+1000(10)(0.05)=1100$; $\dfrac{30000}{v}=1100$.`],
+a:R`(a) $50\text{ m s}^{-1}$ &nbsp; (b) $0.9\text{ m s}^{-2}$ &nbsp; (c) $27.3\text{ m s}^{-1}$`},
+{m:6, q:R`A block of mass $5\text{ kg}$ is projected up a line of greatest slope of a rough plane inclined at $20^\circ$, with speed $8\text{ m s}^{-1}$. The coefficient of friction is $0.3$. Use an energy method to find how far the block travels up the plane, and determine whether it then slides back down.`,
+s:[R`$R=50\cos20^\circ=46.98$, friction $=0.3\times46.98=14.10\text{ N}$.`,
+R`Initial KE $=\tfrac12(5)(64)=160\text{ J}$.`,
+R`KE lost = PE gained + work against friction: $160=50d\sin20^\circ+14.10d=31.20d$.`,
+R`$d=5.13\text{ m}$. At rest: down-slope weight component $50\sin20^\circ=17.1\text{ N}\gt$ max friction $14.1\text{ N}$, so it slides back.`],
+a:R`$5.13\text{ m}$; yes, it slides back down`}
+],
+pr:[
+{m:5, q:R`A crate of mass $40\text{ kg}$ is pulled $15\text{ m}$ across a horizontal floor by a rope at $30^\circ$ above the horizontal with tension $120\text{ N}$. A constant resistance of $80\text{ N}$ acts. Find the work done by the tension and the speed of the crate after $15\text{ m}$, if it starts from rest.`,
+s:[R`Work by tension $=120\cos30^\circ\times15=1558.8\text{ J}$.`, R`Work against resistance $=80\times15=1200\text{ J}$.`, R`$\tfrac12(40)v^2=358.8\Rightarrow v^2=17.94$.`],
+a:R`$1560\text{ J}$; $4.24\text{ m s}^{-1}$`},
+{m:4, q:R`A particle of mass $2\text{ kg}$ is released from rest at the top of a slide $6\text{ m}$ high. (a) If the slide is smooth, find the speed at the bottom. (b) If the speed at the bottom is actually $9\text{ m s}^{-1}$, find the work done against resistance.`,
+s:[R`(a) $\tfrac12mv^2=mgh\Rightarrow v=\sqrt{2(10)(6)}=\sqrt{120}$.`, R`(b) PE lost $=120\text{ J}$, KE gained $=\tfrac12(2)(81)=81\text{ J}$.`],
+a:R`(a) $10.95\text{ m s}^{-1}$ &nbsp; (b) $39\text{ J}$`},
+{m:3, q:R`A cyclist and bicycle have total mass $80\text{ kg}$. They climb a hill inclined at $\sin^{-1}\tfrac1{20}$ at a constant $5\text{ m s}^{-1}$ against a resistance of $25\text{ N}$. Find the power output.`,
+s:[R`Constant speed → driving force $=25+800\times\tfrac1{20}=65\text{ N}$.`, R`$P=Fv=65\times5$.`],
+a:R`$325\text{ W}$`},
+{m:3, q:R`A ball of mass $0.5\text{ kg}$ is thrown vertically upwards at $15\text{ m s}^{-1}$. Air resistance does $20\text{ J}$ of work by the time the ball reaches its highest point. Find the greatest height reached.`,
+s:[R`Initial KE $=\tfrac12(0.5)(225)=56.25\text{ J}$.`, R`$56.25=mgh+20=5h+20$.`],
+a:R`$7.25\text{ m}$`}
+]}
+]};
+
+/* Each row: [label, formula, star]  — star = 1 means "not in the MF19 list of formulae: memorise" */
+FORMULAS.p1 = [
+{h:'Quadratics', r:[
+['Quadratic formula', R`$x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$`,1],
+['Completed square', R`$ax^2+bx+c=a\left(x+\frac{b}{2a}\right)^2+c-\frac{b^2}{4a}$`,1],
+['Discriminant', R`$b^2-4ac\gt0$ two roots · $=0$ equal roots (tangent) · $\lt0$ no real roots`,1]]},
+{h:'Functions', r:[
+['Inverse', R`$y=f(x)\Rightarrow$ make $x$ the subject; domain of $f^{-1}$ = range of $f$`,1],
+['Composite', R`$fg(x)=f\big(g(x)\big)$`,1],
+['Translations', R`$f(x)+a$: $\binom{0}{a}$ · $f(x+a)$: $\binom{-a}{0}$`,1],
+['Stretches', R`$af(x)$: factor $a$ ∥ $y$-axis · $f(ax)$: factor $\frac1a$ ∥ $x$-axis`,1],
+['Reflections', R`$-f(x)$: in $x$-axis · $f(-x)$: in $y$-axis`,1]]},
+{h:'Coordinate geometry', r:[
+['Gradient', R`$m=\dfrac{y_2-y_1}{x_2-x_1}$`,1],
+['Mid-point', R`$\left(\dfrac{x_1+x_2}{2},\dfrac{y_1+y_2}{2}\right)$`,1],
+['Distance', R`$\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$`,1],
+['Straight line', R`$y-y_1=m(x-x_1)$`,1],
+['Perpendicular', R`$m_1m_2=-1$`,1],
+['Circle', R`$(x-a)^2+(y-b)^2=r^2$; &nbsp; $x^2+y^2+2gx+2fy+c=0$: centre $(-g,-f)$, $r=\sqrt{g^2+f^2-c}$`,1]]},
+{h:'Circular measure', r:[
+['Radians', R`$\pi\text{ rad}=180^\circ$`,0],
+['Arc length', R`$s=r\theta$`,0],
+['Sector area', R`$A=\tfrac12r^2\theta$`,0],
+['Segment area', R`$\tfrac12r^2(\theta-\sin\theta)$`,1],
+['Triangle area', R`$\tfrac12ab\sin C$`,1]]},
+{h:'Trigonometry', r:[
+['Identities', R`$\tan\theta\equiv\dfrac{\sin\theta}{\cos\theta}\qquad\sin^2\theta+\cos^2\theta\equiv1$`,0],
+['Exact values', R`$\sin30^\circ=\tfrac12,\ \sin45^\circ=\tfrac{\sqrt2}2,\ \sin60^\circ=\tfrac{\sqrt3}2,\ \tan30^\circ=\tfrac1{\sqrt3},\ \tan60^\circ=\sqrt3$`,1],
+['Principal values', R`$-\tfrac\pi2\le\sin^{-1}x\le\tfrac\pi2$ · $0\le\cos^{-1}x\le\pi$ · $-\tfrac\pi2\lt\tan^{-1}x\lt\tfrac\pi2$`,0],
+['Second solutions', R`$\sin$: $180^\circ-\alpha$ · $\cos$: $360^\circ-\alpha$ · $\tan$: $\alpha+180^\circ$`,1]]},
+{h:'Series', r:[
+['Binomial', R`$(a+b)^n=a^n+\binom n1a^{n-1}b+\binom n2a^{n-2}b^2+\cdots+b^n$, &nbsp; $\binom nr=\dfrac{n!}{r!(n-r)!}$`,0],
+['Arithmetic', R`$u_n=a+(n-1)d\qquad S_n=\tfrac n2\{2a+(n-1)d\}=\tfrac n2(a+l)$`,0],
+['Geometric', R`$u_n=ar^{n-1}\qquad S_n=\dfrac{a(1-r^n)}{1-r}\qquad S_\infty=\dfrac a{1-r},\ |r|\lt1$`,0]]},
+{h:'Differentiation', r:[
+['Power rule', R`$\dfrac{d}{dx}x^n=nx^{n-1}$`,0],
+['Chain rule', R`$\dfrac{dy}{dx}=\dfrac{dy}{du}\cdot\dfrac{du}{dx}$; &nbsp; $\dfrac{d}{dx}(ax+b)^n=an(ax+b)^{n-1}$`,1],
+['Tangent / normal', R`gradient $m=f'(x_1)$; normal gradient $-\dfrac1m$`,1],
+['Stationary points', R`$\dfrac{dy}{dx}=0$; &nbsp; $\dfrac{d^2y}{dx^2}\gt0$ min, $\lt0$ max`,1],
+['Connected rates', R`$\dfrac{dy}{dt}=\dfrac{dy}{dx}\times\dfrac{dx}{dt}$`,1]]},
+{h:'Integration', r:[
+['Power rule', R`$\displaystyle\int x^n\,dx=\frac{x^{n+1}}{n+1}+c,\ n\ne-1$`,0],
+['Linear inside', R`$\displaystyle\int(ax+b)^n\,dx=\frac{(ax+b)^{n+1}}{a(n+1)}+c$`,1],
+['Area between curves', R`$\displaystyle\int_a^b(y_{\text{top}}-y_{\text{bottom}})\,dx$`,1],
+['Volume (x-axis)', R`$V=\pi\displaystyle\int_a^by^2\,dx$`,1],
+['Volume (y-axis)', R`$V=\pi\displaystyle\int_c^dx^2\,dy$`,1]]}
+];
+
+FORMULAS.s1 = [
+{h:'Summary statistics', r:[
+['Mean', R`$\bar x=\dfrac{\sum x}{n}=\dfrac{\sum fx}{\sum f}$`,0],
+['Variance', R`$\sigma^2=\dfrac{\sum x^2}{n}-\bar x^2=\dfrac{\sum fx^2}{\sum f}-\bar x^2$`,0],
+['Coded data', R`$\bar x=a+\dfrac{\sum(x-a)}{n}\qquad\sigma^2=\dfrac{\sum(x-a)^2}{n}-\left(\dfrac{\sum(x-a)}{n}\right)^2$`,1],
+['Frequency density', R`$\dfrac{\text{frequency}}{\text{class width}}$`,1],
+['Combining', R`$\sum x^2=n(\sigma^2+\bar x^2)$`,1]]},
+{h:'Permutations & combinations', r:[
+['Arrangements', R`$n!$; &nbsp; with repeats $\dfrac{n!}{p!\,q!\cdots}$`,1],
+['Permutations', R`$\,{}^nP_r=\dfrac{n!}{(n-r)!}$`,1],
+['Combinations', R`$\,{}^nC_r=\binom nr=\dfrac{n!}{r!(n-r)!}$`,0]]},
+{h:'Probability', r:[
+['Complement', R`$P(A')=1-P(A)$`,1],
+['Addition', R`$P(A\cup B)=P(A)+P(B)-P(A\cap B)$`,1],
+['Conditional', R`$P(A\mid B)=\dfrac{P(A\cap B)}{P(B)}$`,1],
+['Independent', R`$P(A\cap B)=P(A)P(B)$`,1],
+['Mutually exclusive', R`$P(A\cap B)=0$`,1]]},
+{h:'Discrete random variables', r:[
+['Expectation', R`$E(X)=\sum xp$`,0],
+['Variance', R`$\mathrm{Var}(X)=\sum x^2p-\{E(X)\}^2$`,0],
+['Binomial $B(n,p)$', R`$P(X=r)=\binom nrp^r(1-p)^{n-r}$; &nbsp; mean $np$, variance $np(1-p)$`,0],
+['Geometric', R`$P(X=r)=p(1-p)^{r-1}$; &nbsp; mean $\dfrac1p$`,0],
+['Geometric shortcut', R`$P(X\gt r)=(1-p)^r\qquad P(X\le r)=1-(1-p)^r$`,1]]},
+{h:'Normal distribution', r:[
+['Standardising', R`$Z=\dfrac{X-\mu}{\sigma}\sim N(0,1)$`,1],
+['Symmetry', R`$\Phi(-z)=1-\Phi(z)\qquad P(Z\gt z)=1-\Phi(z)$`,1],
+['Approx. to binomial', R`$np\gt5,\ n(1-p)\gt5$: $\;B(n,p)\approx N\big(np,\ np(1-p)\big)$`,1],
+['Continuity correction', R`$P(X\le k)\to P(Y\lt k+0.5)$; &nbsp; $P(X\ge k)\to P(Y\gt k-0.5)$`,1]]}
+];
+
+FORMULAS.m1 = [
+{h:'Kinematics', r:[
+['Constant acceleration', R`$v=u+at\qquad s=ut+\tfrac12at^2\qquad s=\tfrac12(u+v)t\qquad v^2=u^2+2as\qquad s=vt-\tfrac12at^2$`,0],
+['Variable acceleration', R`$v=\dfrac{ds}{dt}\quad a=\dfrac{dv}{dt}\quad s=\displaystyle\int v\,dt\quad v=\int a\,dt$`,1],
+['Graphs', R`$v$–$t$: gradient = acceleration, area = displacement`,1],
+['Gravity', R`$g=10\ \text{m s}^{-2}$`,1]]},
+{h:'Forces & equilibrium', r:[
+['Resolving', R`components $F\cos\theta$ and $F\sin\theta$`,1],
+['Resultant', R`$R=\sqrt{X^2+Y^2}$, &nbsp; direction $\tan^{-1}\dfrac{Y}{X}$`,1],
+['Weight', R`$W=mg$`,1],
+['Friction', R`$F\le\mu R$; &nbsp; $F=\mu R$ when limiting or moving`,1],
+['Inclined plane', R`along slope $mg\sin\alpha$, &nbsp; into slope $mg\cos\alpha$`,1]]},
+{h:'Newton’s laws', r:[
+['Second law', R`resultant force $=ma$`,1],
+['Lift', R`$R-mg=ma$`,1],
+['Connected particles', R`same tension and same magnitude of acceleration (light string, smooth pulley)`,1]]},
+{h:'Momentum', r:[
+['Momentum', R`$p=mv$`,1],
+['Conservation', R`$m_1u_1+m_2u_2=m_1v_1+m_2v_2$`,1],
+['Coalescence', R`$m_1u_1+m_2u_2=(m_1+m_2)v$`,1]]},
+{h:'Energy, work & power', r:[
+['Work done', R`$W=Fd\cos\theta$`,1],
+['Kinetic energy', R`$\tfrac12mv^2$`,1],
+['Potential energy', R`$mgh$`,1],
+['Work–energy', R`work by driving force − work against resistance = $\Delta\text{KE}+\Delta\text{PE}$`,1],
+['Power', R`$P=Fv$; &nbsp; max speed when $\dfrac Pv=$ resistance`,1]]}
+];
+
+FORMULAS.p3 = [
+{h:'Algebra', r:[
+['Modulus', R`$|x-a|\lt b\iff a-b\lt x\lt a+b$; &nbsp; $|f|=|g|\iff f^2=g^2$`,1],
+['Remainder theorem', R`remainder on dividing $p(x)$ by $(ax-b)$ is $p\!\left(\tfrac ba\right)$`,1],
+['Partial fractions', R`$\dfrac{A}{ax+b}+\dfrac{B}{cx+d}+\dfrac{C}{(cx+d)^2}$; &nbsp; $\dfrac{Bx+C}{x^2+c^2}$ for a quadratic factor`,1],
+['Binomial series', R`$(1+x)^n=1+nx+\dfrac{n(n-1)}{2!}x^2+\dfrac{n(n-1)(n-2)}{3!}x^3+\cdots,\ |x|\lt1$`,0]]},
+{h:'Logarithms & exponentials', r:[
+['Laws', R`$\log xy=\log x+\log y\quad\log\frac xy=\log x-\log y\quad\log x^k=k\log x$`,1],
+['Change of base', R`$a^x=b\Rightarrow x=\dfrac{\ln b}{\ln a}$`,1],
+['Linear forms', R`$y=kx^n$: $\ln y=\ln k+n\ln x$ &nbsp; · &nbsp; $y=ka^x$: $\ln y=\ln k+x\ln a$`,1]]},
+{h:'Trigonometry', r:[
+['Pythagorean', R`$\sec^2\theta\equiv1+\tan^2\theta\qquad\operatorname{cosec}^2\theta\equiv1+\cot^2\theta$`,0],
+['Compound angles', R`$\sin(A\pm B)=\sin A\cos B\pm\cos A\sin B$<br>$\cos(A\pm B)=\cos A\cos B\mp\sin A\sin B$<br>$\tan(A\pm B)=\dfrac{\tan A\pm\tan B}{1\mp\tan A\tan B}$`,0],
+['Double angles', R`$\sin2A=2\sin A\cos A$<br>$\cos2A=\cos^2A-\sin^2A=2\cos^2A-1=1-2\sin^2A$<br>$\tan2A=\dfrac{2\tan A}{1-\tan^2A}$`,0],
+['R form', R`$a\sin\theta+b\cos\theta=R\sin(\theta+\alpha)$, &nbsp; $R=\sqrt{a^2+b^2}$, &nbsp; $\tan\alpha=\dfrac ba$`,1]]},
+{h:'Differentiation', r:[
+['Standard', R`$e^x\to e^x$ · $\ln x\to\frac1x$ · $\sin x\to\cos x$ · $\cos x\to-\sin x$ · $\tan x\to\sec^2x$ · $\tan^{-1}x\to\frac1{1+x^2}$`,0],
+['Reciprocal trig', R`$\sec x\to\sec x\tan x$ · $\operatorname{cosec}x\to-\operatorname{cosec}x\cot x$ · $\cot x\to-\operatorname{cosec}^2x$`,0],
+['Product / quotient', R`$(uv)'=uv'+vu'\qquad\left(\dfrac uv\right)'=\dfrac{vu'-uv'}{v^2}$`,0],
+['Parametric', R`$\dfrac{dy}{dx}=\dfrac{dy/dt}{dx/dt}$`,0],
+['Implicit', R`$\dfrac{d}{dx}f(y)=f'(y)\dfrac{dy}{dx}$; &nbsp; $\dfrac{d}{dx}(xy)=x\dfrac{dy}{dx}+y$`,1]]},
+{h:'Integration', r:[
+['Standard', R`$\int e^{ax+b}dx=\frac1ae^{ax+b}$ · $\int\frac1{ax+b}dx=\frac1a\ln|ax+b|$ · $\int\sec^2x\,dx=\tan x$`,0],
+['Inverse tan', R`$\displaystyle\int\frac{1}{x^2+a^2}\,dx=\frac1a\tan^{-1}\frac xa$`,0],
+['Log form', R`$\displaystyle\int\frac{f'(x)}{f(x)}\,dx=\ln|f(x)|$`,0],
+['By parts', R`$\displaystyle\int u\frac{dv}{dx}\,dx=uv-\int v\frac{du}{dx}\,dx$`,0],
+['Trig identities', R`$\cos^2x=\tfrac12(1+\cos2x)\qquad\sin^2x=\tfrac12(1-\cos2x)$`,1],
+['Trapezium rule', R`$\int_a^by\,dx\approx\tfrac12h\{y_0+2(y_1+\cdots+y_{n-1})+y_n\},\ h=\frac{b-a}n$`,0]]},
+{h:'Numerical methods', r:[
+['Sign change', R`$f(a)f(b)\lt0$ and $f$ continuous $\Rightarrow$ root in $(a,b)$`,1],
+['Iteration', R`$x_{n+1}=F(x_n)$ converges if $|F'(\alpha)|\lt1$`,1]]},
+{h:'Vectors', r:[
+['Scalar product', R`$\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3=|\mathbf a||\mathbf b|\cos\theta$`,0],
+['Line', R`$\mathbf r=\mathbf a+\lambda\mathbf d$`,1],
+['Perpendicular', R`$\mathbf a\cdot\mathbf b=0$`,1]]},
+{h:'Differential equations', r:[
+['Separating variables', R`$\dfrac{dy}{dx}=f(x)g(y)\Rightarrow\displaystyle\int\frac{dy}{g(y)}=\int f(x)\,dx$`,1]]},
+{h:'Complex numbers', r:[
+['Modulus & argument', R`$|z|=\sqrt{x^2+y^2}$, &nbsp; $-\pi\lt\arg z\le\pi$`,1],
+['Forms', R`$z=r(\cos\theta+i\sin\theta)=re^{i\theta}$`,1],
+['Products', R`$|z_1z_2|=|z_1||z_2|$, &nbsp; $\arg(z_1z_2)=\arg z_1+\arg z_2$`,1],
+['Loci', R`$|z-a|=r$ circle · $|z-a|=|z-b|$ perp. bisector · $\arg(z-a)=\theta$ half-line`,1]]}
+];
+
+FORMULAS.s2 = [
+{h:'Poisson distribution', r:[
+['Probability', R`$P(X=r)=e^{-\lambda}\dfrac{\lambda^r}{r!}$`,0],
+['Mean & variance', R`$E(X)=\mathrm{Var}(X)=\lambda$`,0],
+['Binomial → Poisson', R`$n\gt50$, $np\lt5$: $\;B(n,p)\approx\mathrm{Po}(np)$`,1],
+['Poisson → Normal', R`$\lambda\gt15$: $\;\mathrm{Po}(\lambda)\approx N(\lambda,\lambda)$ with continuity correction`,1]]},
+{h:'Linear combinations', r:[
+['One variable', R`$E(aX+b)=aE(X)+b\qquad\mathrm{Var}(aX+b)=a^2\mathrm{Var}(X)$`,0],
+['Two variables', R`$E(aX\pm bY)=aE(X)\pm bE(Y)\qquad\mathrm{Var}(aX\pm bY)=a^2\mathrm{Var}(X)+b^2\mathrm{Var}(Y)$`,0],
+['Sums of Poissons', R`$X+Y\sim\mathrm{Po}(\lambda+\mu)$ (independent)`,1]]},
+{h:'Continuous random variables', r:[
+['Total probability', R`$\displaystyle\int f(x)\,dx=1$`,1],
+['Mean', R`$E(X)=\displaystyle\int xf(x)\,dx$`,0],
+['Variance', R`$\mathrm{Var}(X)=\displaystyle\int x^2f(x)\,dx-\mu^2$`,0],
+['Median', R`$\displaystyle\int_{\text{lower}}^mf(x)\,dx=0.5$`,1]]},
+{h:'Sampling & estimation', r:[
+['Sample mean', R`$\bar X\sim N\!\left(\mu,\dfrac{\sigma^2}{n}\right)$ (exact if $X$ normal; CLT for large $n$)`,0],
+['Unbiased estimates', R`$\bar x=\dfrac{\sum x}{n}\qquad s^2=\dfrac{1}{n-1}\left(\sum x^2-\dfrac{(\sum x)^2}{n}\right)$`,0],
+['CI for mean', R`$\bar x\pm z\dfrac{\sigma}{\sqrt n}$`,0],
+['CI for proportion', R`$\hat p\pm z\sqrt{\dfrac{\hat p(1-\hat p)}{n}}$`,0],
+['z values', R`90%: 1.645 · 95%: 1.960 · 98%: 2.326 · 99%: 2.576`,1]]},
+{h:'Hypothesis tests', r:[
+['z statistic', R`$z=\dfrac{\bar x-\mu_0}{\sigma/\sqrt n}$`,1],
+['Type I error', R`reject $H_0$ when $H_0$ true; &nbsp; $P$ = actual significance level`,1],
+['Type II error', R`accept $H_0$ when $H_0$ false`,1]]}
+];
+
+
+/* ================= app ================= */
+const ORDER = ['p1','s1','m1','p3','s2'];
+const SEC = {p1:1, p3:3, m1:4, s1:5, s2:6};
+const LEVELS = {
+  as:{name:'AS Level', papers:['p1','s1','m1'], note:'Paper 1 plus one of Mechanics or Probability & Statistics 1.'},
+  a:{name:'A Level', papers:['p3','s2'], note:'Paper 3 is compulsory; S2 is taken together with S1. Full A Level also needs Paper 1.'}
+};
+const app = document.getElementById('app');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---- storage (per browser) ---- */
+const store = {
+  get(k, d){ try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+};
+const done = new Set(store.get('w9709.done', []));
+const saveDone = () => store.set('w9709.done', [...done]);
+
+/* ---- theme ---- */
+(function(){
+  const t = store.get('w9709.theme', null);
+  if (t) document.documentElement.setAttribute('data-theme', t);
+})();
+document.getElementById('theme').addEventListener('click', () => {
+  const root = document.documentElement;
+  const cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const next = cur === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next); store.set('w9709.theme', next);
+});
+
+/* ---- maths rendering ---- */
+function typeset(el){
+  if (window.renderMathInElement) {
+    renderMathInElement(el, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}], throwOnError:false, ignoredTags:['script','noscript','style','textarea','pre','code','input']});
+  }
+}
+function texToMathML(html){
+  if (!window.katex) return html;
+  return html.replace(/\$\$([\s\S]+?)\$\$|\$([^$]+?)\$/g, (m, d, i) => {
+    try { return katex.renderToString(d || i, {displayMode:!!d, output:'mathml', throwOnError:false}); } catch(e){ return m; }
+  });
+}
+
+/* ---- helpers ---- */
+const paper = id => DATA[id];
+const accent = id => `--accent:var(--c-${id})`;
+const qid = (pid, tid, kind, i) => `${pid}-${tid}-${kind}${i}`;
+function counts(pid, tid){
+  const p = paper(pid); let total = 0, got = 0;
+  p.topics.forEach(t => { if (tid && t.id !== tid) return; t.pr.forEach((q, i) => { total++; if (done.has(qid(pid, t.id, 'p', i))) got++; }); });
+  return {total, got};
+}
+const totalQs = () => ORDER.reduce((n, id) => n + paper(id).topics.reduce((m, t) => m + t.ex.length + t.pr.length, 0), 0);
+const totalTopics = () => ORDER.reduce((n, id) => n + paper(id).topics.length, 0);
+const levelOf = pid => paper(pid).level;
+const icon = {
+  sheet:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>',
+  dl:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>',
+  dice:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/><circle cx="15" cy="9" r="1.2" fill="currentColor"/><circle cx="9" cy="15" r="1.2" fill="currentColor"/></svg>'
+};
+
+/* ---- question card ---- */
+function qCard(pid, t, q, i, kind){
+  const id = qid(pid, t.id, kind === 'ex' ? 'e' : 'p', i);
+  const isEx = kind === 'ex';
+  const working = `<div class="working"${isEx ? '' : ' hidden'}><div class="working-h">${isEx ? 'Solution' : 'Full solution'}</div><ol class="steps">${q.s.map(x => `<li>${x}</li>`).join('')}</ol>${q.a ? `<div class="answer"><span>Answer</span><div>${q.a}</div></div>` : ''}</div>`;
+  const isDone = done.has(id);
+  return `<div class="q${isDone ? ' is-done' : ''}" id="${id}">
+    <div class="q-n">${i + 1}</div>
+    <div class="q-main">
+      <div class="q-text">${q.q}</div>
+      <div class="q-marks">[${q.m}]</div>
+      ${isEx ? '' : `<div class="q-tools">
+        ${q.h ? `<button class="btn sm line" data-act="hint" aria-expanded="false">Show hint</button>` : ''}
+        <button class="btn sm" data-act="sol" aria-expanded="false">Show solution</button>
+        <label class="done-toggle"><input type="checkbox" data-done="${id}"${isDone ? ' checked' : ''}> I can do this</label>
+      </div>
+      ${q.h ? `<div class="hint" hidden><b>Hint:</b> ${q.h}</div>` : ''}`}
+      ${working}
+    </div>
+  </div>`;
+}
+
+/* ---- views ---- */
+function renderHome(){
+  const sample = DATA.p1.topics[0].ex[1];
+  const row = id => { const p = paper(id), c = counts(id), pct = c.total ? Math.round(100 * c.got / c.total) : 0;
+    return `<a class="paper-row" href="#/${p.level}/${id}" style="${accent(id)}">
+      <span class="pr-badge">${p.short}</span>
+      <span><span class="pr-name">${esc(p.name)}</span><br><span class="pr-meta">${p.paper}, ${p.exam}, ${p.marks} marks</span></span>
+      <span class="pr-prog">${c.got} of ${c.total} done<span class="bar"><i style="width:${pct}%"></i></span></span></a>`; };
+  app.innerHTML = `
+  <section class="hero"><div class="wrap">
+    <div class="hero-copy">
+      <h1>Every 9709 topic, explained and practised.</h1>
+      <p class="lede">Clear notes, worked examples and exam-style questions with full working for Pure 1, Pure 3, Statistics 1 &amp; 2 and Mechanics. Each paper has its own formula sheet to download.</p>
+      <div class="hero-actions"><a class="btn" href="#/as">Start AS Level</a><a class="btn line" href="#/a">Start A Level</a></div>
+      <p class="hero-count">${totalTopics()} topics and ${totalQs()} questions, each with a step-by-step solution.</p>
+    </div>
+    <div class="paper-sample" style="${accent('p1')}">
+      <div class="ps-cap">From Pure 1, Quadratics</div>
+      <div class="q-text">${sample.q}</div>
+      <div class="q-marks">[${sample.m}]</div>
+      <div class="working"><div class="working-h">Solution</div><ol class="steps">${sample.s.slice(0,3).map(x => `<li>${x}</li>`).join('')}</ol><div class="answer"><span>Answer</span><div>${sample.a}</div></div></div>
+    </div>
+  </div></section>
+  <section class="section"><div class="wrap">
+    <h2>Pick your papers</h2>
+    <p class="sub">Work through a paper topic by topic, or jump straight to the questions. Tick “I can do this” on a question to track your progress.</p>
+    <div class="routes">
+      <div class="route"><h3>AS Level</h3><p>${LEVELS.as.note}</p>${LEVELS.as.papers.map(row).join('')}</div>
+      <div class="route"><h3>A Level</h3><p>${LEVELS.a.note}</p>${LEVELS.a.papers.map(row).join('')}</div>
+    </div>
+  </div></section>
+  <section class="section" style="padding-top:0"><div class="wrap">
+    <h2>How 9709 is assessed</h2>
+    <p class="sub">Your school chooses the combination of papers. Paper 2 (Pure Mathematics 2) is an AS-only alternative to Mechanics or S1 and is not covered here.</p>
+    <table class="assess">
+      <tr><th>Qualification</th><th>Papers you sit</th></tr>
+      <tr><td>AS Level</td><td>Paper 1 and one of: Paper 2, Paper 4 (Mechanics) or Paper 5 (S1)</td></tr>
+      <tr><td>A Level</td><td>Papers 1 and 3, plus either Papers 4 and 5 (Mechanics and S1) or Papers 5 and 6 (S1 and S2). Papers 4 and 6 cannot be combined.</td></tr>
+      <tr><td>Paper lengths</td><td>Papers 1 and 3: 1 hr 50 min, 75 marks. Papers 4, 5 and 6: 1 hr 15 min, 50 marks.</td></tr>
+    </table>
+  </div></section>
+  <section class="section" style="padding-top:0"><div class="wrap">
+    <h2>Habits that earn marks</h2>
+    <p class="sub">Most lost marks in 9709 come from presentation, not from not knowing the maths.</p>
+    <div class="tips">
+      <div><h4>Show every step</h4><p>Method marks are awarded for correct working even when the final answer is wrong. A bare answer can score zero.</p></div>
+      <div><h4>Use the marks as a guide</h4><p>A [2] question needs two steps; a [7] question needs a longer chain. Spend about 1.4 minutes per mark.</p></div>
+      <div><h4>Get the accuracy right</h4><p>Give non-exact answers to 3 significant figures and angles in degrees to 1 decimal place, unless told otherwise. Keep more figures in your working.</p></div>
+    </div>
+  </div></section>`;
+}
+
+function renderLevel(lv, pid, tid){
+  const L = LEVELS[lv];
+  if (!pid || !L.papers.includes(pid)) pid = L.papers[0];
+  const p = paper(pid);
+  let ti = p.topics.findIndex(t => t.id === tid); if (ti < 0) ti = 0;
+  const t = p.topics[ti];
+  const pc = counts(pid);
+  const tabs = L.papers.map(id => `<a href="#/${lv}/${id}" aria-current="${id === pid}" style="${accent(id)}"><span class="dot"></span>${paper(id).short}&nbsp; ${esc(paper(id).name)}</a>`).join('');
+  const toc = p.topics.map((x, i) => { const c = counts(pid, x.id);
+    return `<li><a href="#/${lv}/${pid}/${x.id}" aria-current="${i === ti}"><span class="num">${SEC[pid]}.${i + 1}</span><span>${esc(x.title)}</span><span class="tprog${c.got === c.total ? ' full' : ''}">${c.got}/${c.total} practised</span></a></li>`; }).join('');
+  const prev = p.topics[ti - 1], next = p.topics[ti + 1];
+  app.innerHTML = `
+  <div class="level-head" style="${accent(pid)}"><div class="wrap">
+    <div class="level-title"><h1>${L.name}</h1><p>${L.note}</p></div>
+    <nav class="paper-tabs" aria-label="Papers">${tabs}</nav>
+  </div></div>
+  <div class="wrap" style="${accent(pid)}">
+    <div class="paper-band">
+      <div class="pb-text">
+        <h2><span>${p.short}</span> ${esc(p.name)}</h2>
+        <p>${p.blurb}</p>
+        <div class="pb-facts"><span><b>${p.paper}</b></span><span><b>${p.exam}</b> exam</span><span><b>${p.marks}</b> marks</span><span><b>${pc.got}</b> of ${pc.total} practice questions done</span></div>
+      </div>
+      <div class="pb-actions">
+        <button class="btn" data-act="sheet" data-pid="${pid}">${icon.sheet}Formula sheet</button>
+        <button class="btn line" data-act="random" data-pid="${pid}">${icon.dice}Random question</button>
+      </div>
+    </div>
+    <div class="layout">
+      <aside class="toc" aria-label="Topics"><h3>Topics</h3><ol>${toc}</ol></aside>
+      <article class="topic">
+        <div class="topic-head"><div class="sec-no">${SEC[pid]}.${ti + 1}</div><h2>${esc(t.title)}</h2><p>${t.sum}</p></div>
+        <div class="notes">${t.notes}</div>
+        <div class="part-h"><h3>Worked examples</h3><span>Read the working, then cover it and try again</span></div>
+        ${t.ex.map((q, i) => qCard(pid, t, q, i, 'ex')).join('')}
+        <div class="part-h"><h3>Practice questions</h3><span>${t.pr.length} questions with full solutions</span></div>
+        ${t.pr.map((q, i) => qCard(pid, t, q, i, 'pr')).join('')}
+        <nav class="pn" aria-label="Topic navigation">
+          ${prev ? `<a href="#/${lv}/${pid}/${prev.id}"><small>Previous topic</small><b>${esc(prev.title)}</b></a>` : '<span></span>'}
+          ${next ? `<a class="next" href="#/${lv}/${pid}/${next.id}"><small>Next topic</small><b>${esc(next.title)}</b></a>` : '<span></span>'}
+        </nav>
+      </article>
+    </div>
+  </div>`;
+}
+
+function renderSheets(){
+  app.innerHTML = `<section class="section"><div class="wrap">
+    <h2>Formula sheets</h2>
+    <p class="sub">One sheet per paper. Formulas marked <span class="star">★</span> are not in the official list of formulae (MF19), so you need to memorise them. Download a sheet to keep offline, or print it.</p>
+    <div class="sheets">${ORDER.map(id => { const p = paper(id); return `<div class="sheet-card" style="${accent(id)}">
+      <h3>${esc(p.name)}</h3><p>${p.paper}, ${p.level === 'as' ? 'AS Level' : 'A Level'}. ${FORMULAS[id].length} sections${id[0] === 's' ? ' plus normal distribution tables' : ''}.</p>
+      <div class="row"><button class="btn sm" data-act="sheet" data-pid="${id}">${icon.sheet}Open</button><button class="btn sm line" data-act="download" data-pid="${id}">${icon.dl}Download</button></div></div>`; }).join('')}</div>
+  </div></section>`;
+}
+
+/* ---- formula sheet content ---- */
+function erf(x){ // Taylor series, accurate to ~1e-13 for |x| < 3
+  let sum = 0, term = x, n = 0;
+  while (Math.abs(term) > 1e-17 && n < 200){ sum += term / (2*n + 1); n++; term *= -x*x / n; }
+  return 2 / Math.sqrt(Math.PI) * sum;
+}
+const Phi = z => 0.5 * (1 + erf(z / Math.SQRT2));
+function phiTables(){
+  let h = '<div class="fs-sec"><h3>The normal distribution function Φ(z)</h3><p style="margin:0 0 8px;font-size:14px">Gives $\\Phi(z)=P(Z\\le z)$ for $Z\\sim N(0,1)$. For negative $z$ use $\\Phi(-z)=1-\\Phi(z)$.</p><div class="phi-wrap"><table class="phi"><tr><th>z</th>';
+  for (let c = 0; c < 10; c++) h += `<th>${c}</th>`;
+  h += '</tr>';
+  for (let r = 0; r < 31; r++){
+    const z0 = r / 10; h += `<tr><th>${z0.toFixed(1)}</th>`;
+    for (let c = 0; c < 10; c++) h += `<td>${Phi(z0 + c / 100).toFixed(4)}</td>`;
+    h += '</tr>';
+  }
+  h += '</table></div></div>';
+  const ps = [0.75, 0.8, 0.85, 0.9, 0.95, 0.975, 0.99, 0.995, 0.9975, 0.999, 0.9995];
+  const zs = ['0.674','0.842','1.036','1.282','1.645','1.960','2.326','2.576','2.807','3.090','3.291'];
+  h += '<div class="fs-sec"><h3>Critical values: if $P(Z\\le z)=p$ then</h3><div class="phi-wrap"><table class="phi"><tr><th>p</th>' + ps.map(p => `<td>${p}</td>`).join('') + '</tr><tr><th>z</th>' + zs.map(z => `<td>${z}</td>`).join('') + '</tr></table></div></div>';
+  return h;
+}
+function sheetHTML(pid){
+  const p = paper(pid);
+  let h = `<div class="fs" style="${accent(pid)}"><div class="fs-head"><div><h2>${esc(p.name)}: formula sheet</h2><p>Cambridge International AS &amp; A Level Mathematics 9709, ${p.paper}</p></div>
+    <p class="fs-key"><span class="star">★</span> not in the MF19 list of formulae: memorise</p></div>`;
+  FORMULAS[pid].forEach(sec => {
+    h += `<section class="fs-sec"><h3>${sec.h}</h3><table class="fs-tbl">${sec.r.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2] ? '<span class="star" title="Memorise">★</span>' : ''}</td></tr>`).join('')}</table></section>`;
+  });
+  if (pid === 's1' || pid === 's2') h += phiTables();
+  return h + '</div>';
+}
+const SHEET_CSS = `body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#1b2340;margin:0;padding:28px;font-size:15px;line-height:1.5}
+.fs{max-width:900px;margin:0 auto}.fs-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-end;flex-wrap:wrap;border-bottom:2px solid #1b2340;padding-bottom:10px}
+h2{margin:0;font-size:22px}.fs-head p{margin:2px 0 0;color:#4b5573;font-size:14px}.star{color:#e0463a;font-weight:800}
+.fs-sec{break-inside:avoid;margin-top:16px}.fs-sec h3{font-size:16px;margin:0 0 4px;color:ACCENT}
+table{border-collapse:collapse;width:100%}.fs-tbl td{border-top:1px solid #d9e1ec;padding:6px 8px;vertical-align:top}
+.fs-tbl td:first-child{width:190px;color:#4b5573;font-weight:600;font-size:14px}.fs-tbl td:last-child{width:22px;text-align:right}
+.phi{font-size:12px;font-variant-numeric:tabular-nums}.phi th,.phi td{border:1px solid #d9e1ec;padding:3px 5px;text-align:center}.phi th{background:#f3f6fa}
+math{font-size:1.08em}@media print{body{padding:0}}`;
+function downloadSheet(pid){
+  const p = paper(pid);
+  const body = texToMathML(sheetHTML(pid));
+  const doc = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>9709 ${p.short} formula sheet</title><style>${SHEET_CSS.replace('ACCENT', p.color)}</style></head><body>${body}</body></html>`;
+  const blob = new Blob([doc], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = `9709-${p.short}-formula-sheet.html`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+let sheetPid = null, lastFocus = null;
+const modal = document.getElementById('sheet-modal');
+function openSheet(pid){
+  sheetPid = pid; lastFocus = document.activeElement;
+  document.getElementById('sheet-title').textContent = `${paper(pid).short} formula sheet`;
+  const body = document.getElementById('sheet-body');
+  body.innerHTML = sheetHTML(pid); typeset(body);
+  modal.hidden = false; document.body.style.overflow = 'hidden';
+  document.getElementById('sheet-close').focus();
+}
+function closeSheet(){ modal.hidden = true; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+document.getElementById('sheet-close').onclick = closeSheet;
+document.getElementById('sheet-dl').onclick = () => downloadSheet(sheetPid);
+document.getElementById('sheet-print').onclick = () => { document.body.classList.add('print-sheet'); window.print(); };
+window.addEventListener('afterprint', () => document.body.classList.remove('print-sheet'));
+modal.addEventListener('click', e => { if (e.target === modal) closeSheet(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeSheet(); });
+
+/* ---- routing ---- */
+let pendingScroll = null;
+function route(){
+  const parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+  const [a, b, c] = parts;
+  document.querySelectorAll('[data-nav]').forEach(n => n.removeAttribute('aria-current'));
+  const navKey = (a === 'as' || a === 'a' || a === 'sheets') ? a : 'home';
+  const navEl = document.querySelector(`[data-nav="${navKey}"]`); if (navEl) navEl.setAttribute('aria-current', 'page');
+  document.getElementById('nav').classList.remove('open');
+  if (a === 'as' || a === 'a') renderLevel(a, b, c);
+  else if (a === 'sheets') renderSheets();
+  else renderHome();
+  typeset(app);
+  // on narrow screens, bring the current paper tab and topic chip into view
+  document.querySelectorAll('.paper-tabs, .toc ol').forEach(sc => {
+    const cur = sc.querySelector('[aria-current="true"]');
+    if (cur && sc.scrollWidth > sc.clientWidth) sc.scrollLeft = Math.max(0, (cur.closest('li') || cur).offsetLeft - 16);
+  });
+  if (pendingScroll){
+    const el = document.getElementById(pendingScroll); pendingScroll = null;
+    if (el){ el.scrollIntoView({block:'start'}); el.classList.add('flash'); }
+  } else window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+
+/* ---- interactions ---- */
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const act = b.dataset.act;
+  if (act === 'sol' || act === 'hint'){
+    const card = b.closest('.q');
+    const panel = card.querySelector(act === 'sol' ? '.working' : '.hint');
+    const open = panel.hidden; panel.hidden = !open;
+    b.setAttribute('aria-expanded', String(open));
+    b.textContent = act === 'sol' ? (open ? 'Hide solution' : 'Show solution') : (open ? 'Hide hint' : 'Show hint');
+  } else if (act === 'sheet') openSheet(b.dataset.pid);
+  else if (act === 'download') downloadSheet(b.dataset.pid);
+  else if (act === 'random'){
+    const pid = b.dataset.pid, p = paper(pid), pool = [];
+    p.topics.forEach(t => t.pr.forEach((q, i) => pool.push({t, id:qid(pid, t.id, 'p', i)})));
+    const fresh = pool.filter(x => !done.has(x.id));
+    const pick = (fresh.length ? fresh : pool)[Math.floor(Math.random() * (fresh.length || pool.length))];
+    pendingScroll = pick.id;
+    const target = `#/${p.level}/${pid}/${pick.t.id}`;
+    if (location.hash === target) route(); else location.hash = target;
+  }
+});
+document.addEventListener('change', e => {
+  const cb = e.target.closest('[data-done]'); if (!cb) return;
+  const id = cb.dataset.done;
+  if (cb.checked) done.add(id); else done.delete(id);
+  saveDone();
+  cb.closest('.q').classList.toggle('is-done', cb.checked);
+  // refresh progress counts without re-rendering the page
+  const [pid, tid] = id.split('-');
+  const tc = counts(pid, tid), pc = counts(pid);
+  const link = document.querySelector(`.toc a[href$="/${pid}/${tid}"] .tprog`);
+  if (link){ link.textContent = `${tc.got}/${tc.total} practised`; link.classList.toggle('full', tc.got === tc.total); }
+  const facts = document.querySelector('.pb-facts span:last-child');
+  if (facts) facts.innerHTML = `<b>${pc.got}</b> of ${pc.total} practice questions done`;
+});
+document.getElementById('menu').addEventListener('click', e => {
+  const nav = document.getElementById('nav'); const open = !nav.classList.contains('open');
+  nav.classList.toggle('open', open); e.currentTarget.setAttribute('aria-expanded', String(open));
+});
+
+/* ---- search ---- */
+let INDEX = null;
+const strip = h => h.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+function buildIndex(){
+  INDEX = [];
+  ORDER.forEach(pid => { const p = paper(pid);
+    p.topics.forEach(t => {
+      INDEX.push({pid, t, kind:'topic', text:(t.title + ' ' + t.sum + ' ' + strip(t.notes)).toLowerCase(), label:t.title, snip:t.sum});
+      [['ex', t.ex], ['pr', t.pr]].forEach(([k, arr]) => arr.forEach((q, i) => {
+        INDEX.push({pid, t, kind:k, i, id:qid(pid, t.id, k === 'ex' ? 'e' : 'p', i), text:(strip(q.q) + ' ' + t.title).toLowerCase(), label:`${t.title}, ${k === 'ex' ? 'example' : 'question'} ${i + 1}`, snip:q.q});
+      }));
+    });
+  });
+}
+function safeSnippet(h, n){
+  let s = strip(h); if (s.length <= n) return s;
+  s = s.slice(0, n);
+  if ((s.match(/\$/g) || []).length % 2) s = s.slice(0, s.lastIndexOf('$'));
+  return s.trim() + '…';
+}
+const qInput = document.getElementById('q'), results = document.getElementById('results');
+qInput.addEventListener('input', () => {
+  const v = qInput.value.trim().toLowerCase();
+  if (v.length < 2){ results.hidden = true; return; }
+  if (!INDEX) buildIndex();
+  const words = v.split(/\s+/);
+  const hits = INDEX.filter(x => words.every(w => x.text.includes(w)))
+    .sort((a, b) => (a.kind === 'topic' ? 0 : 1) - (b.kind === 'topic' ? 0 : 1)).slice(0, 14);
+  results.innerHTML = hits.length ? hits.map((x, n) => `<button data-hit="${n}"><div class="r-where">${paper(x.pid).short}, ${esc(x.label)}</div><div class="r-text">${safeSnippet(x.snip, 110)}</div></button>`).join('')
+    : `<div class="empty">Nothing matches “${esc(qInput.value)}”. Try a topic name such as “binomial” or “friction”.</div>`;
+  results._hits = hits; results.hidden = false; typeset(results);
+});
+results.addEventListener('click', e => {
+  const b = e.target.closest('[data-hit]'); if (!b) return;
+  const x = results._hits[+b.dataset.hit];
+  results.hidden = true; qInput.value = '';
+  document.getElementById('search').classList.remove('open');
+  if (x.id) pendingScroll = x.id;
+  const target = `#/${paper(x.pid).level}/${x.pid}/${x.t.id}`;
+  if (location.hash === target) route(); else location.hash = target;
+});
+document.addEventListener('click', e => { if (!e.target.closest('#search') && !e.target.closest('#searchToggle')) results.hidden = true; });
+qInput.addEventListener('keydown', e => { if (e.key === 'Escape'){ results.hidden = true; qInput.blur(); } });
+document.getElementById('searchToggle').addEventListener('click', () => {
+  const s = document.getElementById('search'); s.classList.toggle('open'); if (s.classList.contains('open')) qInput.focus();
+});
+
+/* ---- start ---- */
+function start(){
+  if (!window.renderMathInElement) document.getElementById('offline').hidden = false;
+  route();
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+</script>
+</body>
+</html>
