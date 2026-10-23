@@ -115,35 +115,6 @@ All the content is inside the HTML file, in the `<script>` block near the bottom
 - `DATA.p1`, `DATA.s1`, `DATA.m1`, `DATA.p3` and `DATA.s2` hold each paper's topics.
 - `FORMULAS.p1` and so on hold the formula sheets.
 
-Each topic looks like this:
-
-```js
-{id:'quadratics', title:'Quadratics', sum:'One-line summary',
- notes:R`<h4>Heading</h4><p>Notes with maths like $b^2-4ac$</p>`,
- ex:[ /* worked examples */ ],
- pr:[ /* practice questions */ ]}
-```
-
-Each question looks like this:
-
-```js
-{m:3,                                    // marks
- q:R`Solve $x^2-5x+6=0$.`,               // question
- h:R`Factorise.`,                        // hint (optional)
- s:[R`$(x-2)(x-3)=0$`, R`So $x=2$ or $x=3$.`],  // solution steps
- a:R`$x=2$ or $x=3$`}                    // final answer
-```
-
-Tips for writing content:
-
-- Maths is written in **LaTeX**: `$...$` inside a sentence, `$$...$$` on its own line.
-- Text is wrapped in `` R`...` ``, so type each backslash once: `\frac`, not `\\frac`.
-- Don't type `${` anywhere in the text, because it breaks the file. If you need `$` followed by `{`, put a small space in between: `$\,{}^nC_r$`.
-- Use `\lt` and `\gt` instead of `<` and `>` inside maths.
-- In formula sheets, each row is `[label, formula, star]`. Use `1` for the star if the formula is not in MF19, and `0` if it is.
-
-After editing, open the file in your browser and check the topic you changed.
-
 ---
 
 ## Conventions
